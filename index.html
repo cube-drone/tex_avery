@@ -3,9 +3,11 @@
 <head>
     <title> Greetings, human., </title>
 
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="jquery.hotkeys.js"> </script> 
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900' rel='stylesheet' type='text/css'>
+    <script src="js/bootstrap.min.js"></script> 
 
     <script type="text/javascript"> 
         
@@ -44,11 +46,14 @@
     <style type="text/css">
         
     body{
-        padding: 50px;
         background-color: #111;
         color: #CCC;
         line-height: 1.5em;
         font-family: 'Source Code Pro', monospace;
+    }
+
+    .container{
+        padding-top: 50px;
     }
     
     #target{
@@ -56,7 +61,6 @@
         color: #CCC;
         line-height: 1.5em;
         border: 0;
-        width: 70%;
         font-size: medium;
         font-family: 'Source Code Pro', monospace;
     }
@@ -79,16 +83,19 @@
     <meta charset='utf-8' /> 
 </head>
 <body>
-
-    <ul id='history'> 
-        <li class='computer'> Greetings, <strong>human</strong>. </li>
-    </ul> 
+    <div class='container'>
+    <div class='row'>
+        <ul id='history' class='span12' > 
+            <li class='computer'> Greetings, <strong>human</strong>. </li>
+        </ul>
+    </div> 
     
-    <div id='prompt'>
-        <span id='host'>human@computer.org: ~/$</span> 
-        <input type='text' id='target'></input>
+    <div class='row'>
+        <div id='prompt' class='span12'>
+            <span id='host' class='span3'>human@computer.org: ~/$</span> 
+            <input type='text' id='target' class='span9'></input>
+        </div>
     </div>
-
 </body>
 </html>
 
