@@ -32,7 +32,10 @@ overflow-x: hidden;
 overflow-y: auto;
 }
 
-.computer {
+.pagebreak{
+height: 500px;
+}
+
+.narrator {
 color: #E8C5D3;
 }
-</style>
