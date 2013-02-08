@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <title> Greetings, human., </title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="jquery.hotkeys.js"> </script> 
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript"> 
+        
+        $(document).ready(function() {
+            $("#target").focus();
+
+            var request_response = function(request){
+                response_callback("Response"); 
+            }
+            
+            var focus = function(evt) {
+                $("#target").focus(); 
+                return evt;
+            };
+
+            var response_callback = function( response ){
+                $("#history").append( "<li class='computer'> $> "+ response +" </li> " );
+                $("#prompt").show();
+            }
+
+            var enter = function(evt) {
+                var words = $("#target").val();
+                $("#history").append( "<li class='human'> $> " + words + " </li> " );
+                $("#target").val("");
+                $("#prompt").hide();
+                request_response();
+                return evt;
+            };
+
+            $(document).bind('keydown', focus);
+            $("#target").bind('keydown.return', enter);
+        });
+
+    </script>
+
+    <style type="text/css">
+        
+    body{
+        padding: 50px;
+        background-color: #111;
+        color: #CCC;
+        line-height: 1.5em;
+        font-family: 'Source Code Pro', monospace;
+    }
+    
+    #target{
+        background-color: #111;
+        color: #CCC;
+        line-height: 1.5em;
+        border: 0;
+        width: 70%;
+        font-size: medium;
+        font-family: 'Source Code Pro', monospace;
+    }
+
+    textarea:focus, input:focus{
+        outline: none;
+    }
+    
+
+    #history {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .computer {
+        color: #E8C5D3;
+    }
+    </style>
+  
+    <meta charset='utf-8' /> 
+</head>
+<body>
+
+    <ul id='history'> 
+        <li class='computer'> Greetings, <strong>human</strong>. </li>
+    </ul> 
+    
+    <div id='prompt'>
+        <span id='host'>human@computer.org: ~/$</span> 
+        <input type='text' id='target'></input>
+    </div>
+
+</body>
+</html>
+
