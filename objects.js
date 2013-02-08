@@ -1,8 +1,4 @@
 
-var you = { 
-    are_in: rooms.antechamber,
-    inventory: []
-}
 
 var all_actions = function(){ 
     var actions = [];
@@ -12,28 +8,11 @@ var all_actions = function(){
     return actions;
 }
 
-var rooms = { 
-    antechamber: {
-        state: {
-            contains: [ objects.fridge ]
-        },
-        initial: function() {
-            history.append( "You are in a 10x10 steel box. In front of you is a refridgerator." )
-        }
-        verbs: {
-            look_around: function() { 
-                rooms.first.initial()
-            }
-            
-        }
-    }
-}
-
 var objects = {
     fridge: { 
         state: { 
             open: false,
-            contains: [ objects.orange ]
+            contains: [ ]
         }, 
         verbs: { 
             smell: function() { 
@@ -67,7 +46,7 @@ var objects = {
             },
             take: function() {
                 history.append( "The fridge is a little too heavy for that." );
-            }
+            },
             throw: function() {
                 history.append( "The fridge is a little too heavy for that." );
             }
@@ -75,3 +54,24 @@ var objects = {
     }
 }
 
+var rooms = { 
+    antechamber: {
+        state: {
+            contains: [ objects.fridge ]
+        },
+        initial: function() {
+            history.append( "You are in a 10x10 steel box. In front of you is a refridgerator." )
+        },
+        verbs: {
+            look_around: function() { 
+                rooms.first.initial()
+            }
+            
+        }
+    }
+}
+
+var you = { 
+    are_in: rooms.antechamber,
+    inventory: []
+}
