@@ -3,18 +3,24 @@
 <head>
     <title> Greetings, human., </title>
 
-    <!-- TODO: separate external libs into their own folder --> 
-    <script src="jquery-1.9.1.min.js"></script>
-    <script src="underscore-min.js"></script>
-    <script src="jquery.hotkeys.js"> </script> 
-    <script src="bootstrap/js/bootstrap.min.js"></script> 
+    <!-- Every javascript system benefits from jQuery and underscore. -->
+    <script src="libs/jquery-1.9.1.min.js"></script>
+    <script src="libs/underscore-min.js"></script>
+
+    <!-- We use the hotkeys library to clean up key->event mappings -->
+    <!--   it also allows for keyboard shortcuts. -->
+    <script src="libs/jquery.hotkeys.js"> </script> 
+    
+    <!-- Bootstrap style engine. --> 
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script> 
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+
+    <!-- Our code -->
     <script src="objects.js"></script> 
     <script src="main.js"></script> 
 
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
-    <!--
+    <!-- Google Source Code font. Probably unnecessary, but pretty. -->
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900' rel='stylesheet' type='text/css' />
-    -->
     <link href='style.css' rel='stylesheet' type='text/css' />
 
     <meta charset='utf-8' /> 

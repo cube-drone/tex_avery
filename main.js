@@ -71,9 +71,13 @@ $(document).ready(function() {
         return evt;
     };
 
+    // If the user hits a keyboard key anywhere in the document, move focus
+    //      to the prompt element. 
     $(document).bind('keydown', tools.wrappers.event_bubble( prompt.focus ));
+
     $("#target").bind('keydown.return', enter);
     
+    // Bind a function listing available options to the prompt. 
     $("#target").typeahead({ source:list_of_options })
 });
 
