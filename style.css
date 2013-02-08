@@ -1,0 +1,35 @@
+
+body{
+background-color: #111;
+color: #CCC;
+line-height: 1.5em;
+font-family: 'Source Code Pro', monospace;
+}
+
+.container{
+padding-top: 50px;
+}
+
+#target{
+background-color: #111;
+color: #CCC;
+line-height: 1.5em;
+border: 0;
+font-size: medium;
+font-family: 'Source Code Pro', monospace;
+}
+
+textarea:focus, input:focus{
+outline: none;
+}
+
+
+#history {
+padding: 0;
+list-style-type: none;
+}
+
+.computer {
+color: #E8C5D3;
+}
+</style>
