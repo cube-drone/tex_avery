@@ -11,16 +11,23 @@
     <!--   it also allows for keyboard shortcuts. -->
     <script src="libs/jquery.hotkeys.js"> </script> 
     
-    <!-- Bootstrap style engine. --> 
+    <!-- Bootstrap style. --> 
     <script src="libs/bootstrap/js/bootstrap.min.js"></script> 
     <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
 
+    <!-- Handlebars html templating engine. -->
+    <!-- <script src="libs/handlebars.js"></script> -->
+
+    <!-- Require.js asynchronous module loading -->
+    <script src="libs/require.js"></script>
+
     <!-- Our code -->
-    <script src="objects.js"></script> 
     <script src="main.js"></script> 
 
     <!-- Google Source Code font. Probably unnecessary, but pretty. -->
+    <!--
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900' rel='stylesheet' type='text/css' />
+    -->
     <link href='style.css' rel='stylesheet' type='text/css' />
 
     <meta charset='utf-8' /> 
@@ -31,14 +38,12 @@
         <div class='span3'>
         </div>
         <ul id='history' class='span9' > 
-            <li class='computer'> Greetings, <strong>human</strong>. </li>
         </ul>
     </div> 
     
-    <div class='row'>
-        <div id='prompt' class='span12'>
-            <span id='host' class='span3'>human@computer.org: ~/$</span> 
-            <input type='text' id='target' class='span9'></input>
+    <div class='row' class='span12'>
+        <div id='host' class='span3'>human@computer.org: ~/$</div> 
+        <div id='prompt'>
         </div>
     </div>
 </body>
