@@ -4,13 +4,34 @@ define(function() {
 var public = {};
 var private = {};
 
-var big_number = 0;
+private.big_number = 0;
+private.prototypes = {};
+
+public.register_prototype = function( name, prototype ){
+    // if an object goes into local storage and comes out later
+    // we need to know which prototype to give it.
+    private.prototypes[name] = prototype;
+};
+
+public.find_prototype = function( name ) {
+    return private.prototypes[name];
+}
+
+private.rehydrate = function( obj ){
+    if( typeof(obj.state_id) !== "undefined"){
+        obj.__proto__ = public.find_prototype(obj.name); 
+        if( typeof(obj.__proto__) == "undefined" || obj.__proto__ === null ){
+            console.error("Unregistered prototype: " + obj.name);
+        }
+        console.log( obj );
+    }
+}
 
 public.WithState = function(){
     this.default_state = {};
-    this.name = "object_with_state";
-    this.state_id = big_number;
-    big_number ++;
+    this.name = "with_state";
+    this.state_id = private.big_number;
+    private.big_number ++;
 };
 
 public.WithState.prototype.key = function(key){
@@ -37,11 +58,12 @@ public.WithState.prototype.get_state = function(key){
         }
     }
     var obj = JSON.retrocycle( JSON.parse( state ));
-    if( typeof(obj.state_id) !== "undefined"){
-        obj.prototype = public.WithState.prototype;
-    }
+    private.rehydrate( obj );
+    _.each(obj, private.rehydrate );
     return obj;
 }
+
+public.register_prototype( "with_state", public.WithState.prototype );
 
 return public;
 

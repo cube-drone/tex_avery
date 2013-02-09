@@ -28,15 +28,38 @@ require(["state"], function(state){
         equal( object.get_state("best_korea"), "north korea", "Object fetches 'north_korea' from localStorage." );
         equal( object2.get_state("best_korea"), "south korea", "Object2 fetches 'south korea' from localStorage." );
     });
+
+    test( "Prototype Registration", function() { 
+        state.register_prototype("awesome", state.prototype);
+        equal( state.find_prototype("awesome"), state.prototype );
+    });
     
     test( "Objects can contain other objects / circular references.", function() {
         var object = new state.WithState();
         var object2 = new state.WithState();
-
         object.set_state("object2", object2);
         object2.set_state("object", object);
-        console.log( object );
-        equal( object.get_state("object2"), object2, "Hell Yeah." );
+        object2.set_state("moustache", "MOUSTACHE!" );
+
+        equal( object.get_state("object2").name, object2.name, "Same name." );
+        equal( object.get_state("object2").get_state("moustache"), "MOUSTACHE!", "Can get state information." );
+        equal( object.get_state("object2").get_state("object").get_state("object2").get_state("moustache"), "MOUSTACHE!", "Circular reference." );
+    });
+    
+    test( "Objects can contain lists of objects.", function() {
+        var object = new state.WithState();
+        var object2 = new state.WithState();
+        var object3 = new state.WithState();
+        var object4 = new state.WithState();
+        object.set_state("contains", [object2, object3, object4]);
+        object2.set_state("cat", "hat");
+        object3.set_state("french", "chat_chapeau");
+        object4.set_state("spanish", "el_gateau_with_a_sombrero");
+
+        var list = object.get_state("contains");
+        equal( list[0].get_state("cat"), "hat" )
+        equal( list[1].get_state("french"), "chat_chapeau" )
+        equal( list[2].get_state("spanish"), "el_gateau_with_a_sombrero" )
     });
 });
 
