@@ -1,4 +1,5 @@
-// A prototypal object for things that have recordable state information. 
+// Registers object names to object classes. 
+// Currently necessary for object serialization to work properly. 
 define(function() {
 
 var public = {};

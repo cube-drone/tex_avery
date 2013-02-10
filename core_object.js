@@ -1,9 +1,7 @@
 // Core object for objects in the universe. 
 define(["history",
         "state",
-        "registry", 
-        "synonyms", 
-        "tools"], function(history, state, registry, synonyms, tools){
+        "registry"], function(history, state, registry){
 
 var public = {};
 var private = {};
@@ -19,6 +17,10 @@ public.InteractiveObject.prototype.children = function() {
     return this.get_state("contains");
 }
 
+public.InteractiveObject.prototype.verbs = function(){ 
+    return _.difference( _.keys( this.__proto__ ), _.keys( public.InteractiveObject.prototype ) );
+}
+
 public.InteractiveObject.prototype.visible_children = function(){
     var hidden_objects = this.get_state("hidden_objects");
     return _.filter( this.children(), function(item){
@@ -28,7 +30,7 @@ public.InteractiveObject.prototype.visible_children = function(){
 
 public.InteractiveObject.prototype.visible_verbs = function(){
     var hidden_verbs = this.get_state("hidden_verbs");
-    return _.filter( this.verbs, function( verb ){
+    return _.filter( this.verbs(), function( verb ){
         return !_.contains( hidden_verbs, verb );
     });
 };
@@ -47,24 +49,6 @@ public.InteractiveObject.prototype.recursive_find = function recursive_find(noun
         }
     }
     return false;
-};
-
-public.InteractiveObject.prototype.get_actions = function(){
-    var actions = [];
-    var name = this.name;
-
-    _.each( this.visible_verbs(), function( verb ){ 
-        var syns = synonyms.find( verb );
-        _.each( syns, function( synonym ){
-            actions.push( synonym.replace("_", " ") + " " + name );
-        });
-    });
-
-    _.each( this.visible_children(), function( contained ){
-        actions = _.union( actions, contained.get_actions() );
-    });
-
-    return actions;
 };
 
 public.InteractiveObject.prototype.parent = function( obj ){
@@ -149,31 +133,12 @@ public.InteractiveObject.prototype.delete = function(){
     this.get_state("parent").remove_child(this);
 };
 
-public.InteractiveObject.prototype.command = function r_cmd( command ){
-    if( tools.endswith( command, this.name.replace("_", " ") ) ){
-        var matching_verbs = [];
-        _.each( this.verbs, function( verb ){
-            if( tools.verb_in_command( verb, command )){
-                matching_verbs.push( verb );
-            }
-        });
-        if( matching_verbs.length > 0 ){
-            this[matching_verbs[0]]();
-            return true;
-        }
-    }
-    var children = this.visible_children();
-    var result = _.some(children, function(item){ return item.command(command) });
-    return result;
-};
-
 public.sample_objects = {}
 
 public.sample_objects.orange = function(){
     this.name = "orange";    
 };
 public.sample_objects.orange.prototype = new public.InteractiveObject();
-public.sample_objects.orange.prototype.verbs = ["eat"];
 public.sample_objects.orange.prototype.eat = function(){
     history.append("The orange is delicious.");
     this.delete();
@@ -191,13 +156,9 @@ public.sample_objects.fridge.prototype = new public.InteractiveObject();
 public.sample_objects.fridge.prototype.default_state = {
     open: false,
 };
-public.sample_objects.fridge.prototype.verbs = 
-    ["smell", "eat", "look_at", "open", "close", "take"]; 
-
 public.sample_objects.fridge.prototype.smell = function() {
     history.append("It smells fridgy.");
 };
-
 public.sample_objects.fridge.prototype.eat = function() {
     history.append("You can't fit the entire thing in your mouth.");
 };
@@ -240,6 +201,18 @@ public.sample_objects.fridge.prototype.close = function() {
 public.sample_objects.fridge.prototype.take = function() {
     history.append( "The fridge is a little too heavy for that." );
 };
+public.sample_objects.fridge.prototype.use = function(obj){
+    if( typeof(obj) === "undefined" ){
+        history.append( "Use the fridge? Okay. You use it." );
+    }
+    else if( obj.name === "orange" ){
+        history.append( "You rub the orange sensually against the fridge." );
+    }
+    else{
+        history.append( "I'm not sure how to use that on the orange." );
+    }
+};
+public.sample_objects.fridge.prototype.rub = public.sample_objects.fridge.prototype.use;
 
 registry.register_object( "fridge", public.sample_objects.fridge );
 

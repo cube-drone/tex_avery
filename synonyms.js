@@ -4,12 +4,28 @@ define(function() {
 
     // The first synonym in the set is always the one we use on the object.
     var synonym_groups = [
-        ["look_at", "examine"],
+        ["look_at", "examine", "look"],
         ["smell", "sniff"],
         ["take", "grab", "get"],
         ["eat", "consume"]
     ];
 
+    public.combining_prepositions = [
+        "with",
+        "as", 
+        "on",
+        "at", 
+        "to", 
+        "and", 
+        "against"
+    ];
+
+    public.discardable_words = [
+        "the", 
+        "in", 
+        "an", 
+        "a"
+    ];
 
     public.find = function( verb ){
         var matches = [verb];

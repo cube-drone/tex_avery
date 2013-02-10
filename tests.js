@@ -7,19 +7,47 @@ require.config({
 
 require(["tools"], function(tools){
     
-    module("Clean");
+    module("Tools");
 
     test( "Clean a variety of things.", function(){
-        
-        equal(tools.clean("EAt the damn CHEESE"), "eat the damn cheese", "capitalization");
+        equal(tools.clean("EAt damn CHEESE"), "eat damn cheese", "capitalization");
+        equal(tools.clean("eat the cheese"), "eat cheese", "clear extraneous words");
+        equal(tools.clean("use orange on fridge"), "use orange on fridge", "do nothing");
         equal(tools.clean("dot. dot][|///dot,"), "dot dot dot", "punctuation" );
         equal(tools.clean("dot           dot"), "dot dot", "whitespace" );
         equal(tools.clean("   dot           dot"), "dot dot", "whitespace" );
         equal(tools.clean("dot           dot   "), "dot dot", "whitespace" );
+        equal(tools.clean("Rub the orange against the fridge."), "rub orange against fridge", "example");
+        equal(tools.clean("Eat the orange."), "eat orange", "example");
+    });
 
+    test( "Ends With", function() {
+        ok( tools.ends_with( "hurf durf", "durf" ) );
+        ok( !tools.ends_with( "hurf burf", "durf" ) );
+    });
+
+    test( "Strip From End", function() {
+        equal( tools.strip_from_end("hurf durf burf", "burf"), "hurf durf");
+        equal( tools.strip_from_end("hurf durf burf", "durf burf"), "hurf");
+        equal( tools.strip_from_end("hurf durf burf", "murf burf"), "hurf durf burf");
+    });
+
+    test( "Verb in command", function() {
+        ok( tools.verb_in_command("look_at", "look" ) );
+        ok( tools.verb_in_command("examine", "look at cheese") );
     });
 
 });
+
+require(["synonyms"], function(synonyms){
+    module("Synonyms");
+
+    test("Find all synonyms for look_at", function(){
+        var s = synonyms.find("look_at");
+        ok( _.contains( s, "examine"), "Examine is a synonym for look_at" );
+    });
+});
+
 
 // State
 require(["state", "registry"], function(state, registry){
@@ -140,17 +168,8 @@ require(["state", "registry"], function(state, registry){
     });
 });
 
-require(["synonyms"], function(synonyms){
-    module("Synonyms");
-
-    test("Find all synonyms for look_at", function(){
-        var s = synonyms.find("look_at");
-        ok( _.contains( s, "examine"), "Examine is a synonym for look_at" );
-    });
-});
-
-require(["core_object", "registry", "history", "tools"], 
-    function(core, registry, history, tools){
+require(["core_object", "registry"], 
+    function(core, registry){
 
     module("Core Objects");
 
@@ -200,48 +219,67 @@ require(["core_object", "registry", "history", "tools"],
 
     });
     
-    test( "Here's a fridge!", function() {
-        localStorage.clear();
-        var fridge = new core.sample_objects.fridge();
-        ok( fridge, "Fridge!" );
-        equal( fridge.name, "fridge" );
-    });
-
     test( "Verbs" , function() {
         localStorage.clear();
         var fridge = new core.sample_objects.fridge();
+        console.log( fridge.visible_verbs() );
         ok( _.contains( fridge.visible_verbs(), "eat" ), "Can eat fridge." ); 
         fridge.hide_verb("eat");
         ok( !_.contains( fridge.visible_verbs(), "eat" ), "Can't eat fridge after verb is hidden." ); 
         fridge.show_verb("eat");
         ok( _.contains( fridge.visible_verbs(), "eat" ), "Can eat fridge again." ); 
     });
-
-    test( "Fridge World", function() {
-        localStorage.clear();
-        var fridge = new core.sample_objects.fridge();
-        
-        ok( _.contains( fridge.get_actions(), "open fridge" ), "Can open fridge" );
-        fridge.look_at();
-        equal( history.pop(), "It's a Fridgit Jones 5000.", "Looked at the fridge"); 
-        fridge.open();
-        ok( _.contains( fridge.get_actions(), "eat orange" ), "Can see the orange in the fridge.");
-        var orange = fridge.recursive_find("orange");
-        orange.eat();
-        equal( history.pop(), "The orange is delicious.", "OM NOM NOM" ); 
-        ok( !_.contains( fridge.get_actions(), "eat orange" ), "Can't see the orange after it's been eaten.");
-    });
-
-    test( "Start parsing commands", function() {
-        localStorage.clear();
-        var fridge = new core.sample_objects.fridge();        
-        fridge.open();
-        ok( _.contains( fridge.get_actions(), "eat orange" ), "Can see the orange in the fridge.");
-        ok(fridge.command(tools.clean("Eat the orange")), "Command executed");
-        ok(! fridge.command(tools.clean("Punch a bear")), "Incorrect command not executed.");
-        equal( history.pop(), "The orange is delicious.", "OM NOM NOM" ); 
-        ok( !_.contains( fridge.get_actions(), "eat orange" ), "Can't see the orange after it's been eaten.");
-    });
     
+    require(["command", "history"], 
+        function(command, history){
+
+        module( "Fridge World" );
+
+        test( "Here's a fridge!", function() {
+            localStorage.clear();
+            var fridge = new core.sample_objects.fridge();
+            ok( fridge, "Fridge!" );
+            equal( fridge.name, "fridge" );
+        });
+
+        test( "Getting actions", function() {
+            localStorage.clear();
+            var fridge = new core.sample_objects.fridge();
+            command.set_root( fridge );
+            console.log( command.get_actions() );
+            ok( _.contains( command.get_actions(), "open fridge" ), "Can open fridge" );
+            ok( ! _.contains( command.get_actions(), "use fridge on fridge" ), "Use X on itself is not a valid move." );
+            fridge.look_at();
+            equal( history.pop(), "It's a Fridgit Jones 5000.", "Looked at the fridge"); 
+            fridge.open();
+            ok( _.contains( command.get_actions(), "eat orange" ), "Can see the orange in the fridge.");
+            var orange = fridge.recursive_find("orange");
+            orange.eat();
+            equal( history.pop(), "The orange is delicious.", "OM NOM NOM" ); 
+            ok( !_.contains( command.get_actions(), "eat orange" ), "Can't see the orange after it's been eaten.");
+        });
+
+        test( "Start parsing commands", function() {
+            localStorage.clear();
+            var fridge = new core.sample_objects.fridge();        
+            command.set_root( fridge );
+            
+            ok( command.command("Look"), "Verbs are implicitly tied to the root element.");
+            equal( history.pop(), "It's a Fridgit Jones 5000.", "IMPLICIT." );
+            
+            fridge.open();
+            ok( _.contains( command.get_actions(), "eat orange" ), "Can see the orange in the fridge.");
+
+            ok( command.command("Use orange on fridge"), "Rub orange against fridge." );
+            ok( command.command("Rub the orange against the fridge"), "Rub orange against fridge." );
+            equal( history.pop(), "You rub the orange sensually against the fridge.", "Rubbed."); 
+            
+            ok( command.command("Eat the orange"), "Command executed");
+            equal( history.pop(), "The orange is delicious.", "OM NOM NOM" ); 
+            ok( !_.contains( command.get_actions(), "eat orange" ), "Can't see the orange after it's been eaten.");
+            
+            ok(! command.command("Punch a bear"), "Incorrect command not executed.");
+        });
+    });
 });
 

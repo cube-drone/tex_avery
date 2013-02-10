@@ -1,18 +1,31 @@
 // Tools for string manipulations. 
-define(function() {
+define(["synonyms"], function(synonyms){
 return {
     clean: function( words ){
-        return words.toLowerCase()
-            .replace(/[\W]/g, ' ')
+        words = words.toLowerCase();
+        words = words.replace(/[\W]/g, ' ')
             .replace(/\s+/g, ' ')
             .replace(/\s*$/g, '')
             .replace(/^\s*/g, '');
+        _.each( synonyms.discardable_words, function( discard ){
+            words = words.replace( new RegExp(" "+discard+" ", 'g'), " " );
+        });
+        return words;
     },
-    endswith: function( string, suffix ){
+    ends_with: function( string, suffix ){
         return string.indexOf(suffix, string.length - suffix.length) !== -1;
     },
     verb_in_command: function( verb, command ){
-        return command.indexOf(verb.replace("_", " ")) !== -1;
+        return _.any( synonyms.find(verb), function(synonym) {
+            return command.indexOf(synonym.replace("_", " ")) !== -1 });
+    },
+    strip_from_end: function( words, strip ){
+        if( this.ends_with( words, strip )){
+            return words.substring(0, words.length - (strip.length+1) );
+        }
+        else{
+            return words;
+        }
     }
 };
 });
