@@ -1,41 +1,17 @@
 // A prototypal object for things that have recordable state information. 
-define(function() {
+define(["registry"], function(registry){
 
 var public = {};
 var private = {};
 
-private.big_number = 0;
-private.prototypes = {};
-
-public.register_prototype = function( name, prototype ){
-    // if an object goes into local storage and comes out later
-    // we need to know which prototype to give it.
-    private.prototypes[name] = prototype;
-};
-
-public.find_prototype = function( name ) {
-    return private.prototypes[name];
-}
-
-private.rehydrate = function( obj ){
-    if( typeof(obj.state_id) !== "undefined"){
-        obj.__proto__ = public.find_prototype(obj.name); 
-        if( typeof(obj.__proto__) == "undefined" || obj.__proto__ === null ){
-            console.error("Unregistered prototype: " + obj.name);
-        }
-        console.log( obj );
-    }
-}
-
+// WithState is the base class for objects that have recordable state.  
 public.WithState = function(){
     this.default_state = {};
-    this.name = "with_state";
-    this.state_id = private.big_number;
-    private.big_number ++;
+    this.name = "with_state"; 
 };
 
 public.WithState.prototype.key = function(key){
-    return this.name + ":" + this.state_id + ":" + key;
+    return this.name + ":" + key;
 };
 
 public.WithState.prototype.set_state = function(key, value){
@@ -54,16 +30,21 @@ public.WithState.prototype.get_state = function(key){
         }
         else
         {
+            if( key === 'contains' 
+                || key === 'hidden_objects' 
+                || key ==='hidden_verbs' ){
+                return [];
+            }
             return null;
         }
     }
     var obj = JSON.retrocycle( JSON.parse( state ));
-    private.rehydrate( obj );
-    _.each(obj, private.rehydrate );
+    registry.rehydrate( obj );
+    _.each(obj, registry.rehydrate );
     return obj;
 }
 
-public.register_prototype( "with_state", public.WithState.prototype );
+registry.register_object( "with_state", public.WithState );
 
 return public;
 
