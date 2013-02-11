@@ -249,7 +249,7 @@ require(["core_object", "registry"],
             console.log( command.get_actions() );
             ok( _.contains( command.get_actions(), "open fridge" ), "Can open fridge" );
             ok( ! _.contains( command.get_actions(), "use fridge on fridge" ), "Use X on itself is not a valid move." );
-            fridge.look_at();
+            fridge.look();
             equal( history.pop(), "It's a Fridgit Jones 5000.", "Looked at the fridge"); 
             fridge.open();
             ok( _.contains( command.get_actions(), "eat orange" ), "Can see the orange in the fridge.");
@@ -271,7 +271,6 @@ require(["core_object", "registry"],
             ok( _.contains( command.get_actions(), "eat orange" ), "Can see the orange in the fridge.");
 
             ok( command.command("Use orange on fridge"), "Rub orange against fridge." );
-            ok( command.command("Rub the orange against the fridge"), "Rub orange against fridge." );
             equal( history.pop(), "You rub the orange sensually against the fridge.", "Rubbed."); 
             
             ok( command.command("Eat the orange"), "Command executed");
@@ -283,3 +282,4 @@ require(["core_object", "registry"],
     });
 });
 
+localStorage.clear();

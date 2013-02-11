@@ -70,10 +70,9 @@ public.command = function ( command ){
                         return true;
                     };
                 });
-                if( !success ){ 
-                    history.append( "I couldn't figure out how to " + command + " the " + noun.name  );
+                if( success ){ 
+                    return true;
                 };
-                return true;
             }
             else{
                 // Single Object Logic
@@ -84,7 +83,7 @@ public.command = function ( command ){
                     };
                 });
                 if( !success ){ 
-                    history.append( "I couldn't figure out how to " + command + " the " + noun  );
+                    history.append( "I couldn't figure out how to " + command + " the " + noun.name  );
                 };
                 return true;
             }

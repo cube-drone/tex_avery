@@ -4,7 +4,7 @@ define(function() {
 
     // The first synonym in the set is always the one we use on the object.
     var synonym_groups = [
-        ["look_at", "examine", "look"],
+        ["look", "examine", "look_at"],
         ["smell", "sniff"],
         ["take", "grab", "get"],
         ["eat", "consume"]

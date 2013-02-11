@@ -8,10 +8,17 @@ var private = {};
 
 public.InteractiveObject = function(){
     this.name = "interactive_object";  
+    if( ! this.get_state("initialized") ){
+        this.setup();
+    }
 };
 registry.register_object( "interactive_object", public.InteractiveObject );
 
 public.InteractiveObject.prototype = new state.WithState();
+
+public.InteractiveObject.prototype.setup = function() {
+    return;
+}
 
 public.InteractiveObject.prototype.children = function() {
     return this.get_state("contains");
@@ -147,12 +154,15 @@ registry.register_object( "orange", public.sample_objects.orange );
 
 public.sample_objects.fridge = function(){
     this.name = "fridge";
+};
+public.sample_objects.fridge.prototype = new public.InteractiveObject();
+public.sample_objects.fridge.prototype.setup = function(){
     this.hide_verb("close");
     var orange = new public.sample_objects.orange();
     this.add_child( orange );
     this.hide_child( orange );
-};
-public.sample_objects.fridge.prototype = new public.InteractiveObject();
+    this.set_state("initialized", true); 
+}
 public.sample_objects.fridge.prototype.default_state = {
     open: false,
 };
@@ -162,12 +172,15 @@ public.sample_objects.fridge.prototype.smell = function() {
 public.sample_objects.fridge.prototype.eat = function() {
     history.append("You can't fit the entire thing in your mouth.");
 };
-public.sample_objects.fridge.prototype.look_at = function() {
+public.sample_objects.fridge.prototype.look = function() {
     if( ! this.get_state('open') ){ 
         history.append("It's a Fridgit Jones 5000.");
     }
     else{
-        history.append("It's a Fridgit Jones 5000. Inside it? A vegetable crisper.");
+        history.append("It's an open Fridgit Jones 5000.");
+        if(this.has_child('orange')){
+            history.append("There's an orange in there. ");
+        }
     }
 };
 public.sample_objects.fridge.prototype.open = function() {
@@ -212,7 +225,6 @@ public.sample_objects.fridge.prototype.use = function(obj){
         history.append( "I'm not sure how to use that on the orange." );
     }
 };
-public.sample_objects.fridge.prototype.rub = public.sample_objects.fridge.prototype.use;
 
 registry.register_object( "fridge", public.sample_objects.fridge );
 
