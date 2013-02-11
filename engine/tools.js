@@ -17,7 +17,7 @@ return {
     },
     verb_in_command: function( verb, command ){
         return _.any( synonyms.find(verb), function(synonym) {
-            return command.indexOf(synonym.replace("_", " ")) !== -1 });
+            return command.indexOf(synonym.replace(/_/g, " ")) !== -1 });
     },
     strip_from_end: function( words, strip ){
         if( this.ends_with( words, strip )){

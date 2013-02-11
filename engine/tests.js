@@ -34,7 +34,6 @@ require(["engine/tools"], function(tools){
     });
 
     test( "Verb in command", function() {
-        ok( tools.verb_in_command("look_at", "look" ) );
         ok( tools.verb_in_command("examine", "look at cheese") );
     });
 
@@ -246,7 +245,7 @@ require(["engine/core_object", "engine/registry"],
             localStorage.clear();
             var fridge = new core.sample_objects.fridge();
             command.set_root( fridge );
-            ok( _.contains( command.get_actions(), "open fridge" ), "Can open fridge" );
+            ok( _.contains( command.get_actions(), "open" ), "Can open fridge" );
             ok( ! _.contains( command.get_actions(), "use fridge on fridge" ), "Use X on itself is not a valid move." );
             fridge.look();
             equal( history.pop(), "It's a Fridgit Jones 5000.", "Looked at the fridge"); 
@@ -265,10 +264,11 @@ require(["engine/core_object", "engine/registry"],
             
             ok( command.command("Look"), "Verbs are implicitly tied to the root element.");
             equal( history.pop(), "It's a Fridgit Jones 5000.", "IMPLICIT." );
-            
-            fridge.open();
-            ok( _.contains( command.get_actions(), "eat orange" ), "Can see the orange in the fridge.");
 
+            fridge.open();
+            ok( _.contains( command.get_actions(), "look at orange" ), "Can see the orange in the fridge.");
+            ok( command.command("Look at orange"), "Look at that orange." );
+            equal( history.pop(), "It's .. orange.", "Look at it!" );
             ok( command.command("Use orange on fridge"), "Rub orange against fridge." );
             equal( history.pop(), "You rub the orange sensually against the fridge.", "Rubbed."); 
             

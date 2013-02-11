@@ -4,17 +4,17 @@ define(function() {
 
     // The first synonym in the set is always the one we use on the object.
     var synonym_groups = [
-        ["look", "examine", "look_at"],
+        ["look_at", "examine"],
         ["smell", "sniff"],
         ["take", "grab", "get"],
-        ["eat", "consume"]
+        ["eat", "consume"],
+        ["lick", "taste"]
     ];
 
     public.combining_prepositions = [
         "with",
         "as", 
         "on",
-        "at", 
         "to", 
         "and", 
         "against"

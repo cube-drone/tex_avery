@@ -1,14 +1,14 @@
-require(["ui/prompt", "engine/core_object", "engine/command", "ui/history"], 
-    function(prompt, core_object, command, history){
+require(["ui/prompt", "game/player", "engine/command", "ui/history"], 
+    function(prompt, player, command, history){
 
 $(document).ready(function() {
 
     prompt.create( $("#prompt") );
     prompt.focus();
-    history.append("You're in a room with a <strong>fridge</strong>.");
     
-    var fridge = new core_object.sample_objects.fridge();        
-    command.set_root( fridge );
+    var me = new player.me();
+    command.set_root( me );
+    me.look_around();
 
     prompt.register_callback( function(text){
         history.append( "> " + text, 'player');

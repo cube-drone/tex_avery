@@ -12,6 +12,10 @@ public.set_root = function( object ){
     root_object = object;
 }
 
+public.get_root = function() {
+    return root_object;
+}
+
 // Get all available actions from within root object
 public.get_actions = function(){
     var visible_nouns = root_object.visible_children(); 
@@ -21,14 +25,19 @@ public.get_actions = function(){
     _.each( visible_nouns, function( noun ) {
         _.each( visible_nouns, function( other_noun ){
             if( noun.name !== other_noun.name) {
-                actions.push( "use " + noun.name.replace("_", " ") + " on " + other_noun.name.replace("_", " ") );
+                actions.push( "use " + noun.name.replace(/_/g, " ") + " on " + other_noun.name.replace(/_/g, " ") );
             }
         });
         var verbs = noun.visible_verbs();
         _.each( verbs, function( verb ) {
             var syns = synonyms.find( verb );
             _.each( syns, function( synonym ){
-                actions.push( synonym.replace("_", " ") + " " + noun.name );
+                if( noun.name === root_object.name){
+                    actions.push( synonym.replace(/_/g, " ") );
+                }
+                else{
+                    actions.push( synonym.replace(/_/g, " ") + " " + noun.name );
+                }
             });
         });
     });

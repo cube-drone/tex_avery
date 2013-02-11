@@ -35,9 +35,13 @@ public.InteractiveObject.prototype.verbs = function(){
 
 public.InteractiveObject.prototype.visible_children = function(){
     var hidden_objects = this.get_state("hidden_objects");
-    return _.filter( this.children(), function(item){
+    var children = _.filter( this.children(), function(item){
         return !_.contains( hidden_objects, item.name );
     });
+    _.each( children, function(child){
+        children = _.union( children, child.visible_children() );
+    });
+    return children; 
 };
 
 public.InteractiveObject.prototype.visible_verbs = function(){
@@ -79,11 +83,15 @@ public.InteractiveObject.prototype.add_child = function( obj ){
 };
 
 public.InteractiveObject.prototype.remove_child = function( obj ){
-    var children = _.filter(this.children(), function(child){
-        return !obj.name == child.name;
+    var children = _.reject(this.children(), function(child){
+        return obj.name === child.name;
     });
     this.set_state("contains", children);
 };
+
+public.InteractiveObject.prototype.remove_children = function(){
+    this.set_state("contains", [] );
+}
 
 public.InteractiveObject.prototype.has_child = function( name ){
     return _.any( this.children(), function(child){
@@ -152,6 +160,9 @@ public.sample_objects.orange = function(){
     this.base_setup();
 };
 public.sample_objects.orange.prototype = new public.InteractiveObject();
+public.sample_objects.orange.prototype.look_at = function(){
+    history.append("It's .. orange." );
+}
 public.sample_objects.orange.prototype.eat = function(){
     history.append("The orange is delicious.");
     this.delete();
@@ -168,7 +179,6 @@ public.sample_objects.fridge.prototype.setup = function(){
     var orange = new public.sample_objects.orange();
     this.add_child( orange );
     this.hide_child( orange );
-    this.set_state("initialized", true); 
 }
 public.sample_objects.fridge.prototype.default_state = {
     open: false,
