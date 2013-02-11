@@ -1,4 +1,5 @@
-require(["prompt", "core_object", "command", "history"], function(prompt, core_object, command, history){
+require(["ui/prompt", "engine/core_object", "engine/command", "ui/history"], 
+    function(prompt, core_object, command, history){
 
 $(document).ready(function() {
 

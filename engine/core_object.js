@@ -1,20 +1,25 @@
 // Core object for objects in the universe. 
-define(["history",
-        "state",
-        "registry"], function(history, state, registry){
+define(["ui/history",
+        "engine/state",
+        "engine/registry"], function(history, state, registry){
 
 var public = {};
 var private = {};
 
 public.InteractiveObject = function(){
     this.name = "interactive_object";  
-    if( ! this.get_state("initialized") ){
-        this.setup();
-    }
+    this.base_setup();
 };
 registry.register_object( "interactive_object", public.InteractiveObject );
 
 public.InteractiveObject.prototype = new state.WithState();
+
+public.InteractiveObject.prototype.base_setup = function() {
+    if( ! this.get_state("initialized") ){
+        this.setup();
+        this.set_state("initialized", true );
+    }
+}
 
 public.InteractiveObject.prototype.setup = function() {
     return;
@@ -144,6 +149,7 @@ public.sample_objects = {}
 
 public.sample_objects.orange = function(){
     this.name = "orange";    
+    this.base_setup();
 };
 public.sample_objects.orange.prototype = new public.InteractiveObject();
 public.sample_objects.orange.prototype.eat = function(){
@@ -154,6 +160,7 @@ registry.register_object( "orange", public.sample_objects.orange );
 
 public.sample_objects.fridge = function(){
     this.name = "fridge";
+    this.base_setup();
 };
 public.sample_objects.fridge.prototype = new public.InteractiveObject();
 public.sample_objects.fridge.prototype.setup = function(){

@@ -1,5 +1,5 @@
 // Tools for string manipulations. 
-define(["synonyms"], function(synonyms){
+define(["engine/synonyms"], function(synonyms){
 return {
     clean: function( words ){
         words = words.toLowerCase();

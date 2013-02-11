@@ -1,9 +1,9 @@
 // Command things
-define(["core_object",
-        "registry",
-        "synonyms", 
-        "history",
-        "tools"], function(core_object, registry, synonyms, history, tools){
+define(["engine/core_object",
+        "engine/registry",
+        "engine/synonyms", 
+        "engine/tools", 
+        "ui/history"], function(core_object, registry, synonyms, tools, history){
 
 var root_object = "";
 var public = {};

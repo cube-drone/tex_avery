@@ -1,5 +1,5 @@
 // A prototypal object for things that have recordable state information. 
-define(["registry"], function(registry){
+define(["engine/registry"], function(registry){
 
 var public = {};
 var private = {};

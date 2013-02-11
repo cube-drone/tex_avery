@@ -1,11 +1,12 @@
 
 require.config({ 
+    baseUrl: '../', 
     paths: {
-        history:"mock_history"
+        "ui/history":"engine/mock_history"
     }
 });
 
-require(["tools"], function(tools){
+require(["engine/tools"], function(tools){
     
     module("Tools");
 
@@ -39,7 +40,7 @@ require(["tools"], function(tools){
 
 });
 
-require(["synonyms"], function(synonyms){
+require(["engine/synonyms"], function(synonyms){
     module("Synonyms");
 
     test("Find all synonyms for look_at", function(){
@@ -50,7 +51,7 @@ require(["synonyms"], function(synonyms){
 
 
 // State
-require(["state", "registry"], function(state, registry){
+require(["engine/state", "engine/registry"], function(state, registry){
     
     module("State");
 
@@ -168,7 +169,7 @@ require(["state", "registry"], function(state, registry){
     });
 });
 
-require(["core_object", "registry"], 
+require(["engine/core_object", "engine/registry"], 
     function(core, registry){
 
     module("Core Objects");
@@ -222,7 +223,6 @@ require(["core_object", "registry"],
     test( "Verbs" , function() {
         localStorage.clear();
         var fridge = new core.sample_objects.fridge();
-        console.log( fridge.visible_verbs() );
         ok( _.contains( fridge.visible_verbs(), "eat" ), "Can eat fridge." ); 
         fridge.hide_verb("eat");
         ok( !_.contains( fridge.visible_verbs(), "eat" ), "Can't eat fridge after verb is hidden." ); 
@@ -230,7 +230,7 @@ require(["core_object", "registry"],
         ok( _.contains( fridge.visible_verbs(), "eat" ), "Can eat fridge again." ); 
     });
     
-    require(["command", "history"], 
+    require(["engine/command", "ui/history"], 
         function(command, history){
 
         module( "Fridge World" );
@@ -246,7 +246,6 @@ require(["core_object", "registry"],
             localStorage.clear();
             var fridge = new core.sample_objects.fridge();
             command.set_root( fridge );
-            console.log( command.get_actions() );
             ok( _.contains( command.get_actions(), "open fridge" ), "Can open fridge" );
             ok( ! _.contains( command.get_actions(), "use fridge on fridge" ), "Use X on itself is not a valid move." );
             fridge.look();
