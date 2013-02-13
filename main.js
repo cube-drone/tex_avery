@@ -7,8 +7,6 @@ $(document).ready(function() {
     prompt.focus();
     
     var me = new player.me();
-    command.set_root( me );
-    me.look_around();
 
     prompt.register_callback( function(text){
         history.append( "> " + text, 'player');

@@ -52,7 +52,9 @@ InteractiveObject.prototype.visible_children = function(){
         return !_.contains( hidden_objects, item.name );
     });
     _.each( children, function(child){
-        children = _.union( children, child.visible_children() );
+        if( typeof(child) !== 'undefined' && typeof(child.visible_children) !== 'undefined'){
+            children = _.union( children, child.visible_children() );
+        }
     });
     return children; 
 };

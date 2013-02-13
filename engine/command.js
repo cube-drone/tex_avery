@@ -121,18 +121,6 @@ public.command = function ( command ){
     if( success ){
         return true;
     };
-    
-    // Root object is implicitly the object. ("Run"), ("Lie"), ("Dance")
-    //  I'm expecting that the root object is the player, here. 
-    var success = _.some( root_object.visible_verbs(), function( verb ){
-        if( tools.verb_in_command( verb, command )){
-            root_object[verb]();
-            return true;
-        };
-    });
-    if( success ){
-        return true;
-    }
 
     history.append( "I don't understand." );
     return false;

@@ -1,17 +1,24 @@
 
 define(["engine/core_object",
         "engine/registry",
+        "engine/command",
         "ui/history",
         "ui/prompt", 
+        "game/room",
         "game/inventory", 
         "game/kitchen"], 
-        function( core, registry, history, prompt, inventory, kitchen){
+        function( core, registry, command, history, prompt, room, inventory, kitchen){
 
 var public = {};
 
 public.me = function(){
     this.name = "me";    
     this.base_setup();
+    // Load whatever the current room is. 
+    command.set_root(this);
+    var path_to_initial_location = "game/"+ this.get_state('current_location').name;
+    room.change_location( path_to_initial_location );
+    // Prepare easter eggs and core commands
     this.register_special_verb('die');
     this.register_special_verb('win');
     this.register_special_verb('look_around');
@@ -25,7 +32,7 @@ public.me.prototype = new core();
 public.me.prototype.use_target = true;
 public.me.prototype.setup = function(){
     var i = new inventory.inventory();
-    var k = new kitchen.kitchen();
+    var k = new kitchen.room();
     this.add_child(i);
     this.add_child(k);
     this.set_state('current_location', k );
@@ -67,7 +74,10 @@ public.me.prototype.look_around = function(){
         history.append("You've won the game. You can go home, now.");
         return;
     }
-    this.get_state('current_location').look_at();
+    var current_location = this.get_state('current_location');
+    if( typeof(current_location.look_at) !== "undefined" ){
+        current_location.look_at();
+    }
 }
 
 public.me.prototype.get_ye_flask = function(){
@@ -75,8 +85,12 @@ public.me.prototype.get_ye_flask = function(){
 }
 
 public.me.prototype.debug = function(){
+    console.log( "This:" );
     console.log( this );
+    console.log( "Visible Children:" );
     console.log( this.visible_children() );
+    console.log( "Current Location:" );
+    console.log( this.get_state('current_location'));
 }
 
 public.me.prototype.help = function(){

@@ -1,7 +1,8 @@
 define(["engine/core_object",
         "engine/registry",
         "engine/command",
-        "ui/history"], function( core, registry, command, history){
+        "game/room",
+        "ui/history"], function( core, registry, command, room, history){
 
 var public = {};
 
@@ -235,29 +236,34 @@ public.fridge.prototype.close = function(){
 }
 registry.register_object( "fridge", public.fridge );
 
-public.kitchen = function(){
+public.room = function(){
     this.name = "kitchen";    
     this.base_setup();
     this.register_special_verb("go_north");
+    this.register_special_verb("go_through_door");
 };
 
-public.kitchen.prototype = new core();
-public.kitchen.prototype.setup = function(){
+public.room.prototype = new core();
+public.room.prototype.setup = function(){
     this.add_child( new public.toaster() );
     this.add_child( new public.fridge() );
     this.add_child( new public.stove() );
     this.add_child( new public.mirror() );
 }
 
-public.kitchen.prototype.go_north_from = function(){
-    history.append("I'm going to level with you - I haven't built a north.");
+public.room.prototype.go_north_from = function(){
+    room.change_location("game/north");
 }
 
-public.kitchen.prototype.go_north = function(){
+public.room.prototype.go_north = function(){
     this.go_north_from();
 }
 
-public.kitchen.prototype.look_at = function(){
+public.room.prototype.go_through_door = function(){
+    this.go_north_from();
+}
+
+public.room.prototype.look_at = function(){
     var string = [ "You are standing in a small, tidy kitchen. ", 
     "It's unfamiliar to you, but it seems like most kitchens you've seen", 
     " before. There's a <span class='object'>stove</span>, a ", 
@@ -266,7 +272,7 @@ public.kitchen.prototype.look_at = function(){
     history.append( string.join(" ") );
 }
 
-registry.register_object( "kitchen", public.kitchen );
+registry.register_object( "kitchen", public.room );
 
 return public;
 });
