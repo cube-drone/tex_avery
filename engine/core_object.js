@@ -1,39 +1,52 @@
 // Core object for objects in the universe. 
-define(["ui/history",
-        "engine/state",
-        "engine/registry"], function(history, state, registry){
 
-var public = {};
-var private = {};
+define(["engine/state",
+        "engine/registry"], function(state, registry){
 
-public.InteractiveObject = function(){
+var InteractiveObject = {};
+
+// Every subclass of Interactive Object must define a name
+//   and call 'base_setup'. 
+// It's important to note that object initialization logic
+//   shouldn't go in here - this function will be called 
+//   _every single time_ that the object becomes a visible 
+//   part of the game's hierarchy. Close the fridge door and
+//  open it again? The "new orange();" call may occur. 
+// Instead, setup belongs in the 'setup' function. Override that.
+InteractiveObject = function(){
     this.name = "interactive_object";  
     this.base_setup();
 };
-registry.register_object( "interactive_object", public.InteractiveObject );
+registry.register_object( "interactive_object", InteractiveObject );
 
-public.InteractiveObject.prototype = new state.WithState();
+// IO is a subclass of WithState. 
+//   every IO object has a name and state.
+InteractiveObject.prototype = new state.WithState();
 
-public.InteractiveObject.prototype.base_setup = function() {
+// Do not override this class. 
+InteractiveObject.prototype.base_setup = function() {
     if( ! this.get_state("initialized") ){
         this.setup();
         this.set_state("initialized", true );
     }
 }
 
-public.InteractiveObject.prototype.setup = function() {
+// Include this object when listing things to use on other things.
+InteractiveObject.prototype.use_target = false;
+
+// Override this class if you want to perform actions the _first time_
+// that the object is created. 
+InteractiveObject.prototype.setup = function() {
     return;
 }
 
-public.InteractiveObject.prototype.children = function() {
+// Children is a list of Direct Descendants of this object. 
+InteractiveObject.prototype.children = function() {
     return this.get_state("contains");
 }
 
-public.InteractiveObject.prototype.verbs = function(){ 
-    return _.difference( _.keys( this.__proto__ ), _.keys( public.InteractiveObject.prototype ) );
-}
-
-public.InteractiveObject.prototype.visible_children = function(){
+// The list of ALL visible descendants of this object. 
+InteractiveObject.prototype.visible_children = function(){
     var hidden_objects = this.get_state("hidden_objects");
     var children = _.filter( this.children(), function(item){
         return !_.contains( hidden_objects, item.name );
@@ -44,14 +57,8 @@ public.InteractiveObject.prototype.visible_children = function(){
     return children; 
 };
 
-public.InteractiveObject.prototype.visible_verbs = function(){
-    var hidden_verbs = this.get_state("hidden_verbs");
-    return _.filter( this.verbs(), function( verb ){
-        return !_.contains( hidden_verbs, verb );
-    });
-};
-
-public.InteractiveObject.prototype.recursive_find = function recursive_find(noun){
+// Find an object in this object's tree. 
+InteractiveObject.prototype.recursive_find = function recursive_find(noun){
     if (this.name === noun){
         return this;
     }
@@ -67,11 +74,11 @@ public.InteractiveObject.prototype.recursive_find = function recursive_find(noun
     return false;
 };
 
-public.InteractiveObject.prototype.parent = function( obj ){
+InteractiveObject.prototype.parent = function( obj ){
     return this.get_state( "parent" );
 };
 
-public.InteractiveObject.prototype.add_child = function( obj ){
+InteractiveObject.prototype.add_child = function( obj ){
     var children = this.children();
     if(!_.any( children, function(child) {return child.name === obj.name;})){
         obj.set_state( "parent", this);
@@ -82,30 +89,30 @@ public.InteractiveObject.prototype.add_child = function( obj ){
     return false;
 };
 
-public.InteractiveObject.prototype.remove_child = function( obj ){
+InteractiveObject.prototype.remove_child = function( obj ){
     var children = _.reject(this.children(), function(child){
         return obj.name === child.name;
     });
     this.set_state("contains", children);
 };
 
-public.InteractiveObject.prototype.remove_children = function(){
+InteractiveObject.prototype.remove_children = function(){
     this.set_state("contains", [] );
 }
 
-public.InteractiveObject.prototype.has_child = function( name ){
+InteractiveObject.prototype.has_child = function( name ){
     return _.any( this.children(), function(child){
         return child.name === name;
     });
 }
 
-public.InteractiveObject.prototype.has_visible_child = function( name ){
+InteractiveObject.prototype.has_visible_child = function( name ){
     return _.any( this.visible_children(), function(child){
         return child.name === name;
     });
 }
 
-public.InteractiveObject.prototype.hide_child = function( obj ){
+InteractiveObject.prototype.hide_child = function( obj ){
     if( typeof(obj) !== "string" ){
         obj = obj.name;
     }
@@ -119,7 +126,7 @@ public.InteractiveObject.prototype.hide_child = function( obj ){
     return false;
 };
 
-public.InteractiveObject.prototype.show_child = function( obj ){
+InteractiveObject.prototype.show_child = function( obj ){
     if( typeof(obj) !== "string" ){
         obj = obj.name;
     }
@@ -129,7 +136,26 @@ public.InteractiveObject.prototype.show_child = function( obj ){
     this.set_state("hidden_objects", hidden_children);
 };
 
-public.InteractiveObject.prototype.hide_verb = function( verb ){
+// The list of verbs is calculated as :
+//   the list of all functions _minus_ the list of functions that 
+//   exist in the InteractiveObject prototype. 
+// So, every function of a InteractiveSubject subclass is a verb, by
+//   default. 
+InteractiveObject.prototype.verbs = function(){ 
+    return _.difference( _.keys( this.__proto__ ), 
+                        _.keys( InteractiveObject.prototype ) );
+}
+
+// Only show verbs that haven't been hidden with 'hide_verb'. 
+InteractiveObject.prototype.visible_verbs = function(){
+    var hidden_verbs = this.get_state("hidden_verbs");
+    return _.filter( this.verbs(), function( verb ){
+        return !_.contains( hidden_verbs, verb );
+    });
+};
+
+// Verbs can be hidden by calling "hide_verb" with that verb's name.
+InteractiveObject.prototype.hide_verb = function( verb ){
     var hidden_verbs = this.get_state("hidden_verbs");
     if(!_.any( hidden_verbs, function(hidden_verb) {return hidden_verb === verb;})){
         hidden_verbs.push(verb);
@@ -139,111 +165,38 @@ public.InteractiveObject.prototype.hide_verb = function( verb ){
     return false;
 };
 
-public.InteractiveObject.prototype.show_verb = function( verb ){
+InteractiveObject.prototype.show_verb = function( verb ){
     var hidden_verbs = _.filter(this.get_state("hidden_verbs"), function(v){
         return !v == verb;
     });
     this.set_state("hidden_verbs", hidden_verbs);
 };
 
-public.InteractiveObject.prototype.delete = function(){
+// Special commands don't require the noun. 
+//  So, 'kitchen.go_north' would normally be activated by "go north kitchen"
+//  but if it's registered as a special command in the constructor, 
+//  it would instead be activated by 'go north'. 
+InteractiveObject.prototype.register_special_verb = function( verb ){
+    if( typeof( this.special_verbs ) === 'undefined') {
+        this.special_verbs = [];
+    }
+    this.special_verbs.push( verb );
+    this.hide_verb( verb );
+}
+
+InteractiveObject.prototype.get_special_verbs = function(){
+    if( typeof( this.special_verbs ) === 'undefined') {
+        return [];
+    }
+    return this.special_verbs;
+}
+
+InteractiveObject.prototype.delete = function(){
     if( this.get_state("parent") === null ){
         console.error("Cannot delete element without parent.");
     }
     this.get_state("parent").remove_child(this);
 };
 
-public.sample_objects = {}
-
-public.sample_objects.orange = function(){
-    this.name = "orange";    
-    this.base_setup();
-};
-public.sample_objects.orange.prototype = new public.InteractiveObject();
-public.sample_objects.orange.prototype.look_at = function(){
-    history.append("It's .. orange." );
-}
-public.sample_objects.orange.prototype.eat = function(){
-    history.append("The orange is delicious.");
-    this.delete();
-}
-registry.register_object( "orange", public.sample_objects.orange );
-
-public.sample_objects.fridge = function(){
-    this.name = "fridge";
-    this.base_setup();
-};
-public.sample_objects.fridge.prototype = new public.InteractiveObject();
-public.sample_objects.fridge.prototype.setup = function(){
-    this.hide_verb("close");
-    var orange = new public.sample_objects.orange();
-    this.add_child( orange );
-    this.hide_child( orange );
-}
-public.sample_objects.fridge.prototype.default_state = {
-    open: false,
-};
-public.sample_objects.fridge.prototype.smell = function() {
-    history.append("It smells fridgy.");
-};
-public.sample_objects.fridge.prototype.eat = function() {
-    history.append("You can't fit the entire thing in your mouth.");
-};
-public.sample_objects.fridge.prototype.look = function() {
-    if( ! this.get_state('open') ){ 
-        history.append("It's a Fridgit Jones 5000.");
-    }
-    else{
-        history.append("It's an open Fridgit Jones 5000.");
-        if(this.has_child('orange')){
-            history.append("There's an orange in there. ");
-        }
-    }
-};
-public.sample_objects.fridge.prototype.open = function() {
-    if( ! this.get_state('open') ){
-        this.set_state('open', true); 
-        this.show_verb("close");
-        this.hide_verb("open");
-        history.append( "You open the fridge." );
-        this.show_child( "orange" );
-        if( this.has_child( "orange" ) )
-        {
-            history.append( "There's an orange in there." );
-        }
-    }
-    else{
-        history.append( "The fridge remains open." );
-    }
-};
-public.sample_objects.fridge.prototype.close = function() {
-    if( this.get_state('open') ){
-        this.set_state('open', false); 
-        this.show_verb("open");
-        this.hide_verb("close");
-        history.append( "You close the fridge.");
-        this.hide_child( "orange" );
-    }
-    else{
-        history.append( "The fridge remains closed.");
-    }
-};
-public.sample_objects.fridge.prototype.take = function() {
-    history.append( "The fridge is a little too heavy for that." );
-};
-public.sample_objects.fridge.prototype.use = function(obj){
-    if( typeof(obj) === "undefined" ){
-        history.append( "Use the fridge? Okay. You use it." );
-    }
-    else if( obj.name === "orange" ){
-        history.append( "You rub the orange sensually against the fridge." );
-    }
-    else{
-        history.append( "I'm not sure how to use that on the orange." );
-    }
-};
-
-registry.register_object( "fridge", public.sample_objects.fridge );
-
-return public;
+return InteractiveObject;
 });

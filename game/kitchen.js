@@ -8,7 +8,8 @@ var public = {};
 public.toaster = function(){
     this.name = "toaster";
 }
-public.toaster.prototype = new core.InteractiveObject();
+public.toaster.prototype = new core();
+public.toaster.prototype.use_target = true;
 public.toaster.prototype.look_at = function(){
     history.append("It's a Toastmaster.");
 }
@@ -30,6 +31,10 @@ public.toaster.prototype.use = function(obj){
         history.append("Somehow this manages not to explode and kill everyone.");
         obj.set_state("cooked", true);
     }
+    if( obj.name === 'me' ){
+        history.append("You lightly toast your hand." );
+        history.append("ow. ow ow ow ow ow ow. ow." );
+    }
 }
 public.toaster.prototype.take = function(){
     history.append("The toaster is yours. Bask in the slightly more well-laden glow.");
@@ -41,31 +46,53 @@ registry.register_object( "toaster", public.toaster );
 public.stove = function(){
     this.name = "stove";
 }
-public.stove.prototype = new core.InteractiveObject();
+public.stove.prototype = new core();
+public.stove.prototype.use_target = true;
 public.stove.prototype.look_at = function(){
     history.append("It's a small, greasy electric stove." ); 
 }
 public.stove.prototype.lick = function(){
     history.append("It tastes incomprehensibly vile, something like buttered rust." );
 }
+public.stove.prototype.open = function(){
+    history.append("You attempt to open the oven on the stove. ");
+    history.append("However, it is stuck shut.");
+}
+public.stove.prototype.take = function(){
+    history.append("HNNNRRRRGGGGH. Nope. It's not going to budge." );
+}
 public.stove.prototype.use = function(obj){
     if( typeof(obj) === 'undefined') {
         history.append("You turn the stove on and off a couple of times.");
         history.append("Yep, working stove.");
     }
-    if( obj.name === 'bacon' ){
-        history.append("You attempt to cook the bacon directly over the stove, but the grease dripping on to the element causes a fire.");
-        history.append("Attempting to put out the fire, you, instead, manage to catch fire yourself." );
-        history.append("Why - why do you have to wear such flammable clothing?");
-        command.get_root().die();
+    switch( obj.name ){
+        case 'bacon':
+            history.append("You attempt to cook the bacon directly over the stove, but the grease dripping on to the element causes a fire.");
+            history.append("Attempting to put out the fire, you, instead, manage to catch fire yourself." );
+            history.append("Why - why do you have to wear such flammable clothing?");
+            command.get_root().die();
+            return;
+        case 'me':
+            history.append("No.");
+            return;
+        case 'fork':
+            history.append("You try to use the fork to wedge open the stove's door.");
+            history.append("Then, you realize that the stove is nothing more than a prop, and give up.");
+            return;
+        default:
+            history.append("I'm not sure how to use " + this.name + " with " + obj.name );
+            return;
     }
+
 }
 registry.register_object( "stove", public.stove );
 
 public.bacon = function(){
     this.name = "bacon";
 }
-public.bacon.prototype = new core.InteractiveObject();
+public.bacon.prototype = new core();
+public.bacon.prototype.use_target = true;
 public.bacon.prototype.look_at = function(){
     history.append("A kilogram of uncooked Maple Star Smokey Back Bacon, richly marbled with fat." ); 
 }
@@ -94,19 +121,24 @@ public.bacon.prototype.use = function(obj){
         this.eat();
         return;
     }
-    if( obj.name === 'fork' ){
-        history.append("You lightly perforate the bacon.");
-    }
-    if( obj.name === 'toaster' ){
-        history.append("You use the toaster to very clumsily cook the bacon." );
-        history.append("Somehow this manages not to explode and kill everyone.");
-        this.set_state("cooked", true);
-    }
-    if( obj.name === 'stove' ){
-        history.append("You attempt to cook the bacon directly over the stove, but the grease dripping on to the element causes a fire.");
-        history.append("Attempting to put out the fire, you, instead, manage to catch fire yourself." );
-        history.append("Why - why do you have to wear such flammable clothing?");
-        command.get_root().die();
+    switch( obj.name ){
+        case 'fork':
+            history.append("You lightly perforate the bacon.");
+            return;
+        case 'toaster':
+            history.append("You use the toaster to very clumsily cook the bacon." );
+            history.append("Somehow this manages not to explode and kill everyone.");
+            this.set_state("cooked", true);
+            return;
+        case 'stove':
+            history.append("You attempt to cook the bacon directly over the stove, but the grease dripping on to the element causes a fire.");
+            history.append("Attempting to put out the fire, you, instead, manage to catch fire yourself." );
+            history.append("Why - why do you have to wear such flammable clothing?");
+            command.get_root().die();
+            return;
+        default:
+            history.append("I dunno how to do that to bacon.");
+            return;
     }
 }
 registry.register_object( "bacon", public.bacon );
@@ -114,20 +146,37 @@ registry.register_object( "bacon", public.bacon );
 public.mirror = function(){
     this.name = "mirror";
 }
-public.mirror.prototype = new core.InteractiveObject();
+public.mirror.use_target = true;
+public.mirror.prototype = new core();
 public.mirror.prototype.look_at = function(){
     history.append("It's you! God, you're ugly." ); 
 }
 public.mirror.prototype.smash = function(){
     history.append("You smash the mirror. 7 years of bad luck are now all up on your plate.");
-    this.delete();
 }
 public.mirror.prototype.use = function(obj){
     if( typeof(obj) === 'undefined') {
         this.look_at();
     }
-    if( obj.name === 'bacon' ){
-        command.get_root().win();
+    switch( obj.name ){
+        case 'bacon':
+            command.get_root().win();
+            return;
+        case 'stove':
+            history.append("Both of those things are attached to the walls.");
+            return;
+        case 'fork':
+            history.append("It's as if there were two forks!");
+            return;
+        case 'toaster':
+            this.smash();
+            return;
+        case 'me':
+            this.look_at();
+            return;
+        default:
+            history.append("I can't do that with the mirror.");
+            return;
     }
 }
 registry.register_object( "mirror", public.mirror );
@@ -136,7 +185,7 @@ public.fridge = function(){
     this.name = "fridge";
     this.base_setup();
 }
-public.fridge.prototype = new core.InteractiveObject();
+public.fridge.prototype = new core();
 public.fridge.prototype.setup = function(){
     this.hide_verb("close");
     this.add_child( new public.bacon() );
@@ -189,9 +238,10 @@ registry.register_object( "fridge", public.fridge );
 public.kitchen = function(){
     this.name = "kitchen";    
     this.base_setup();
+    this.register_special_verb("go_north");
 };
 
-public.kitchen.prototype = new core.InteractiveObject();
+public.kitchen.prototype = new core();
 public.kitchen.prototype.setup = function(){
     this.add_child( new public.toaster() );
     this.add_child( new public.fridge() );
@@ -199,13 +249,20 @@ public.kitchen.prototype.setup = function(){
     this.add_child( new public.mirror() );
 }
 
+public.kitchen.prototype.go_north_from = function(){
+    history.append("I'm going to level with you - I haven't built a north.");
+}
+
+public.kitchen.prototype.go_north = function(){
+    this.go_north_from();
+}
+
 public.kitchen.prototype.look_at = function(){
     var string = [ "You are standing in a small, tidy kitchen. ", 
     "It's unfamiliar to you, but it seems like most kitchens you've seen", 
     " before. There's a <span class='object'>stove</span>, a ", 
     " <span class='object'>fridge</span>, a <span class='object'>toaster</span>, ", 
-    " and a <span class='object'>mirror</span>. ", 
-    " There's a door to your right. " ];
+    " and a <span class='object'>mirror</span>. " ];
     history.append( string.join(" ") );
 }
 

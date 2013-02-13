@@ -20,13 +20,6 @@ define(function() {
         "against"
     ];
 
-    public.discardable_words = [
-        "the", 
-        "in", 
-        "an", 
-        "a"
-    ];
-
     public.find = function( verb ){
         var matches = [verb];
         _.each( synonym_groups, function(synonyms){

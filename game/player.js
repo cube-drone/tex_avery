@@ -12,9 +12,17 @@ var public = {};
 public.me = function(){
     this.name = "me";    
     this.base_setup();
+    this.register_special_verb('die');
+    this.register_special_verb('win');
+    this.register_special_verb('look_around');
+    this.register_special_verb('debug');
+    this.register_special_verb('help');
+    this.register_special_verb('reset_universe');
+    this.register_special_verb('get_ye_flask');
 };
 
-public.me.prototype = new core.InteractiveObject();
+public.me.prototype = new core();
+public.me.prototype.use_target = true;
 public.me.prototype.setup = function(){
     var i = new inventory.inventory();
     var k = new kitchen.kitchen();
@@ -94,13 +102,13 @@ public.me.prototype.use = function(obj){
     if( typeof(obj) === 'undefined'){
         history.append("<a href='http://www.youtube.com/watch?v=I9zpnLBtwwg'>Use me, use me, say that you'll use me.</a>");
         return;
-    }
+    };
     if( obj.name === 'fork' ){
         history.append("You fork yourself. Ow. Smooth.");
-    }
-    if( obj.name === 'kitchen' ){
-        history.append("I haven't quite worked out the mechanics of using a kitchen on yourself. " );
-    }
+    };
+    if( obj.name === 'stove' ){
+        history.append("No. That is an awful idea.");
+    };
     if( obj.name === 'bacon' ){
         obj.eat();
     }

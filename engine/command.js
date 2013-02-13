@@ -23,21 +23,27 @@ public.get_actions = function(){
     var actions = [];
 
     _.each( visible_nouns, function( noun ) {
-        _.each( visible_nouns, function( other_noun ){
-            if( noun.name !== other_noun.name) {
-                actions.push( "use " + noun.name.replace(/_/g, " ") + " on " + other_noun.name.replace(/_/g, " ") );
-            }
+        // Use X on Y
+        if( noun.use_target ){
+            _.each( visible_nouns, function( other_noun ){
+                if( noun.name !== other_noun.name &&
+                        other_noun.use_target) {
+                    actions.push( "use " + noun.name.replace(/_/g, " ") + " on " + other_noun.name.replace(/_/g, " ") );
+                }
+            });
+        }
+        
+        // Special commands
+        _.each( noun.get_special_verbs(), function(verb){
+            actions.push( verb.replace(/_/g, " ") );
         });
+
+        // Synonyms
         var verbs = noun.visible_verbs();
         _.each( verbs, function( verb ) {
             var syns = synonyms.find( verb );
             _.each( syns, function( synonym ){
-                if( noun.name === root_object.name){
-                    actions.push( synonym.replace(/_/g, " ") );
-                }
-                else{
-                    actions.push( synonym.replace(/_/g, " ") + " " + noun.name );
-                }
+                actions.push( synonym.replace(/_/g, " ") + " " + noun.name );
             });
         });
     });
@@ -49,6 +55,20 @@ public.command = function ( command ){
     var command = tools.clean( command );
     var visible_nouns = root_object.visible_children(); 
     visible_nouns.push( root_object );
+
+    // First, try all special commands.
+    var success = _.some( visible_nouns, function( noun ){
+        return _.some( noun.get_special_verbs(), function( verb ){
+            if( command === verb.replace(/_/g, " ") ){
+                noun[verb]();
+                return true;
+            }
+            return false;
+        });
+    });
+    if( success ){
+        return;
+    }   
 
     // Verb-Object sentences. ("eat apple")
     var success = _.some( visible_nouns, function( noun ){

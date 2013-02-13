@@ -9,7 +9,8 @@ var public = {};
 public.fork = function(){
     this.name = "fork";
 }
-public.fork.prototype = new core.InteractiveObject();
+public.fork.prototype = new core();
+public.fork.prototype.use_target = true;
 public.fork.prototype.look_at = function(){
     history.append("It's a common kitchen fork. Silverware." );
     history.append("You keep it around, just in case you run into a particularly gullible werewolf.");
@@ -28,9 +29,10 @@ registry.register_object( "fork", public.fork );
 public.inventory = function(){
     this.name = "inventory"; 
     this.base_setup();
+    this.register_special_verb( 'inventory' );
 };
 
-public.inventory.prototype = new core.InteractiveObject();
+public.inventory.prototype = new core();
 public.inventory.prototype.setup = function(){
     var fork = new public.fork();
     this.add_child( fork );
@@ -42,6 +44,7 @@ public.inventory.prototype.look_at = function(){
         history.append( "&nbsp;"+child.name );
     });
 }
+public.inventory.prototype.inventory = public.inventory.prototype.look_at;
 
 registry.register_object( "inventory", public.inventory );
 

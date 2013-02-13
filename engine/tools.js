@@ -7,9 +7,6 @@ return {
             .replace(/\s+/g, ' ')
             .replace(/\s*$/g, '')
             .replace(/^\s*/g, '');
-        _.each( synonyms.discardable_words, function( discard ){
-            words = words.replace( new RegExp(" "+discard+" ", 'g'), " " );
-        });
         return words;
     },
     ends_with: function( string, suffix ){
