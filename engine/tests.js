@@ -273,9 +273,6 @@ require(["engine/sample_objects", "engine/command", "ui/history"],
         localStorage.clear();
         var fridge = new sample_objects.fridge();        
         command.set_root( fridge );
-        
-        ok( command.command("Look"), "Verbs are implicitly tied to the root element.");
-        equal( history.pop(), "It's a Fridgit Jones 5000.", "IMPLICIT." );
 
         fridge.open();
         ok( _.contains( command.get_actions(), "look at orange" ), "Can see the orange in the fridge.");
