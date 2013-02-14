@@ -8,7 +8,6 @@ var private = {};
 private.template = "<input type='text' id='target' class='span9'></input>";
 
 private.typeahead_fn = function() { return ["Default"]; };
-private.typeahead = function() { return private.typeahead_fn(); };
 private.callbacks = [];
 
 public.register_typeahead = function( typeahead_fn ){
@@ -41,7 +40,7 @@ public.val = function(){
 
 private.enter = function(evt) {
     // If the typeahead is visible, enter shouldn't trigger nothin'
-    if( $('.typeahead').is(":visible") ){
+    if( evt.keyCode !== 13 ){
         return evt;
     }
 
@@ -52,6 +51,7 @@ private.enter = function(evt) {
     // Currently synchronous. Will look at asynchronous soon. 
     _.each( private.callbacks, function( callback_fn ){ callback_fn( words ); } ); 
 
+    $("#target").autocomplete( "close" );
     public.show();
     return evt;
 };
@@ -61,10 +61,17 @@ public.create = function( jquery_element ) {
     jquery_element.append(private.template);
 
     // Bind the enter function
-    $("#target").bind('keydown.return', private.enter);
+    $("#target").bind('keydown', private.enter);
     
+    console.log( private.typeahead_fn );
     // Bind a function listing available options to the prompt. 
-    $("#target").typeahead({ source: private.typeahead })
+    $("#target").autocomplete({ 
+        source:private.typeahead_fn, 
+        minLength:0,
+        delay: 0,
+        position: { my : "right top", at: "right bottom" } })
+
+    $(document).bind('keydown', public.focus);
 };
 
 return public;
