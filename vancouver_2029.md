@@ -123,14 +123,14 @@ life expectancy of a person in the top 30% of salaries ($150,000CAD/yr)
 is trending at around 110 years. 
 
 For people for whom a long natural life isn't in the cards, there's 
-always becoming one of the Ancients.  A variety of companies are quite
-happy to put your brain in a jar of nutrient-rich sludge and plug you 
-into the internet, replacing your dying cells with fresh-grown new ones,
+always the option of joining the Ancients.  A variety of companies are quite
+happy to put a brain in a jar of nutrient-rich sludge and plug that brain 
+into the internet, replacing its dying cells with fresh-grown new ones,
 all-but-perpetually. This is still expensive - it comes in at about $2000
-a month, which is a lot considering how long you'll be paying for the
-service.  You can always work it off, though - you'd be surprised how much
-you can make in your new life as the intelligence guiding a train or a 
-telephone switching station. 
+a month, which is a lot considering how long it'll be paying for the
+service.  The brain can always work it off, though - you'd be surprised 
+at how much a brain can make in its new life as the intelligence guiding 
+a train or a telephone switching station. 
 
 We finally have immortality as an available option, and just like most
 brand-new technologies it is ridden with bugs, drastic failures, and only
@@ -157,17 +157,27 @@ Still nothin' on this front, although for extremely difficult computing applicat
 a cluster of Ancients and some well-tuned machine learning algorithms can get a 
 lot of work done very quickly.
 
-Ecology & Oil
--------------
+Ecology & Electricity
+---------------------
 
 Oil is failing, fast, and so is the planet. Things are starting to get pretty fucked 
 up, as the "mine it in Canada, ship it to China, manufacture it in China, ship it to 
 Canada, and sell it" strategy is starting to become unsustainably expensive. 
 
-The buzzwords are _local_ and _green_, and _bio_, and they're building steam as 
+The staggering and oft-ignored efficiency of rail comes back into
+light.  Many airlines are going bankrupt at the sheer cost of keeping planes aloft
+makes air travel unreasonable for all but the most affluent of passengers - and
+the concept of battery-powered airplanes is at-best hilarious. Even the vast trucking
+infrastructure of the U.S. and Canada is having trouble with the soaring cost
+of gasoline. Ergo, more rail, and some of the first major rail development in North
+America in the last 50 years. As of 2027, a high-speed West Coast passenger and light-freight
+railway exists, linking Whistler, Vancouver, Seattle, Portland, San Francisco, and 
+Los Angeles - and it can make it from end-to-end in about six hours.  
+
+The buzzwords are _local_, _green_, and _bio_, and they're building steam as 
 ecological disasters create more and more problems - but even if humanity 
 manages to reach a new equilibrium, it's not going to be as idyllic as it was before.
-The first East Coast Superhurricane was a real eye-opener. Vancouver - and it's south
+The first East Coast Superhurricane was a real eye-opener. Vancouver - and its south
 of the border counterpart, Seattle, are becoming Alpha cities, huge links in the
 digital and trade economy of the world - partially because of the waning power of
 the East Coast in the face of extreme weather difficulties. 
@@ -175,4 +185,109 @@ the East Coast in the face of extreme weather difficulties.
 British Columbia and Ontario are managing surprisingly well, though. BC has
 the hydroelecricity, and Ontario has the nuclear option.  Alberta is.. well, 
 let's just say that Alberta is not totally a lost cause, but it's close. The
-term 'pre-apocalyptic wasteland' comes to mind. 
+term 'pre-apocalyptic wasteland' comes to mind. Alberta sold their future, mostly
+to Hong Kong businessmen.
+
+Fusion experiments are promising and even positive-energy, but not at
+anywhere near the scale required for wide-spread power generation. Some French 
+physicists have managed to build up a lot of steam behind the Global Electricity Project,
+and are currently constructing a pilot commercial fusion facility - but the 
+price-to-kilowatt-hour ratio of this new technology currently lags behind even 
+solar and wind.
+
+The Karma Economy
+-----------------
+
+The first decade of the 21st century was dominated by competing trends - a 
+vastly increasing stable of digital media, combined with the
+clear obsolescence of copyright in the face of remix culture and the 
+complete nonexistance of digital scarcity. 
+
+Digital Rights Management was an early attempt to manufacture digital scarcity, 
+and Cloud Services became a much more successful second attempt, but the both
+of them started to fall by the wayside with the inception of Piplup, 
+a content distribution portal that changed content the way that Google changed
+search. 
+
+Anybody could watch content on Piplup, anybody could publish content on 
+Piplup. Video, music, comics, software, anything.  It was more than just
+a site - it was also a protocol, allowing sites to join the Piplup network
+and participate in the Karma Conspiracy. 
+
+The thing was, users could vote on things in the content distribution network,
+but users who paid more money got a lot more votes. The sum of all of the money
+from paying users and advertising was then split up based on how many views and
+how many votes each item on the network received.  People put money in, because
+by doing so they could visibly influence the ebb and flow of media around them -
+or throw support behind their own ego-driven content projects. 
+
+It was a ridiculous scheme, and it had been tried many times before, but this time, 
+through some combination of fantastic luck and a few viral hits, it managed to work.
+
+Of course, keeping users from manufacturing a pile of sock puppet accounts and
+manipulating the votes in their favour - required some kind of strong authentication
+scheme. Good thing AuthentiCat chips were becoming ubiquitous. 
+
+With Piplup Points holding real value, a lot of artists broke free from their
+publication fetters and struck out on their own, finding that their revenue from 
+Piplup Points more than exceeded their cut from record sales. 
+
+Piplup's tiny cut of the proceedings has also made them unimaginably wealthy. 
+
+Direct Democratic
+-----------------
+
+In 2017, the Digital Democratic Party was formed in B.C. politics under the unusual 
+platform that they did not actually have a platform at all. They instead
+promised to bring each and every issue directly to their constituents for discussion
+and debate before voting on it in Parliament. 
+
+This was made possible by sophisticated software that they had designed
+and open-sourced prior to the elections. 
+
+It was 2026 before any Digital Democrats managed to score any seats - they managed to
+get three, in remote ridings - but their odd-ball politics and sophisticated interactions
+with their constituents made the news a number of times, and they're an increasingly
+attractive candidate in the upcoming 2030 elections. 
+
+The Direct Democrats have been criticized as giving too much electoral clout to the
+sort of people who have vast reserves of free time to participate in the political
+discussion - the elderly, office-workers,  and Ancients - but prominent DDP party 
+leader Bryan Fung has dismissed this, claiming that these people had always enjoyed
+some level of preferred treatment in the political process, being as they were the 
+most likely to vote anyways. 
+
+Disconnect
+----------
+With ubquitous computing being old hat, most users exhibit a level of dependence on
+their digital aids only exhibited by the most die-hard of techies today.  With 
+devices providing a sort of 'extended brain' for users - the ability to query the
+internet for anything, any time, local storage of notes, contacts, calendars, timetables, 
+documents - users who are separated from their devices for a length of time experience a
+phase colloquially called "Disconnect" - where they have difficulty operating without
+computer guidance, content-rich distraction, and constant social interaction. 
+
+Many people voluntarily travel to remote locations and Disconnect on purpose, just 
+to feel like human beings again - although it's not long before they itch to once
+again connect themselves to the firehose of humanity. People who are involuntarily
+Disconnected have a much rougher time of it. 
+
+On The Value of Identity Theft
+------------------------------
+
+With most of these things in place, the value of identity theft - and the consequences
+of losing one's online identity - become increasingly clear, as identities can be used 
+for any number of purposes - for financial gain, as part of a digital content strategy, 
+to influence politics, or simply to induce Disconnect in a rival as a way to get them
+out of the way for a while without killing them. 
+
+Stanley's Quest
+---------------
+
+* Master Arc: The Quest To Regain Stanley's Identity
+** Sub Arc: Identity Verification: Police Report, Birth Certificate, Character References
+** Sub Arc: Basic Survival: Getting Some Cash, Food, and a Terminal
+** Sub Arc: You're not the only one: There's been a rash of surgical identity thefts. 
+** Sub Arc: Chip-hacking For Fun & Profit
+** Sub Arc: Who Did This? Tracking the chip-thief. 
+** Sub Arc: Why? Unearthing a grand conspiracy. 
