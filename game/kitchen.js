@@ -266,9 +266,9 @@ public.room.prototype.go_through_door = function(){
 public.room.prototype.look_at = function(){
     var string = [ "You are standing in a small, tidy kitchen. ", 
     "It's unfamiliar to you, but it seems like most kitchens you've seen", 
-    " before. There's a <span class='object'>stove</span>, a ", 
-    " <span class='object'>fridge</span>, a <span class='object'>toaster</span>, ", 
-    " and a <span class='object'>mirror</span>. " ];
+    " before. There's a <strong class='object'>stove</strong>, a ", 
+    " <strong class='object'>fridge</strong>, a <strong class='object'>toaster</strong>, ", 
+    " and a <strong class='object'>mirror</strong>. " ];
     history.append( string.join(" ") );
 }
 

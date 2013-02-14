@@ -5,7 +5,7 @@ define(function() {
 var public = {};
 var private = {};
 
-private.template = "<input type='text' id='target' class='span9'></input>";
+private.template = "<input type='text' id='target' class='span10'></input>";
 
 private.typeahead_fn = function() { return ["Default"]; };
 private.callbacks = [];

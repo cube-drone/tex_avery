@@ -41,7 +41,7 @@ public.inventory.prototype.setup = function(){
 public.inventory.prototype.look_at = function(){
     history.append( "You are carrying:" );
     _.each( this.visible_children(), function( child ){ 
-        history.append( "&nbsp;"+child.name );
+        history.append( "&nbsp;<strong class='object'>"+child.name+"</strong>" );
     });
 }
 public.inventory.prototype.inventory = public.inventory.prototype.look_at;

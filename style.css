@@ -1,8 +1,8 @@
 
 body{
+font-size: large;
 background-color: #111;
 color: #CCC;
-line-height: 1.5em;
 font-family: 'Source Code Pro', monospace;
 }
 
@@ -13,7 +13,6 @@ padding-top: 50px;
 #target{
 background-color: #111;
 color: #CCC;
-line-height: 1.5em;
 border: 0;
 font-size: medium;
 font-family: 'Source Code Pro', monospace;
@@ -26,10 +25,10 @@ outline: none;
 #history {
 padding: 0;
 list-style-type: none;
-max-height: 500px;
+max-height: 300px;
 overflow: auto;
 overflow-x: hidden;
-overflow-y: auto;
+overflow-y: hidden;
 }
 
 .pagebreak{
