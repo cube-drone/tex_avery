@@ -150,6 +150,12 @@ What this means for the player is that they are likely to encounter ATM
 machines and auto-taxis with a little bit more personality than they would
 normally expect from inanimate devices. 
 
+### Unresponsives ###
+
+Some brains, after experiencing particular trauma, refuse to connect to the
+outside world after being placed in their tanks. They concoct elaborate
+fantasies inside their own shells and refuse to communicate with the outside.
+
 Strong AI
 ---------
 
@@ -284,10 +290,24 @@ out of the way for a while without killing them.
 Stanley's Quest
 ---------------
 
-* Master Arc: The Quest To Regain Stanley's Identity
-** Sub Arc: Identity Verification: Police Report, Birth Certificate, Character References
-** Sub Arc: Basic Survival: Getting Some Cash, Food, and a Terminal
-** Sub Arc: You're not the only one: There's been a rash of surgical identity thefts. 
-** Sub Arc: Chip-hacking For Fun & Profit
-** Sub Arc: Who Did This? Tracking the chip-thief. 
-** Sub Arc: Why? Unearthing a grand conspiracy. 
+### Master Arc: The Quest To Regain Stanley's Identity ###
+ * Identity Verification: Police Report, Birth Certificate, Character References
+ * Basic Survival: Getting Some Cash, Food, and a Terminal
+ * You're not the only one: There's been a rash of surgical identity thefts. 
+ * Chip-hacking For Fun & Profit
+ * Who Did This? Tracking the chip-thief. 
+ * Why? Unearthing a grand conspiracy. 
+
+### Endings: ###
+
+* Good Little Bureaucrat: Follow all of the instructions to get your identity back.
+ * You regain your identity, but never learn the full truth of what happened.
+* Murder Everyone: Kill every single NPC.
+ * You were an unresponsive the entire time, playing out an elaborate revenge fantasy.
+* Refugee: Stay Disconnected
+ * You abandon your old life and join a commune on Salt Spring. 
+* Evil Ending: Kill all of your business associates while chipless. 
+ * You become fantastically wealthy, but it's strongly suggested that you're an unresponsive. 
+* Conspiracy: You discover the conspiracy and foil it. 
+ * Canonical ending. Not sure about the details. 
+
