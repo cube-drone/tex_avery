@@ -11,35 +11,30 @@ Chips Ahoy
 
 Being as everybody is net-savvy at this point, and everything
 is online at this point, the problems of authentication and
-authorization became more and more crucial to address.
+authorization have become more and more crucial to address.
 
 Passwords are just so easy to break, and maintaining dozens
 and dozens of username/password pairs becomes unwieldy when 
-your life is distributed amongst dozens of different systems.
+one's life is distributed amongst dozens of different systems.
 
 In 2017, a small biotech firm, AuthentiCat (the logo of which
 is a small black cat with a lock for a head), released a consumer
 grade subdermal chip system.  Based on public-key crypto, each
-subdermal chip contained a password-protected private key and a 
-bluetooth connection that could be used to authenticate the user
+subdermal chip contains a password-protected private key and a 
+bluetooth connection that can be used to authenticate the user
 to a variety of sources. 
 
-    Side-note: From a real-life security standpoint, this is, of
-    course, only as secure as the terminal that is communicating
-    with the chip. Let's gloss over fine details, here - we're 
-    not actually implementing this thing. 
-
-While there were security concerns - no system is unhackable - 
-the AuthentiCat chips proved more secure than most chip-and-pin
-systems, and financial providers started to phase out cards in
-favour of AuthentiCats. Of course, particularly paranoid 
-users could keep their AuthentiCats extradermally, (key-chain FOBs
-being a particularly popular option) but these units were more 
+While there are security concerns - no system is unhackable - 
+the AuthentiCat chips have proven more secure than most chip-and-pin
+systems, and financial providers have started to phase out cards in
+favour of AuthentiCats. Particularly paranoid 
+users can keep their AuthentiCats extradermally, (key-chain FOBs
+being a particularly popular option) but these units are much
 more prone to theft. 
 
-In 2023 the United States - in order to smooth over security-based 
-border tensions after the 2018 Liberty Bell Incident, mandated 
-AuthentiCat passports for travellers into the country.
+In 2023 the United States mandated AuthentiCat passports for 
+travellers into the country. in order to smooth over border 
+tensions after the 2018 Liberty Bell Incident, 
 
 At this point, just about everything in one's life can comfortably
 be authenticated and authorized with an AuthentiCat. Many people
@@ -47,8 +42,8 @@ have their entire lives attached to this one single private key.
 
 Chipless
 --------
-Of course, with all that in mind, it's becoming harder and harder
-to be chipless. 
+
+It's becoming harder and harder to be chipless. 
 
 Some people are voluntarily chipless. It's common among privacy 
 advocates, fundamentalist religiosos, criminals, libertarians,
@@ -68,6 +63,10 @@ bathtub, having had his AuthentiCat removed, surgically. This
 isn't an amnesia story - because played out, right? - but he
 honestly can't remember how it happened, past a rowdy night
 out drinking with his buddies. 
+
+He could consult the recorded video from his specs, but, first,
+they're locked behind an Auth wall, and second, his specs 
+have been stolen. 
 
 Stanley is locked out of his entire life, and it doesn't take
 long for him to realize that the chipless are treated like an
@@ -152,9 +151,16 @@ normally expect from inanimate devices.
 
 ### Unresponsives ###
 
-Some brains, after experiencing particular trauma, refuse to connect to the
-outside world after being placed in their tanks. They concoct elaborate
-fantasies inside their own shells and refuse to communicate with the outside.
+Some brains, after being plugged into the Ancients' Network, refuse to connect 
+to the outside world. 
+They concoct elaborate fantasies inside their own shell and will not interact.
+
+The policy for dealing with unresponsives differs from network to network, but
+most of them are willing to keep the brains plugged in until their payments 
+are past due, at which point they are disconnected and discarded. 
+
+For the player, bending the universe too much in absurd directions will trigger
+one of the 'you were an unresponsive the whole time' endings. 
 
 Strong AI
 ---------
@@ -201,8 +207,46 @@ and are currently constructing a pilot commercial fusion facility - but the
 price-to-kilowatt-hour ratio of this new technology currently lags behind even 
 solar and wind.
 
-The Karma Economy
------------------
+
+Cybernetics, Augments, Biocybernetics and Datajacks
+---------------------------------------------------
+
+At what point does prosthetics become cybernetics? Even as far back as 2014, 
+nervous-system-controlled prosthetic limbs were becoming available options for wealthy
+amputees. The limbs never performed quite as smoothly or fluidly as real limbs
+would, of course, but they've improved over time to be more resistant to the 
+elements, lighter, more efficient with battery life. I think the real jumping-off
+point between prosthetics and cybernetics is when the cybernetic limb is superior
+to the original, and that is still not the case. Natural limbs don't have battery-life
+issues, they're lighter, nimbler, more flexible, self-healing, and much more 
+sensitive. Natural eyes perform faster saccades and don't overload the brain with 
+out-of-focus data, and natural ears handle music and human speech better than 
+any prosthetic to date. 
+
+So, I'd argue that one could call these things 'cybernetics' once people would choose 
+a prosthetic over their natural equipment - and we're not there yet. 
+
+However, prosthetic research into direct neural interfaces has allowed for one common
+human modification - a datajack. A special high-bandwidth IO card installed directly 
+into the brain.  Because the datajack depends on natural neuroplasticity - can't install
+drivers in the brain - learning a new cybernetic interface takes months of dedication
+and in many cases dedicated physical therapy, but in doing so, humans can graft entirely
+new interfaces on to their bodies.  These aren't bionic replacements, but fully operable
+extra bits of equipment.  
+
+The most common datajack augmentation amongst cube drones and desk jockeys is direct computer
+access - text-input and ui interaction. It takes some training to type directly with 
+one's mind, but it's much more ergonomically sound.
+
+Other professions often get datajack augmentations to provide other useful functions. 
+Operating heavy machinery, for example. 
+
+Companies responsible for growing 'boutique organs' for custom transplant are currently 
+investing a lot of time and research into nervous-system tech and custom bio-implants, but
+nothing of particular interest has come out of it, yet. 
+
+Content
+-------
 
 The first decade of the 21st century was dominated by competing trends - a 
 vastly increasing stable of digital media, combined with the
@@ -210,35 +254,12 @@ clear obsolescence of copyright in the face of remix culture and the
 complete nonexistance of digital scarcity. 
 
 Digital Rights Management was an early attempt to manufacture digital scarcity, 
-and Cloud Services became a much more successful second attempt, but the both
-of them started to fall by the wayside with the inception of Piplup, 
-a content distribution portal that changed content the way that Google changed
-search. 
+and Cloud Services became a much more successful second attempt.
 
-Anybody could watch content on Piplup, anybody could publish content on 
-Piplup. Video, music, comics, software, anything.  It was more than just
-a site - it was also a protocol, allowing sites to join the Piplup network
-and participate in the Karma Conspiracy. 
-
-The thing was, users could vote on things in the content distribution network,
-but users who paid more money got a lot more votes. The sum of all of the money
-from paying users and advertising was then split up based on how many views and
-how many votes each item on the network received.  People put money in, because
-by doing so they could visibly influence the ebb and flow of media around them -
-or throw support behind their own ego-driven content projects. 
-
-It was a ridiculous scheme, and it had been tried many times before, but this time, 
-through some combination of fantastic luck and a few viral hits, it managed to work.
-
-Of course, keeping users from manufacturing a pile of sock puppet accounts and
-manipulating the votes in their favour - required some kind of strong authentication
-scheme. Good thing AuthentiCat chips were becoming ubiquitous. 
-
-With Piplup Points holding real value, a lot of artists broke free from their
-publication fetters and struck out on their own, finding that their revenue from 
-Piplup Points more than exceeded their cut from record sales. 
-
-Piplup's tiny cut of the proceedings has also made them unimaginably wealthy. 
+So now there are two competing content spheres - library service providers who, 
+for a fixed fee, provide unlimited access to large libraries of content, and 
+online enclaves of nary-unlimited pirated content, with each doing their best
+to attempt to extenguish the other. 
 
 Direct Democratic
 -----------------
@@ -301,7 +322,7 @@ Stanley's Quest
 ### Endings: ###
 
 * Good Little Bureaucrat: Follow all of the instructions to get your identity back.
- * You regain your identity, but never learn the full truth of what happened.
+ * You regain your identity, but never learn exactly what happened.
 * Murder Everyone: Kill every single NPC.
  * You were an unresponsive the entire time, playing out an elaborate revenge fantasy.
 * Refugee: Stay Disconnected
