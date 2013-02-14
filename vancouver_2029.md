@@ -1,13 +1,13 @@
 
 Vancouver 2029
---------------
+==============
 
 Some notes on a setting and story for this adventure game.
 
 It's Vancouver, approximately 15 years hence. 
 
 Chips Ahoy
-==========
+----------
 
 Being as everybody is net-savvy at this point, and everything
 is online at this point, the problems of authentication and
@@ -46,7 +46,7 @@ be authenticated and authorized with an AuthentiCat. Many people
 have their entire lives attached to this one single private key. 
 
 Chipless
-========
+--------
 Of course, with all that in mind, it's becoming harder and harder
 to be chipless. 
 
@@ -93,7 +93,7 @@ survive without identity. Maybe he'll even steal or
 create a new identity for himself. Have to survive somehow. 
 
 X-Array Specs
-=============
+-------------
 
 Think "Google Glasses", but with a lot more polish.  There are
 dozens of models from dozens of different providers - the Apple
@@ -109,13 +109,13 @@ in his environment and have a list of verbs come up for that object
 automatically, some of his contacts, all of that good stuff. 
 
 Other Features of the Universe
-==============================
+------------------------------
 
 The Chips are the focus of this story, but the Vancouver 2029 universe
 has a lot of fresh tech at hand to explore. 
 
 The Ancients : Life Extension & Tinned Heads
-============================================
+--------------------------------------------
 
 A lot of people are really excited about this one. With teleromase
 extensions, boutique drugs, and grow-to-order organs, the natural 
@@ -151,14 +151,14 @@ machines and auto-taxis with a little bit more personality than they would
 normally expect from inanimate devices. 
 
 Strong AI
-=========
+---------
 
 Still nothin' on this front, although for extremely difficult computing applications,
 a cluster of Ancients and some well-tuned machine learning algorithms can get a 
 lot of work done very quickly.
 
 Ecology & Oil
-=============
+-------------
 
 Oil is failing, fast, and so is the planet. Things are starting to get pretty fucked 
 up, as the "mine it in Canada, ship it to China, manufacture it in China, ship it to 
