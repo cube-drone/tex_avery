@@ -4,18 +4,24 @@ Tex-Avery
 State and Objects
 ----------
 
-- Interested in querying contextually relevant objects for behaviour
-- Perhaps describe all relationships in terms of 'verb' and 'noun'
-- Input would be sent through a multiplexer, which scrapes for verb noun pairs, 
-    perhaps subject/object relationships, and begins a query of relevant objects
-- Relevant objects would be inventory, those attached to the scene, and perhaps a set of globals
-- Objects should be able to redirect to other objects in some way, ie "Use bucket 
-    on ham" would fill a bucket with ham, or some such
-- Want it to be relatively simple to add objects and rooms, keep an active verb/noun list (w/synonyms)
+### engine/core_object.js ###
+- Contextually relevant objects with behaviour
+- All relationships described in terms of 'verb' and 'noun' - 'nouns' are subclasses
+    of engine/core_object that register verbs. 
+
+### engine/command.js ###
+- Input multiplexer, which scrapes for verb noun pairs, 
+    perhaps subject/object relationships, and creates a query of relevant objects
+- The player is the root object, on the top of a tree that also contains the scene (/room), the inventory, 
+    and any other globals that one might attach to the player.
+- Objects are able to redirect to other objects, ie "Use bucket 
+    on ham" can fill a bucket with ham. Currently this is only implemented as 'use x on y', although
+    we can look at other types of relationship. 
+- It is relatively simple to add objects and rooms and keep an active verb/noun list (w/synonyms)
+
 
 Thoughts on Data
 ----------
-
 - Want all bad input piped to a remote host for live analysis
 - Need a way of either seeing current state for above, or replaying a -specific- game 
     given their past input; that means live-updating would mean versioning the game data
