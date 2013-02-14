@@ -19,7 +19,7 @@ public.toaster.prototype.debate = function(){
 }
 public.toaster.prototype.use = function(obj){
     if( typeof(obj) === 'undefined' ){
-        history.append("Without bread, the toaster serves little purpose.");
+        history.append("Without bread, the <strong class='object'>toaster</strong> serves little purpose.");
         return;
     }
     if( obj.name === 'fork' ){
@@ -28,7 +28,7 @@ public.toaster.prototype.use = function(obj){
         command.get_root().die();
     }
     if( obj.name === 'bacon' ){
-        history.append("You use the toaster to very clumsily cook the bacon." );
+        history.append("You use the <strong class='object'>toaster</strong> to very clumsily cook the <strong class='object'>bacon</strong>." );
         history.append("Somehow this manages not to explode and kill everyone.");
         obj.set_state("cooked", true);
     }
@@ -38,7 +38,7 @@ public.toaster.prototype.use = function(obj){
     }
 }
 public.toaster.prototype.take = function(){
-    history.append("The toaster is yours. Bask in the slightly more well-laden glow.");
+    history.append("The <strong class='object'>toaster</strong> is yours. Bask in the slightly more well-laden glow.");
     this.delete();
     command.get_root().recursive_find('inventory').add_child(this);
 }
@@ -50,13 +50,13 @@ public.stove = function(){
 public.stove.prototype = new core();
 public.stove.prototype.use_target = true;
 public.stove.prototype.look_at = function(){
-    history.append("It's a small, greasy electric stove." ); 
+    history.append("It's a small, greasy electric <strong class='object'>stove</strong>." ); 
 }
 public.stove.prototype.lick = function(){
     history.append("It tastes incomprehensibly vile, something like buttered rust." );
 }
 public.stove.prototype.open = function(){
-    history.append("You attempt to open the oven on the stove. ");
+    history.append("You attempt to open the oven on the <strong class='object'>stove</strong>. ");
     history.append("However, it is stuck shut.");
 }
 public.stove.prototype.take = function(){
@@ -64,7 +64,7 @@ public.stove.prototype.take = function(){
 }
 public.stove.prototype.use = function(obj){
     if( typeof(obj) === 'undefined') {
-        history.append("You turn the stove on and off a couple of times.");
+        history.append("You turn the <strong class='object'>stove</strong> on and off a couple of times.");
         history.append("Yep, working stove.");
     }
     switch( obj.name ){
@@ -78,7 +78,7 @@ public.stove.prototype.use = function(obj){
             history.append("No.");
             return;
         case 'fork':
-            history.append("You try to use the fork to wedge open the stove's door.");
+            history.append("You try to use the <strong class='object'>fork</strong> to wedge open the <strong class='object'>stove</strong>'s door.");
             history.append("Then, you realize that the stove is nothing more than a prop, and give up.");
             return;
         default:
@@ -95,7 +95,7 @@ public.bacon = function(){
 public.bacon.prototype = new core();
 public.bacon.prototype.use_target = true;
 public.bacon.prototype.look_at = function(){
-    history.append("A kilogram of uncooked Maple Star Smokey Back Bacon, richly marbled with fat." ); 
+    history.append("A kilogram of uncooked Maple Star Smokey Back <strong class='object'>Bacon</strong>, richly marbled with fat." ); 
 }
 public.bacon.prototype.eat = function(){
     if( this.get_state("cooked") ){
@@ -104,16 +104,17 @@ public.bacon.prototype.eat = function(){
     }
     else{
         history.append("You eat a full kilogram of uncooked bacon. Afterwards, you cry to yourself for a few minutes.");
+        this.delete();
     }
 }
 public.bacon.prototype.lick = function(){
-    history.append("... tastes like bacon."); 
+    history.append("... tastes like <strong class='object'>bacon</strong>."); 
 }
 public.bacon.prototype.smell = function(){
-    history.append("It smells salty and fatty and an awful lot like bacon.");
+    history.append("It smells salty and fatty and an awful lot like <strong class='object'>bacon</strong>.");
 }
 public.bacon.prototype.take = function(){
-    history.append("You stash the bacon on your person for later use.");
+    history.append("You <strong class='object'>stash</strong> the bacon on your person for later use.");
     this.delete();
     command.get_root().recursive_find('inventory').add_child(this);
 }
@@ -124,10 +125,10 @@ public.bacon.prototype.use = function(obj){
     }
     switch( obj.name ){
         case 'fork':
-            history.append("You lightly perforate the bacon.");
+            history.append("You lightly perforate the <strong class='object'>bacon</strong>.");
             return;
         case 'toaster':
-            history.append("You use the toaster to very clumsily cook the bacon." );
+            history.append("You use the toaster to very clumsily cook the <strong class='object'>bacon</strong>." );
             history.append("Somehow this manages not to explode and kill everyone.");
             this.set_state("cooked", true);
             return;
@@ -147,10 +148,10 @@ registry.register_object( "bacon", public.bacon );
 public.mirror = function(){
     this.name = "mirror";
 }
-public.mirror.use_target = true;
 public.mirror.prototype = new core();
+public.mirror.prototype.use_target = true;
 public.mirror.prototype.look_at = function(){
-    history.append("It's you! God, you're ugly." ); 
+    history.append("It's <strong class='object'>me</strong>! God, I'm ugly." ); 
 }
 public.mirror.prototype.smash = function(){
     history.append("You smash the mirror. 7 years of bad luck are now all up on your plate.");
@@ -158,6 +159,7 @@ public.mirror.prototype.smash = function(){
 public.mirror.prototype.use = function(obj){
     if( typeof(obj) === 'undefined') {
         this.look_at();
+        return;
     }
     switch( obj.name ){
         case 'bacon':
@@ -221,7 +223,7 @@ public.fridge.prototype.open = function(){
     this.show_child( "bacon" );
     if( this.has_child( "bacon" ) )
     {
-        history.append("Just a package of bacon and a flask of mustard." );
+        history.append("Just a package of <strong class='object'>bacon</strong> and a flask of mustard." );
     }
     else{
         history.append("Just a flask of mustard." );
