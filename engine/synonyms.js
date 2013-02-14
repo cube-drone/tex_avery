@@ -13,9 +13,7 @@ define(function() {
 
     public.combining_prepositions = [
         "with",
-        "as", 
         "on",
-        "to", 
         "and", 
         "against"
     ];
