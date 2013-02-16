@@ -51,15 +51,16 @@ public.add_to_universe = function( name, object ){
     });
     if( typeof(object.use) !== 'undefined') {
         thing.prototype.use = function(obj){
+            var that = this;
             if( typeof(obj) === 'undefined'){
                 if( typeof(object.use["undefined"]) !== 'undefined' ){
-                    object.use["undefined"]();
+                    object.use["undefined"].apply(that);
                     return;
                 }
             };
             var success = _.some( _.keys( object.use ), function(key){
                 if( obj.name === key ){
-                    object.use[key](obj);
+                    object.use[key].apply(that, obj);
                     return true;
                 }
                 return false;
