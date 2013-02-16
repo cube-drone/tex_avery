@@ -11,7 +11,6 @@ sample_objects.orange = function(){
     this.register_special_verb( 'think_orangey_thoughts' );
 };
 sample_objects.orange.prototype = new core_object();
-sample_objects.orange.prototype.use_target = true;
 sample_objects.orange.prototype.look_at = function(){
     history.append("It's .. orange." );
 }
@@ -21,6 +20,9 @@ sample_objects.orange.prototype.eat = function(){
 }
 sample_objects.orange.prototype.think_orangey_thoughts = function(){
     history.append("Your mind turns to thoughts of orange.");
+}
+sample_objects.orange.prototype.use = function(){
+    history.append("this is a use target");
 }
 registry.register_object( "orange", sample_objects.orange );
 
@@ -35,7 +37,6 @@ sample_objects.fridge.prototype.setup = function(){
     this.add_child( orange );
     this.hide_child( orange );
 }
-sample_objects.fridge.prototype.use_target = true;
 sample_objects.fridge.prototype.default_state = {
     open: false,
 };

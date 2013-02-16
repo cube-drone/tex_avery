@@ -237,8 +237,8 @@ require(["engine/sample_objects"],
     });
 });
     
-require(["engine/sample_objects", "engine/command", "ui/history"], 
-    function(sample_objects, command, history){
+require(["engine/sample_objects", "engine/command", "engine/objects", "ui/history"], 
+    function(sample_objects, command, objects,  history){
 
     module( "Fridge World" );
 
@@ -252,7 +252,7 @@ require(["engine/sample_objects", "engine/command", "ui/history"],
     test( "Getting actions", function() {
         localStorage.clear();
         var fridge = new sample_objects.fridge();
-        command.set_root( fridge );
+        objects.set_root( fridge );
         ok( _.contains( command.get_actions(), "open fridge" ), "Can open fridge" );
         ok( ! _.contains( command.get_actions(), "use fridge on fridge" ), "Use X on itself is not a valid move." );
         fridge.look();
@@ -272,7 +272,7 @@ require(["engine/sample_objects", "engine/command", "ui/history"],
     test( "Start parsing commands", function() {
         localStorage.clear();
         var fridge = new sample_objects.fridge();        
-        command.set_root( fridge );
+        objects.set_root( fridge );
 
         fridge.open();
         ok( _.contains( command.get_actions(), "look at orange" ), "Can see the orange in the fridge.");
