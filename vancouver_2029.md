@@ -11,35 +11,30 @@ Chips Ahoy
 
 Being as everybody is net-savvy at this point, and everything
 is online at this point, the problems of authentication and
-authorization became more and more crucial to address.
+authorization have become more and more crucial to address.
 
 Passwords are just so easy to break, and maintaining dozens
 and dozens of username/password pairs becomes unwieldy when 
-your life is distributed amongst dozens of different systems.
+one's life is distributed amongst dozens of different systems.
 
 In 2017, a small biotech firm, AuthentiCat (the logo of which
 is a small black cat with a lock for a head), released a consumer
 grade subdermal chip system.  Based on public-key crypto, each
-subdermal chip contained a password-protected private key and a 
-bluetooth connection that could be used to authenticate the user
+subdermal chip contains a password-protected private key and a 
+bluetooth connection that can be used to authenticate the user
 to a variety of sources. 
 
-    Side-note: From a real-life security standpoint, this is, of
-    course, only as secure as the terminal that is communicating
-    with the chip. Let's gloss over fine details, here - we're 
-    not actually implementing this thing. 
-
-While there were security concerns - no system is unhackable - 
-the AuthentiCat chips proved more secure than most chip-and-pin
-systems, and financial providers started to phase out cards in
-favour of AuthentiCats. Of course, particularly paranoid 
-users could keep their AuthentiCats extradermally, (key-chain FOBs
-being a particularly popular option) but these units were more 
+While there are security concerns - no system is unhackable - 
+the AuthentiCat chips have proven more secure than most chip-and-pin
+systems, and financial providers have started to phase out cards in
+favour of AuthentiCats. Particularly paranoid 
+users can keep their AuthentiCats extradermally, (key-chain FOBs
+being a particularly popular option) but these units are much
 more prone to theft. 
 
-In 2023 the United States - in order to smooth over security-based 
-border tensions after the 2018 Liberty Bell Incident, mandated 
-AuthentiCat passports for travellers into the country.
+In 2023 the United States mandated AuthentiCat passports for 
+travellers into the country. in order to smooth over border 
+tensions after the 2018 Liberty Bell Incident, 
 
 At this point, just about everything in one's life can comfortably
 be authenticated and authorized with an AuthentiCat. Many people
@@ -47,8 +42,8 @@ have their entire lives attached to this one single private key.
 
 Chipless
 --------
-Of course, with all that in mind, it's becoming harder and harder
-to be chipless. 
+
+It's becoming harder and harder to be chipless. 
 
 Some people are voluntarily chipless. It's common among privacy 
 advocates, fundamentalist religiosos, criminals, libertarians,
@@ -68,6 +63,10 @@ bathtub, having had his AuthentiCat removed, surgically. This
 isn't an amnesia story - because played out, right? - but he
 honestly can't remember how it happened, past a rowdy night
 out drinking with his buddies. 
+
+He could consult the recorded video from his specs, but, first,
+they're locked behind an Auth wall, and second, his specs 
+have been stolen. 
 
 Stanley is locked out of his entire life, and it doesn't take
 long for him to realize that the chipless are treated like an
@@ -123,14 +122,14 @@ life expectancy of a person in the top 30% of salaries ($150,000CAD/yr)
 is trending at around 110 years. 
 
 For people for whom a long natural life isn't in the cards, there's 
-always becoming one of the Ancients.  A variety of companies are quite
-happy to put your brain in a jar of nutrient-rich sludge and plug you 
-into the internet, replacing your dying cells with fresh-grown new ones,
+always the option of joining the Ancients.  A variety of companies are quite
+happy to put a brain in a jar of nutrient-rich sludge and plug that brain 
+into the internet, replacing its dying cells with fresh-grown new ones,
 all-but-perpetually. This is still expensive - it comes in at about $2000
-a month, which is a lot considering how long you'll be paying for the
-service.  You can always work it off, though - you'd be surprised how much
-you can make in your new life as the intelligence guiding a train or a 
-telephone switching station. 
+a month, which is a lot considering how long it'll be paying for the
+service.  The brain can always work it off, though - you'd be surprised 
+at how much a brain can make in its new life as the intelligence guiding 
+a train or a telephone switching station. 
 
 We finally have immortality as an available option, and just like most
 brand-new technologies it is ridden with bugs, drastic failures, and only
@@ -150,6 +149,19 @@ What this means for the player is that they are likely to encounter ATM
 machines and auto-taxis with a little bit more personality than they would
 normally expect from inanimate devices. 
 
+### Unresponsives ###
+
+Some brains, after being plugged into the Ancients' Network, refuse to connect 
+to the outside world. 
+They concoct elaborate fantasies inside their own shell and will not interact.
+
+The policy for dealing with unresponsives differs from network to network, but
+most of them are willing to keep the brains plugged in until their payments 
+are past due, at which point they are disconnected and discarded. 
+
+For the player, bending the universe too much in absurd directions will trigger
+one of the 'you were an unresponsive the whole time' endings. 
+
 Strong AI
 ---------
 
@@ -157,17 +169,27 @@ Still nothin' on this front, although for extremely difficult computing applicat
 a cluster of Ancients and some well-tuned machine learning algorithms can get a 
 lot of work done very quickly.
 
-Ecology & Oil
--------------
+Ecology & Electricity
+---------------------
 
 Oil is failing, fast, and so is the planet. Things are starting to get pretty fucked 
 up, as the "mine it in Canada, ship it to China, manufacture it in China, ship it to 
 Canada, and sell it" strategy is starting to become unsustainably expensive. 
 
-The buzzwords are _local_ and _green_, and _bio_, and they're building steam as 
+The staggering and oft-ignored efficiency of rail comes back into
+light.  Many airlines are going bankrupt at the sheer cost of keeping planes aloft
+makes air travel unreasonable for all but the most affluent of passengers - and
+the concept of battery-powered airplanes is at-best hilarious. Even the vast trucking
+infrastructure of the U.S. and Canada is having trouble with the soaring cost
+of gasoline. Ergo, more rail, and some of the first major rail development in North
+America in the last 50 years. As of 2027, a high-speed West Coast passenger and light-freight
+railway exists, linking Whistler, Vancouver, Seattle, Portland, San Francisco, and 
+Los Angeles - and it can make it from end-to-end in about six hours.  
+
+The buzzwords are _local_, _green_, and _bio_, and they're building steam as 
 ecological disasters create more and more problems - but even if humanity 
 manages to reach a new equilibrium, it's not going to be as idyllic as it was before.
-The first East Coast Superhurricane was a real eye-opener. Vancouver - and it's south
+The first East Coast Superhurricane was a real eye-opener. Vancouver - and its south
 of the border counterpart, Seattle, are becoming Alpha cities, huge links in the
 digital and trade economy of the world - partially because of the waning power of
 the East Coast in the face of extreme weather difficulties. 
@@ -175,4 +197,138 @@ the East Coast in the face of extreme weather difficulties.
 British Columbia and Ontario are managing surprisingly well, though. BC has
 the hydroelecricity, and Ontario has the nuclear option.  Alberta is.. well, 
 let's just say that Alberta is not totally a lost cause, but it's close. The
-term 'pre-apocalyptic wasteland' comes to mind. 
+term 'pre-apocalyptic wasteland' comes to mind. Alberta sold their future, mostly
+to Hong Kong businessmen.
+
+Fusion experiments are promising and even positive-energy, but not at
+anywhere near the scale required for wide-spread power generation. Some French 
+physicists have managed to build up a lot of steam behind the Global Electricity Project,
+and are currently constructing a pilot commercial fusion facility - but the 
+price-to-kilowatt-hour ratio of this new technology currently lags behind even 
+solar and wind.
+
+
+Cybernetics, Augments, Biocybernetics and Datajacks
+---------------------------------------------------
+
+At what point does prosthetics become cybernetics? Even as far back as 2014, 
+nervous-system-controlled prosthetic limbs were becoming available options for wealthy
+amputees. The limbs never performed quite as smoothly or fluidly as real limbs
+would, of course, but they've improved over time to be more resistant to the 
+elements, lighter, more efficient with battery life. I think the real jumping-off
+point between prosthetics and cybernetics is when the cybernetic limb is superior
+to the original, and that is still not the case. Natural limbs don't have battery-life
+issues, they're lighter, nimbler, more flexible, self-healing, and much more 
+sensitive. Natural eyes perform faster saccades and don't overload the brain with 
+out-of-focus data, and natural ears handle music and human speech better than 
+any prosthetic to date. 
+
+So, I'd argue that one could call these things 'cybernetics' once people would choose 
+a prosthetic over their natural equipment - and we're not there yet. 
+
+However, prosthetic research into direct neural interfaces has allowed for one common
+human modification - a datajack. A special high-bandwidth IO card installed directly 
+into the brain.  Because the datajack depends on natural neuroplasticity - can't install
+drivers in the brain - learning a new cybernetic interface takes months of dedication
+and in many cases dedicated physical therapy, but in doing so, humans can graft entirely
+new interfaces on to their bodies.  These aren't bionic replacements, but fully operable
+extra bits of equipment.  
+
+The most common datajack augmentation amongst cube drones and desk jockeys is direct computer
+access - text-input and ui interaction. It takes some training to type directly with 
+one's mind, but it's much more ergonomically sound.
+
+Other professions often get datajack augmentations to provide other useful functions. 
+Operating heavy machinery, for example. 
+
+Companies responsible for growing 'boutique organs' for custom transplant are currently 
+investing a lot of time and research into nervous-system tech and custom bio-implants, but
+nothing of particular interest has come out of it, yet. 
+
+Content
+-------
+
+The first decade of the 21st century was dominated by competing trends - a 
+vastly increasing stable of digital media, combined with the
+clear obsolescence of copyright in the face of remix culture and the 
+complete nonexistance of digital scarcity. 
+
+Digital Rights Management was an early attempt to manufacture digital scarcity, 
+and Cloud Services became a much more successful second attempt.
+
+So now there are two competing content spheres - library service providers who, 
+for a fixed fee, provide unlimited access to large libraries of content, and 
+online enclaves of nary-unlimited pirated content, with each doing their best
+to attempt to extenguish the other. 
+
+Direct Democratic
+-----------------
+
+In 2017, the Digital Democratic Party was formed in B.C. politics under the unusual 
+platform that they did not actually have a platform at all. They instead
+promised to bring each and every issue directly to their constituents for discussion
+and debate before voting on it in Parliament. 
+
+This was made possible by sophisticated software that they had designed
+and open-sourced prior to the elections. 
+
+It was 2026 before any Digital Democrats managed to score any seats - they managed to
+get three, in remote ridings - but their odd-ball politics and sophisticated interactions
+with their constituents made the news a number of times, and they're an increasingly
+attractive candidate in the upcoming 2030 elections. 
+
+The Direct Democrats have been criticized as giving too much electoral clout to the
+sort of people who have vast reserves of free time to participate in the political
+discussion - the elderly, office-workers,  and Ancients - but prominent DDP party 
+leader Bryan Fung has dismissed this, claiming that these people had always enjoyed
+some level of preferred treatment in the political process, being as they were the 
+most likely to vote anyways. 
+
+Disconnect
+----------
+With ubquitous computing being old hat, most users exhibit a level of dependence on
+their digital aids only exhibited by the most die-hard of techies today.  With 
+devices providing a sort of 'extended brain' for users - the ability to query the
+internet for anything, any time, local storage of notes, contacts, calendars, timetables, 
+documents - users who are separated from their devices for a length of time experience a
+phase colloquially called "Disconnect" - where they have difficulty operating without
+computer guidance, content-rich distraction, and constant social interaction. 
+
+Many people voluntarily travel to remote locations and Disconnect on purpose, just 
+to feel like human beings again - although it's not long before they itch to once
+again connect themselves to the firehose of humanity. People who are involuntarily
+Disconnected have a much rougher time of it. 
+
+On The Value of Identity Theft
+------------------------------
+
+With most of these things in place, the value of identity theft - and the consequences
+of losing one's online identity - become increasingly clear, as identities can be used 
+for any number of purposes - for financial gain, as part of a digital content strategy, 
+to influence politics, or simply to induce Disconnect in a rival as a way to get them
+out of the way for a while without killing them. 
+
+Stanley's Quest
+---------------
+
+### Master Arc: The Quest To Regain Stanley's Identity ###
+ * Identity Verification: Police Report, Birth Certificate, Character References
+ * Basic Survival: Getting Some Cash, Food, and a Terminal
+ * You're not the only one: There's been a rash of surgical identity thefts. 
+ * Chip-hacking For Fun & Profit
+ * Who Did This? Tracking the chip-thief. 
+ * Why? Unearthing a grand conspiracy. 
+
+### Endings: ###
+
+* Good Little Bureaucrat: Follow all of the instructions to get your identity back.
+ * You regain your identity, but never learn exactly what happened.
+* Murder Everyone: Kill every single NPC.
+ * You were an unresponsive the entire time, playing out an elaborate revenge fantasy.
+* Refugee: Stay Disconnected
+ * You abandon your old life and join a commune on Salt Spring. 
+* Evil Ending: Kill all of your business associates while chipless. 
+ * You become fantastically wealthy, but it's strongly suggested that you're an unresponsive. 
+* Conspiracy: You discover the conspiracy and foil it. 
+ * Canonical ending. Not sure about the details. 
+
