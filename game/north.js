@@ -1,34 +1,25 @@
-define(["engine/core_object",
-        "engine/registry",
-        "engine/command",
-        "game/room",
-        "ui/history"], function( core, registry, command, room, history){
+define([
+        "engine/objects",
+        "game/room"
+        "ui/history"], function( objects, room, history){
+
+var app = history.append();
 
 var public = {};
 
-public.room = function(){
-    this.name = "north";    
-    this.base_setup();
-    this.register_special_verb("go_south");
+var north = {
+    special_verbs:["go_south"], 
+    go_south: function(){
+        room.change_location("game/kitchen");
+    },
+    look_at: function(){
+        var string = [ "Having gone north, you discover that there is nothing ", 
+        " around for miles. It is nothing but a formless void. An empty wasteland. ", 
+        " the only exit is <em>south</em>."] 
+        app( string );
+    }
 };
-
-public.room.prototype = new core();
-
-public.room.prototype.go_south_from = function(){
-    room.change_location("game/kitchen");
-}
-
-public.room.prototype.go_south = function(){
-    this.go_south_from();
-}
-
-public.room.prototype.look_at = function(){
-    var string = [ "Having gone north, you discover that there is nothing ", 
-    " around for miles. It is nothing but a formless void. An empty wasteland. ", 
-    " the only exit is <em>south</em>."] 
-    history.append( string.join(" ") );
-}
-registry.register_object( "north", public.room );
+public.room = objects.add_to_universe( "north", north );
 
 return public;
 });

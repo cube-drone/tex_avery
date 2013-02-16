@@ -4,10 +4,20 @@ define(function() {
     var id = 0;
 
     return {
-    pagebreak: function() {
-        $("#history").append( "<li class='pagebreak'> </li>" );
-    },
     append: function(message, author){
+        if(typeof(message) !== 'string' ){
+            if( typeof(message) === 'undefined' ){
+                console.error("Undefined value passed to history.append");
+                return;
+            }
+            if( typeof(message.length) !== 'undefined' ){
+                var message = message.join(" ");
+            }
+            else{
+                console.error("Could not determine type of message");
+                return;
+            }
+        }
         if(typeof(author) === 'undefined'){ author = "narrator" }
         $("#history").append( "<li class='"+author+"' id='history-"+id+"'>"+ message +" </li> " );
         $("#history").scrollTop($("#history")[0].scrollHeight);

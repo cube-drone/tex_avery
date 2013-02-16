@@ -1,33 +1,24 @@
 // Command things
-define(["engine/core_object",
-        "engine/registry",
+define(["engine/objects",
         "engine/synonyms", 
         "engine/tools", 
-        "ui/history"], function(core_object, registry, synonyms, tools, history){
+        "ui/history"], function(objects, synonyms, tools, history){
 
-var root_object = "";
 var public = {};
-
-public.set_root = function( object ){
-    root_object = object;
-}
-
-public.get_root = function() {
-    return root_object;
-}
 
 // Get all available actions from within root object
 public.get_actions = function(){
+    var root_object = objects.get_root();
     var visible_nouns = root_object.visible_children(); 
     visible_nouns.push( root_object );
     var actions = [];
 
     _.each( visible_nouns, function( noun ) {
         // Use X on Y
-        if( noun.use_target ){
+        if( noun.use_target() ){
             _.each( visible_nouns, function( other_noun ){
                 if( noun.name !== other_noun.name &&
-                        other_noun.use_target) {
+                        other_noun.use_target()) {
                     actions.push( "use " + noun.name.replace(/_/g, " ") + " on " + other_noun.name.replace(/_/g, " ") );
                 }
             });
@@ -52,6 +43,7 @@ public.get_actions = function(){
 
 // Execute a command
 public.command = function ( command ){
+    var root_object = objects.get_root();
     var command = tools.clean( command );
     var visible_nouns = root_object.visible_children(); 
     visible_nouns.push( root_object );

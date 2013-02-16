@@ -8,10 +8,11 @@ var private = {};
 public.WithState = function(){
     this.default_state = {};
     this.name = "with_state"; 
+    this.name_key = "the";
 };
 
 public.WithState.prototype.key = function(key){
-    return this.name + ":" + key;
+    return this.name_key + "_" + this.name + ":" + key;
 };
 
 public.WithState.prototype.set_state = function(key, value){

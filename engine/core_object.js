@@ -32,7 +32,9 @@ InteractiveObject.prototype.base_setup = function() {
 }
 
 // Include this object when listing things to use on other things.
-InteractiveObject.prototype.use_target = false;
+InteractiveObject.prototype.use_target = function(){
+    return ( typeof( this.use ) !== 'undefined' );   
+};
 
 // Override this class if you want to perform actions the _first time_
 // that the object is created. 

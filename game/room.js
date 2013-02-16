@@ -4,9 +4,9 @@
 //  and that file's module must contain a 'room' object.
 define(["engine/core_object",
         "engine/registry",
-        "engine/command",
+        "engine/objects",
         "ui/history"],
-        function( core, registry, command, history ){
+        function( core, registry, objects, history ){
 
 var public = {}
 public.change_location = function( path_to_new_location ){
@@ -16,7 +16,7 @@ public.change_location = function( path_to_new_location ){
             History.append("Oh, holy shit, that room doesn't exist.", "error" );
             return;
         };
-        var root = command.get_root();
+        var root = objects.get_root();
         var current_location = root.get_state('current_location');
         root.remove_child(current_location);
         root.set_state('current_location', new_room );
