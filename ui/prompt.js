@@ -72,7 +72,13 @@ private.enter = function(evt){
     public.hide();
 
     // Currently synchronous. Will look at asynchronous soon. 
-    _.each( private.callbacks, function( callback_fn ){ callback_fn( words ); } ); 
+    try{
+        _.each( private.callbacks, function( callback_fn ){ callback_fn( words ); } ); 
+    }
+    catch(err){
+        console.error( err.message );
+        console.error( err );
+    }
 
     $("#target").autocomplete( "close" );
     public.show();
