@@ -9,7 +9,7 @@ define(["engine/core_object",
         function( core, registry, objects, history ){
 
 var public = {}
-public.change_location = function( path_to_new_location ){
+public.change_location = function( path_to_new_location, callback ){
     require([path_to_new_location], function(new_location){
         var new_room = new new_location.room();
         if( typeof( new_room ) === 'undefined' ){
@@ -22,6 +22,9 @@ public.change_location = function( path_to_new_location ){
         root.set_state('current_location', new_room );
         root.add_child(new_room);
         new_room.look_at();
+        if( typeof( callback ) !== 'undefined' ) {
+            callback();
+        };
     });
 };
 

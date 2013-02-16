@@ -1,10 +1,10 @@
-define([
-        "engine/objects",
-        "game/room"
+define(["engine/objects",
+        "game/room",
         "ui/history"], function( objects, room, history){
 
-var app = history.append();
+objects.set_file( "game/north" );
 
+var app = history.append;
 var public = {};
 
 var north = {

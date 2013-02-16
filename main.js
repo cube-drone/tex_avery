@@ -1,5 +1,5 @@
-require(["ui/prompt", "game/player", "engine/command", "ui/history"], 
-    function(prompt, player, command, history){
+require(["ui/prompt", "game/player", "engine/command", "engine/load", "ui/history"], 
+    function(prompt, player, command, load, history){
 
 $(document).ready(function() {
 

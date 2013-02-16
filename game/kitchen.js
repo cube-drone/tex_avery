@@ -3,6 +3,8 @@ define(["engine/objects",
         "ui/history"], 
         function( objects, room, history){
 
+objects.set_file( "game/kitchen" );
+
 var app = history.append;
 var public = {};
 
@@ -22,7 +24,7 @@ var toaster = {
             app("Okay, you electrocute yourself.");
             objects.get_root().die();
         },
-        'bacon': function() {
+        'bacon': function(obj) {
             app("You use the <strong class='object'>toaster</strong> to very clumsily cook the <strong class='object'>bacon</strong>." );
             app("Somehow this manages not to explode and kill everyone.");
             obj.set_state("cooked", true);
@@ -73,7 +75,11 @@ public.stove = objects.add_to_universe( "stove", stove );
 
 var bacon = { 
     look_at:function(){
-        app("A kilogram of uncooked Maple Star Smokey Back <strong class='object'>Bacon</strong>, richly marbled with fat." ); 
+        var un = "un";
+        if(this.get_state('cooked')){
+            un = "";
+        };
+        app("A kilogram of "+un+"cooked Maple Star Smokey Back <strong class='object'>Bacon</strong>, richly marbled with fat." ); 
     },
     eat:function(){
         if( this.get_state("cooked") ){

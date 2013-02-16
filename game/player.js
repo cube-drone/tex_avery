@@ -1,21 +1,23 @@
 
-define(["engine/core_object",
-        "engine/registry",
-        "engine/objects",
+define(["engine/objects",
+        "engine/load",
         "ui/history",
         "ui/prompt", 
         "game/room",
         "game/inventory", 
         "game/kitchen"], 
-        function( core, registry, objects, history, prompt, room, inventory, kitchen){
+        function( objects, load, history, prompt, room, inventory, kitchen){
 
+objects.set_file( "game/player" );
 var public = {};
 
 var me = {
     init: function(){
         objects.set_root(this);
         var path_to_initial_location = "game/"+ this.get_state('current_location').name;
-        room.change_location( path_to_initial_location );
+        room.change_location( path_to_initial_location, function(){
+            load.load();   
+        });
     },
     special_verbs:["die", 
         "win", 
@@ -114,7 +116,6 @@ var me = {
         }
     }
 }
-
 
 public.me = objects.add_to_universe( "me", me );
 

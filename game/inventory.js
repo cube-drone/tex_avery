@@ -1,6 +1,7 @@
 define(["engine/objects",
         "ui/history"], function( objects, history){
 
+objects.set_file( "game/inventory" );
 var app = history.append;
 
 var public = {};
