@@ -4,6 +4,7 @@ define(function() {
 
 var public = {};
 var private = {};
+var container_element = null;
 
 private.template = "<input type='text' id='target' class='span10'></input>";
 
@@ -38,12 +39,34 @@ public.val = function(){
     return $("#target").val();
 };
 
-private.enter = function(evt) {
-    // If the typeahead is visible, enter shouldn't trigger nothin'
-    if( evt.keyCode !== 13 ){
-        return evt;
-    }
+public.choices = function( choice_object ){
+    /*
+    public.hide();
+    var choices = $("<div class='choices btn-group btn-group-vertical'></div>");
+    _.keys( choice_object, function(key){
+        var choice = $("<button class='btn'>"+key+"</button>");
+        choice.click( choice_object[key] );
+        choices.append( choice );
+    });
+    container_element.append( choices );
+    */
+};
 
+private.tab = function(evt){
+    // If the user hits tab, put the first item from
+    // the autocomplete into the #target bar, then 
+    // hit enter.
+    evt.preventDefault();
+    var request = { 
+        term: $("#target").val()
+    };
+    private.typeahead_fn( request, function(response){
+        $("#target").val( response[0] );
+        private.enter(evt);
+    });
+};
+
+private.enter = function(evt){
     var words = public.val();
     public.clear();
     public.hide();
@@ -56,14 +79,29 @@ private.enter = function(evt) {
     return evt;
 };
 
+private.keypress = function(evt) {
+    var TAB = 9;
+    var ENTER = 13;
+    switch(evt.keyCode){
+        case TAB: 
+            private.tab(evt);
+            return;
+        case ENTER:
+            private.enter(evt);
+            return;
+        default:
+            return evt;
+    };
+};
+
 public.create = function( jquery_element ) {
+    container_element = jquery_element; 
     // Add the element to the page.
     jquery_element.append(private.template);
 
     // Bind the enter function
-    $("#target").bind('keydown', private.enter);
+    $("#target").bind('keydown', private.keypress);
     
-    console.log( private.typeahead_fn );
     // Bind a function listing available options to the prompt. 
     $("#target").autocomplete({ 
         source:private.typeahead_fn, 
