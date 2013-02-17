@@ -34,7 +34,7 @@ public.get_actions = function(){
         _.each( verbs, function( verb ) {
             var syns = synonyms.find( verb );
             _.each( syns, function( synonym ){
-                actions.push( synonym.replace(/_/g, " ") + " " + noun.name );
+                actions.push( synonym.replace(/_/g, " ") + " " + noun.name.replace(/_/g, " ") );
             });
         });
     });
@@ -64,8 +64,8 @@ public.command = function ( command ){
 
     // Verb-Object sentences. ("eat apple")
     var success = _.some( visible_nouns, function( noun ){
-        if( tools.ends_with( command, noun.name ) ){
-            command = tools.strip_from_end( command, noun.name );
+        if( tools.ends_with( command, noun.name.replace(/_/g, " ") ) ){
+            command = tools.strip_from_end( command, noun.name.replace(/_/g, " ") );
 
             // Combined Object Logic
             if( _.any( synonyms.combining_prepositions, function( prep ) 
@@ -76,8 +76,8 @@ public.command = function ( command ){
                 });
 
                 var success = _.some( visible_nouns, function( second_noun ){
-                    if( tools.ends_with( command, second_noun.name ) ){
-                        command = tools.strip_from_end( command, second_noun.name );
+                    if( tools.ends_with( command, second_noun.name.replace(/_/g, " ") ) ){
+                        command = tools.strip_from_end( command, second_noun.name.replace(/_/g, " ") );
                         var success = _.some( noun.visible_verbs(), function( verb ){
                             if( tools.verb_in_command( verb, command )){
                                 noun[verb](second_noun);
@@ -85,7 +85,9 @@ public.command = function ( command ){
                             };
                         });
                         if( !success ){ 
-                            history.append( "I couldn't figure out how to " + command + " the " + noun.name + " with the " + second_noun.name );
+                            history.append( "I couldn't figure out how to " + command + 
+                                            " the " + noun.name.replace(/_/g, " ") + 
+                                            " with the " + second_noun.name.replace(/_/g, " ") );
                             return true;
                         };
                         return true;
@@ -104,7 +106,7 @@ public.command = function ( command ){
                     };
                 });
                 if( !success ){ 
-                    history.append( "I couldn't figure out how to " + command + " the " + noun.name  );
+                    history.append( "I couldn't figure out how to " + command + " the " + noun.name.replace(/_/g, " ")  );
                 };
                 return true;
             }
