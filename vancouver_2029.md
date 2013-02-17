@@ -332,3 +332,39 @@ Stanley's Quest
 * Conspiracy: You discover the conspiracy and foil it. 
  * Canonical ending. Not sure about the details. 
 
+### The gameplay ###
+ * You have $50.00 cash, and 72 hours, to complete as much of the game as you can. 
+ * It is impossible to see the entire game in one playthrough. 
+
+### The Bathroom ###
+
+The game starts in the bathroom.  You wake up, woozy and Disconnected, in a 
+bathtub, sore and uncomfortable. There's drying blood about. Your arm is
+clumsily wrapped in gauze. 
+
+When you get up, to get out of the tub, you see yourself in the mirror, 
+Which allows you to establish basic details about your appearance. 
+
+You identify as:
+> Male
+> Female
+> It's Complicated
+
+If your skin color were a refreshing beer, it would be a
+> Hefeveisen
+> Lager
+> Amber Ale
+> Stout
+
+Your build is
+> Wiry & Tall
+> Average
+> Short & Stout
+
+Your hair is 
+> Short & Black
+> Medium & Brown
+> Long & Blonde
+> It's impossible to tell behind the luchadore mask. 
+
+You're not wearing any clothes. 
