@@ -39,6 +39,13 @@ var toaster = {
 }
 public.toaster = objects.add_to_universe( "toaster", toaster );
 
+var cute_little_kitten = {
+    look_at: function(){
+        app("It's a cute little kitten.");
+    }
+}
+public.cute_little_kitten = objects.add_to_universe( "cute_little_kitten", cute_little_kitten );
+
 var stove = {
     look_at: function() {
         app("It's a small, greasy electric <strong class='object'>stove</strong>." ); 
@@ -212,6 +219,7 @@ var kitchen = {
         this.add_child( new public.fridge() );
         this.add_child( new public.stove() );
         this.add_child( new public.mirror() );
+        this.add_child( new public.cute_little_kitten() );
     },
     go_north_from: function(){
         room.change_location("game/north");
@@ -227,6 +235,7 @@ var kitchen = {
         "It's unfamiliar to you, but it seems like most kitchens you've seen", 
         " before. There's a <strong class='object'>stove</strong>, a ", 
         " <strong class='object'>fridge</strong>, a <strong class='object'>toaster</strong>, ", 
+        " a <strong class='object'>cute little kitten</strong>, ", 
         " and a <strong class='object'>mirror</strong>. " ];
         app( string );
     },

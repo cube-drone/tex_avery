@@ -18,6 +18,9 @@ var me = {
         room.change_location( path_to_initial_location, function(){
             load.load();   
         });
+        if( this.get_state('initialized') ){
+            history.append("Welcome back.");            
+        };
     },
     special_verbs:["die", 
         "win", 
