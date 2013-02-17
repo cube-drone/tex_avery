@@ -335,6 +335,11 @@ Stanley's Quest
 ### The gameplay ###
  * You have $50.00 cash, and 72 hours, to complete as much of the game as you can. 
  * It is impossible to see the entire game in one playthrough. 
+ * As you play, absurd actions add to the Absurd score.
+    - 50-75 - glitches start occurring in-universe
+    - 75-100 - severe glitches start occurring in-universe, it's suggested that you might
+            be an Unresponsive
+    - 100+ - you trigger the Unresponsive ending. 
 
 ### The Bathroom ###
 
@@ -356,15 +361,10 @@ If your skin color were a refreshing beer, it would be a
 > Amber Ale
 > Stout
 
-Your build is
-> Wiry & Tall
-> Average
-> Short & Stout
-
 Your hair is 
 > Short & Black
 > Medium & Brown
 > Long & Blonde
-> It's impossible to tell behind the luchadore mask. 
+> It's impossible to tell behind the luchadore mask. (absurd) 
 
 You're not wearing any clothes. 
