@@ -1,10 +1,11 @@
 // The prompt is the bit that the user types in to. 
 // The prompt is global to the DOM - highlander rules apply.
-define(function() {
+define(["ui/history"], function(history) {
 
 var public = {};
 var private = {};
 var container_element = null;
+var choices_mode = false;
 
 private.template = "<input type='text' id='target' class='span10'></input>";
 
@@ -28,7 +29,9 @@ public.hide = function(){
 };
 
 public.show = function(){
-    $("#target").show();
+    if( !choices_mode ){
+        $("#target").show();
+    };
 };
 
 public.clear = function(){
@@ -39,31 +42,43 @@ public.val = function(){
     return $("#target").val();
 };
 
-public.choices = function( choice_object ){
-    /*
-    public.hide();
+public.hide_choices = function(){
+    choices_mode = false;
+    public.show();
+    $(".choices").remove();
+}
+
+public.choices = function( object, choice_object ){
+    choices_mode = true;
+    $("#target").hide();
+    $(".choices").remove();
     var choices = $("<div class='choices btn-group btn-group-vertical'></div>");
-    _.keys( choice_object, function(key){
-        var choice = $("<button class='btn'>"+key+"</button>");
-        choice.click( choice_object[key] );
+    _.each( _.keys(choice_object), function(key){
+        var choice = $("<button class='btn btn-large btn-inverse'>"+key+"</button>");
+        var func = function(){
+            history.append( "> " + key, "player");
+            choice_object[key].apply(object); 
+        }
+        choice.click( func );
         choices.append( choice );
     });
     container_element.append( choices );
-    */
 };
 
 private.tab = function(evt){
     // If the user hits tab, put the first item from
     // the autocomplete into the #target bar, then 
     // hit enter.
-    evt.preventDefault();
-    var request = { 
-        term: $("#target").val()
-    };
-    private.typeahead_fn( request, function(response){
-        $("#target").val( response[0] );
-        private.enter(evt);
-    });
+    if( !choices_mode ){
+        evt.preventDefault();
+        var request = { 
+            term: $("#target").val()
+        };
+        private.typeahead_fn( request, function(response){
+            $("#target").val( response[0] );
+            private.enter(evt);
+        });
+    }
 };
 
 private.enter = function(evt){

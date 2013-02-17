@@ -23,7 +23,9 @@ define(function() {
         $("#history").scrollTop($("#history")[0].scrollHeight);
         $("#history-"+id+" .object").each( function( i, obj ){
             $(obj).hover( function(){ 
-                $("#target").autocomplete( 'search', $(obj).html() ) ;
+                if( $(".choices").length === 0 ){
+                    $("#target").autocomplete( 'search', $(obj).html() ) ;
+                }
             }, function() { 
             } );
         });

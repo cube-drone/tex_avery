@@ -1,7 +1,8 @@
 define(["engine/objects", 
+        "game/talking_toaster",
         "game/room",
         "ui/history"], 
-        function( objects, room, history){
+        function( objects, talking_toaster, room, history){
 
 objects.set_file( "game/kitchen" );
 
@@ -13,7 +14,8 @@ var toaster = {
         app("It's a Toastmaster");
     }, 
     debate: function(){
-        app("It's not <em>that</em> kind of Toastmaster.");
+        var toasty = new talking_toaster.tree();
+        toasty.start();
     },
     use: {
         'undefined': function() {

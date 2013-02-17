@@ -38,3 +38,7 @@ height: 500px;
 .narrator {
 color: #E8C5D3;
 }
+
+.choices{
+font-family: 'Source Code Pro', monospace;
+}
