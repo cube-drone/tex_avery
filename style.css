@@ -31,6 +31,21 @@ overflow-x: hidden;
 overflow-y: hidden;
 }
 
+#history .clickable{
+cursor: pointer;
+padding: 10px;
+margin: 10px;
+border: 1px dashed #BBB; 
+}
+
+#history .clickable:hover{
+background-color: #555;
+}
+
+#history .clickable i{
+margin-right: 10px;
+}
+
 .pagebreak{
 height: 500px;
 }

@@ -1,8 +1,9 @@
 define(["engine/objects", 
         "game/talking_toaster",
         "game/room",
-        "ui/history"], 
-        function( objects, talking_toaster, room, history){
+        "ui/history",
+        "ui/popup"], 
+        function( objects, talking_toaster, room, history, popup){
 
 objects.set_file( "game/kitchen" );
 
@@ -41,7 +42,7 @@ public.toaster = objects.add_to_universe( "toaster", toaster );
 
 var cute_little_kitten = {
     look_at: function(){
-        app("It's a cute little kitten.");
+        app( "Aww, look at the little kitty", "narrator", "<img style='width:500px' src='images/cat.jpg' />" );
     }
 }
 public.cute_little_kitten = objects.add_to_universe( "cute_little_kitten", cute_little_kitten );
