@@ -1,9 +1,8 @@
 define(["engine/objects", 
         "game/talking_toaster",
         "game/room",
-        "ui/history",
-        "ui/popup"], 
-        function( objects, talking_toaster, room, history, popup){
+        "ui/history"], 
+        function( objects, talking_toaster, room, history){
 
 objects.set_file( "game/kitchen" );
 
