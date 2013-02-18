@@ -60,7 +60,7 @@ public.add_to_universe = function( name, object ){
             };
             var success = _.some( _.keys( object.use ), function(key){
                 if( obj.name === key ){
-                    object.use[key].apply(that, obj);
+                    object.use[key].call(that, obj);
                     return true;
                 }
                 return false;
