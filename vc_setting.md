@@ -61,7 +61,7 @@ can become very complicated for that person, especially if they
 happen the be the sort of early adopter who keeps everything 
 in his life behind authenti-crypted doors. 
 
-Like our protagonist, Stanley Jevons, who wakes up in his own 
+Like our protagonist, <NAME> Jevons, who wakes up in his own 
 bathtub, having had his AuthentiCat removed, surgically. This
 isn't an amnesia story - because played out, right? - but he
 honestly can't remember how it happened, past a rowdy night
@@ -71,7 +71,7 @@ He could consult the recorded video from his specs, but, first,
 they're locked behind an Auth wall, and second, his specs 
 have been stolen. 
 
-Stanley is locked out of his entire life, and it doesn't take
+<NAME> is locked out of his entire life, and it doesn't take
 long for him to realize that the chipless are treated like an
 unwanted underclass in society. He can't get taxis, and cash 
 transactions seem to come at a huge premium, if they're available
@@ -79,7 +79,7 @@ at all. None of his devices will recognize or even respond to him.
 Public terminals are crowded and extremely limited.
 
 The procedure for getting an AuthentiCat revoked and replaced is 
-not a particularly easy one, either - Stanley's going to have to
+not a particularly easy one, either - <NAME>'s going to have to
 survive for a few weeks while he waits for the wheels of bureacracy
 to turn - he's going to have to find three character references,
 a copy of his birth certificate, a police report of his attack, 
@@ -101,10 +101,10 @@ Think "Google Glasses", but with a lot more polish.  There are
 dozens of models from dozens of different providers - the Apple
 iSee, the Microsoft Visual Vision 2025, the Samsung Galaxy of 
 Gorgeous Bass Headset, but the Lemovo X-Array Specs are the
-particular brand that Stanley is completely unable to use without
+particular brand that <NAME> is completely unable to use without
 some sort of authentication. 
 
-Over the course of the adventure, Stanley may borrow, buy, or
+Over the course of the adventure, <NAME> may borrow, buy, or
 otherwise acquire snippets of older tech that allow him some of
 his lost capabilities. Video, images, the ability to look at objects
 in his environment and have a list of verbs come up for that object
