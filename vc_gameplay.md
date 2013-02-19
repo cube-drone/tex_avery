@@ -19,4 +19,7 @@ Key Elements
      - If it's possible to kill plot-sensitive characters, or PUT CAT IN OVEN...
    - If we catch them, increment an 'absurdity' counter. 
    - Trigger universe glitches & the Unresponsive ending if it goes too high.
+ * No Bacon + Mirrors
+   - No "guess how the objects fit together" puzzles. If the player is 
+     confused about how to proceed, we are doing things wrong. 
  
