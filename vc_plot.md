@@ -16,7 +16,7 @@ Stanley's Quest
     * There's been a rash of surgical identity thefts. 
     * Including _both_ of your co-workers.
  * Chip-hacking For Fun & Profit
-    * At the library, you meat a chiphacker. 
+    * At the library, you meet a chiphacker. 
     * He invites you to stop by the local Hackerspace. 
  * Who Did This? Tracking the chip-thief. 
  * Why? Unearthing a grand conspiracy. 
