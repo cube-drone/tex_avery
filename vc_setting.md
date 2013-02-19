@@ -125,21 +125,22 @@ life expectancy of a person in the top 30% of salaries ($150,000CAD/yr)
 is trending at around 110 years. 
 
 For people for whom a long natural life isn't in the cards, there's 
-always the option of joining the Ancients.  A variety of companies are quite
-happy to put a brain in a jar of nutrient-rich sludge and plug that brain 
-into the internet, replacing its dying cells with fresh-grown new ones,
-all-but-perpetually. This is still expensive - it comes in at about $2000
-a month, which is a lot considering how long it'll be paying for the
-service.  The brain can always work it off, though - you'd be surprised 
-at how much a brain can make in its new life as the intelligence guiding 
-a train or a telephone switching station. 
+always the option of joining the Ancients.  A variety of companies 
+are quite happy to put a brain in a jar of nutrient-rich sludge and 
+plug that brain into the internet, replacing its dying cells with 
+fresh-grown new ones, all-but-perpetually. This is still expensive 
+- it comes in at about $2000 a month, which is a lot considering 
+how long it'll be paying for the service.  The brain can always 
+work it off, though - you'd be surprised at how much a brain can 
+make in its new life as the intelligence guiding a train or a 
+telephone switching station. 
 
-We finally have immortality as an available option, and just like most
-brand-new technologies it is ridden with bugs, drastic failures, and only
-used by the earliest of early adopters. For one thing, the sort of people
-who are most comfortable with the thought of an eternity trapped in a 
-little metal box with an internet connection are still in their 30s and
-40s at this point.
+We finally have immortality as an available option, and just like
+most brand-new technologies it is ridden with bugs, drastic failures,
+and only used by the earliest of early adopters. For one thing, the
+sort of people who are most comfortable with the thought of an 
+eternity trapped in a little metal box with an internet connection
+are still in their 30s and 40s at this point.
 
 This is bound to create a lot of long-term social issues. People aren't 
 leaving jobs, digital jobs are being snapped up by dirt-cheap mind-labour,
@@ -297,17 +298,38 @@ documents - users who are separated from their devices for a length of time expe
 phase colloquially called "Disconnect" - where they have difficulty operating without
 computer guidance, content-rich distraction, and constant social interaction. 
 
-Many people voluntarily travel to remote locations and Disconnect on purpose, just 
-to feel like human beings again - although it's not long before they itch to once
-again connect themselves to the firehose of humanity. People who are involuntarily
-Disconnected have a much rougher time of it. 
+Many people voluntarily travel to remote locations and Disconnect 
+on purpose, just to feel like human beings again - although it's 
+not long before they itch to once again connect themselves to the 
+firehose of humanity. People who are involuntarily Disconnected 
+have a much rougher time of it. 
 
 On The Value of Identity Theft
 ------------------------------
 
-With most of these things in place, the value of identity theft - and the consequences
-of losing one's online identity - become increasingly clear, as identities can be used 
-for any number of purposes - for financial gain, as part of a digital content strategy, 
-to influence politics, or simply to induce Disconnect in a rival as a way to get them
+With most of these things in place, the value of identity 
+theft - and the consequences of losing one's online identity - 
+become increasingly clear, as identities can be used 
+for any number of purposes - for financial gain, as part of 
+a digital content strategy, to influence politics, or simply 
+to induce Disconnect in a rival as a way to get them
 out of the way for a while without killing them. 
 
+Telecommunications
+------------------
+
+The switched networks for telephones are pretty much null and
+void at this point, as most of the major telcos have decommisioned
+large swathes of them, replacing them with fiber-cable and VOIP. 
+
+Most homes do not have phones, but instead dedicated VOIP+Data
+service packages provided as a feed directly to their headsets. 
+
+Vancouver is blanketed in a high-speed network that would put 
+Kansas City to shame - with fiber connecting homes, and homes
+acting as miniature cel-towers for high speed wireless data. 
+
+The major telecommunications providers in the Vancouver area are 
+TELUX (formed as a merger between TELUS and BELL, tagline: 
+"The Future is Expensive", mascot: "ARPU D2") and Spring Mobile 
+(A Sprint subsidiary that bought a lot of line from Rogers).

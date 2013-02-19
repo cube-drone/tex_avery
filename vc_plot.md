@@ -26,6 +26,10 @@ Stanley's Quest
 * Conspiracy: You discover the conspiracy and foil it. 
  * Canonical ending. Not sure about the details. 
 
+
+Locations
+---------
+
 ### The Bathroom ###
 
 The game starts in the bathroom.  You wake up, woozy and Disconnected, in a 
@@ -53,3 +57,22 @@ Your hair is
 > It's impossible to tell behind the luchadore mask. (absurd) 
 
 You're not wearing any clothes. 
+
+### Library ###
+
+The Library has pay-phones, but the thin phone directories contain
+precious few phone numbers; they're mostly giant indices of 
+assorted businesses. In order to avoid perpetual telespam, most
+of your family is unlisted. 
+
+You do, however, know the number for emergency services. 
+
+### TELUX Kiosk ###
+
+You can, with some of your limited money supply, buy a small 
+portable terminal with a Pay-As-You-Go data plan, and $10 top-up
+cards to keep the data flowing. 
+
+With the portable terminal, you can fish contact information for
+your family out of the system. 
+
