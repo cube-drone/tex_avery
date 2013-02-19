@@ -44,24 +44,24 @@ Which allows you to establish basic details about your appearance.
 #### You ####
 
 Name:
-> <NAME> 
+ * NAME 
 
 You identify as:
-> Male
-> Female
-> It's Complicated
+ * Male
+ * Female
+ * It's Complicated
 
 If your skin color were a refreshing beer, it would be a
-> Hefeveisen
-> Lager
-> Amber Ale
-> Stout
+ * Hefeveisen
+ * Lager
+ * Amber Ale
+ * Stout
 
 Your hair is 
-> Short & Black
-> Medium & Brown
-> Long & Blonde
-> It's impossible to tell behind the luchadore mask. (Absurd++) 
+ * Short & Black
+ * Medium & Brown
+ * Long & Blonde
+ * It's impossible to tell behind the luchadore mask. (Absurd++) 
 
 You're not wearing any clothes. 
 
