@@ -4,9 +4,10 @@ define(["engine/objects",
         "ui/history",
         "ui/prompt", 
         "game/room",
+        "game/sound",
         "game/inventory", 
         "game/kitchen"], 
-        function( objects, load, history, prompt, room, inventory, kitchen){
+        function( objects, load, history, prompt, room, sound, inventory, kitchen){
 
 objects.set_file( "game/player" );
 var public = {};
@@ -30,11 +31,13 @@ var me = {
         "reset_universe", 
         "get_ye_flask" ],
     setup:function(){
-        var i = new inventory.inventory();
-        var k = new kitchen.room();
-        this.add_child(i);
-        this.add_child(k);
-        this.set_state('current_location', k );
+        var inv = new inventory.inventory();
+        var kit = new kitchen.room();
+        var sou = new sound.sound();
+        this.add_child(inv);
+        this.add_child(kit);
+        this.add_child(sou);
+        this.set_state('current_location', kit );
         this.hide_verb('decompose');
         this.hide_verb('reflect');
     },
