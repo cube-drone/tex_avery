@@ -171,7 +171,7 @@ InteractiveObject.prototype.hide_verb = function( verb ){
 
 InteractiveObject.prototype.show_verb = function( verb ){
     var hidden_verbs = _.filter(this.get_state("hidden_verbs"), function(v){
-        return !v == verb;
+        return v != verb;
     });
     this.set_state("hidden_verbs", hidden_verbs);
 };
