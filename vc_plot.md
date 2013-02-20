@@ -2,29 +2,46 @@
 Plot
 ====
 
-Stanley's Quest
----------------
+$NAME's Quest
+-------------
 
 ### Master Arc: The Quest To Regain Stanley's Identity ###
+ * Character Creation: 
+    * Your actions in your apartment in the beginning of the game largely
+      determine the nature of your character. 
  * Identity Verification: 
     * Police Report 
-    * Birth Certificate 
+      * Call the police from a phone ( a public phone can be found at Library or Airport ) 
+      * The police will advise you as to how to recover your identity
+      * Make an appointment with AuthentiCat's Recovery Department. 
+        * Earliest available appointment is always X days in the future.  
     * Character References
- * Basic Survival
-    * Getting Some Cash, Food, and a Terminal
+      * Use a terminal to call your co-workers
+      * They're not available. That's strange, they're usually always online. 
+ * You can get a cheap Pay As You Go data plan and terminal from a TELUX kiosk. 
+    * It's expensive to make calls and surf the web on this thing. 
+    * the TELUX terminal is locked - you can only use the PaYG plan data included. 
+      You can't install software, you can't connect to open networks.
+      It's pretty limited.
  * You're not the only one: 
     * There's been a rash of surgical identity thefts. 
-    * Including _both_ of your co-workers.
+    * (Including _both_ of your co-workers.)
  * Chip-hacking For Fun & Profit
-    * At the library, you meet a chiphacker. 
-    * He invites you to stop by the local Hackerspace. 
+    * At the library, you meet a person who claims to know all about hacking, but
+      is actually a bit of a meathead. 
+      * He invites you to stop by the local Hackerspace. 
+    * At the Hackerspace, they can unlock your terminal. 
+      * They're quite friendly.  
  * Who Did This? Tracking the chip-thief. 
  * Why? Unearthing a grand conspiracy. 
+
 
 ### Endings: ###
 
 * Good Little Bureaucrat: Follow all of the instructions to get your identity back.
  * You regain your identity, but never learn exactly what happened.
+ * Your bank account is emptied and your company is stripped of its assets. 
+   You dissolve the company and get a 9-7 with TELUX's creative department. 
 * Absurdist Fantasy: Kill an NPC, perform a series of unusual operations.
  * You were an unresponsive the entire time. 
 
@@ -86,6 +103,20 @@ although you've never visited either - their apartments
 are every bit as shitty as yours. You meet at pubs, and 
 occasionally co-work out of coworking offices or coffee shops. 
 
+#### Ennis Laoghaire ####
+
+Co-worker. "It's prounounced 'Ennis Leera'". Vancouver native,
+Irish/Filipino parents (also Vancouver natives.)
+A little pudgy, usually wears a close-cropped beard. 
+Has a tendency to over-hyperbolize statements ("This is the 
+finest coffee ever touched by human hands."). 
+
+#### Shani Djamila ####
+
+Co-worker. South Californian, with Indonesian parents, who
+migrated from South Sulawesi. Fond of collared shirts, Bachelor's
+degree in Business Administration. 
+
 ### The Apartment ###
 
 A Vancouver micro-studio. 384 sq.ft. It has a separate bathroom,
@@ -137,6 +168,12 @@ She will ask you to relate the events of your last evening, which
 will give the player a chance to hear about them for the first time.
 
 < PUT EVENTS HERE > 
+
+You and your coworkers were out celebrating. Your most recent
+meme-shirt really set a record for sales, and you've all made 
+enough money to semi-retire. 
+
+</ PUT EVENTS HERE > 
 
 If you show her your scar, she will note that it looks to have been
 a reasonably skilled extraction job.
