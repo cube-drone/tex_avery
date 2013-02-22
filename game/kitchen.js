@@ -1,10 +1,15 @@
 define(["engine/objects", 
+        "engine/sound", 
         "game/talking_toaster",
         "game/room",
         "ui/history"], 
-        function( objects, talking_toaster, room, history){
+        function( objects, sound, talking_toaster, room, history){
 
 objects.set_file( "game/kitchen" );
+
+sound.register_playlist("kitchen", 
+    ["sounds/clock.wav"], 
+    ["sounds/clock.wav"]);
 
 var app = history.append;
 var public = {};
@@ -214,6 +219,9 @@ public.fridge = objects.add_to_universe( "fridge", fridge );
 
 var kitchen = {
     special_verbs: ["go_north", "go_through_door"],
+    init: function(){
+        sound.set_playlist("kitchen");
+    },
     setup: function(){
         this.add_child( new public.toaster() );
         this.add_child( new public.fridge() );

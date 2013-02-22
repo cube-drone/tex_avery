@@ -3,24 +3,13 @@ define( ['engine/objects', 'engine/sound', 'ui/history'],
 
 var public = {};
 
-sound_engine.register_playlist("sample", ["sounds/clock.wav", "sounds/clock.wav"], []);
+objects.set_file( "game/sound" );
 
 var volume = {
-    setup: function(){
-        this.set_state("volume", 50);
+    init: function(){
+        this.set( this.get_state("volume") );
     },
-    mute: function(){
-        this.set_state("volume", 0 );
-        history.append("Setting "+this.name.replace(/_/g, " ")+" to 0" );
-    },
-    turn_up: function(){
-        var vol = this.get_state("volume");
-        if( vol >= 91 ){
-            return;
-        }
-        vol += 10;
-        this.set_state("volume", vol);
-
+    set: function(vol){
         if( this.name === "ambient_volume" ){
             sound_engine.set_ambient_volume( vol );
         }
@@ -30,6 +19,19 @@ var volume = {
         if( this.name === "sfx_volume" ){
             sound_engine.set_sfx_volume( vol );
         }
+    },
+    setup: function(){
+        this.set_state("volume", 50);
+        this.hide_verb("set");
+    },
+    turn_up: function(){
+        var vol = this.get_state("volume");
+        if( vol >= 91 ){
+            return;
+        }
+        vol += 10;
+        this.set_state("volume", vol);
+        this.set( vol );
 
         history.append("Setting "+this.name.replace(/_/g, " ")+" to " + vol );
     },
@@ -40,20 +42,9 @@ var volume = {
         }
         vol -= 10;
         this.set_state("volume", vol);
-
-        if( this.name === "ambient_volume" ){
-            console.log( "ambient: " + vol );
-            sound_engine.set_ambient_volume( vol );
-        }
-        if( this.name === "music_volume" ){
-            sound_engine.set_music_volume( vol );
-        }
-        if( this.name === "sfx_volume" ){
-            sound_engine.set_sfx_volume( vol );
-        }
+        this.set( vol );
 
         history.append("Setting "+this.name.replace(/_/g, " ")+" to " + vol );
-
     }
 }
 public.ambient_volume = objects.add_to_universe( "ambient_volume", volume );
@@ -61,6 +52,15 @@ public.music_volume = objects.add_to_universe("music_volume", volume );
 public.sfx_volume = objects.add_to_universe("sfx_volume", volume );
 
 var sound = {
+    init: function(){ 
+        sound_engine.stop();
+
+        this.hide_child( "ambient_volume" );
+        this.hide_child( "music_volume" );
+        this.hide_child( "sfx_volume" );
+        this.hide_verb( "mute" );
+        this.show_verb( "unmute" );
+    },
     setup: function(){
         this.set_state("mute", true);
         var ambient = new public.ambient_volume();
@@ -77,7 +77,7 @@ var sound = {
     unmute: function(){
         history.append( "You turn on the sound. ", "narrator" );
         
-        sound_engine.start( 50, 50, 50, "sample" ); 
+        sound_engine.start(); 
         
         this.show_child( "ambient_volume" );
         this.show_child( "music_volume" );

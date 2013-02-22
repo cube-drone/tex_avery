@@ -2,14 +2,17 @@ define(
     function(){
 
 var public = {};
+    
+createjs.Sound.setMute(true);
+var sound_on = false;
 
-var ambient_volume = 0;
-var music_volume = 0;
-var sfx_volume = 0;
+var playlist_name = "sample";
+var ambient_volume = 0.5;
+var music_volume = 0.2;
+var sfx_volume = 0.5;
 var current_ambient = null;
 var current_song = null;
 
-var sound_on = false;
 var ambient_playlists = {};
 var music_playlists = {};
 
@@ -18,13 +21,8 @@ public.register_playlist = function( name, ambient_playlist, music_playlist ){
     music_playlists[name] = music_playlist;
 };
 
-public.start = function(ambient_vol, music_vol, sfx_vol, playlist_name){
-    
-    // 'global' variables
-    sound_on = true;
-    ambient_volume = (ambient_vol/100);
-    music_volume = (music_vol/100);
-    sfx_volume = (sfx_vol/100); 
+public.set_playlist = function( name ){
+    playlist_name = name;
 
     var playlist = "";
     if( typeof(localStorage['sound:current_playlist']) !== 'undefined' ){
@@ -64,14 +62,15 @@ public.start = function(ambient_vol, music_vol, sfx_vol, playlist_name){
 
     // Music  
     var music_playlist = music_playlists[playlist_name];
-    _.each( music_playlist, function(track){
+    _.each( music_playlist, function(track, i){
         createjs.Sound.registerSound(track, "music_"+playlist_name + "_" + i)
     });
     if( song >= music_playlist.length ){
         song = 0;
         localStorage[ 'sound:'+playlist+':current_song' ] = JSON.stringify(song);
     }
-};
+}
+
 
 var nextAmbient = function(evt){
     var playlist = localStorage[ 'sound:current_playlist']; 
@@ -86,7 +85,6 @@ var nextAmbient = function(evt){
     current_ambient = createjs.Sound.play(ambient_id);
     current_ambient.setVolume( ambient_volume ); 
     current_ambient.addEventListener( "complete", nextAmbient );
-    console.log( ambient_id );
 }
 
 var nextSong = function(evt){
@@ -126,33 +124,48 @@ var loadHandler = function(evt){
 
 createjs.Sound.addEventListener("loadComplete", loadHandler);
 
+var normalize = function( volume ){
+    if( volume <= 0 ){
+        return 0;
+    }
+    else if( volume > 100 ){
+        return 1; 
+    }
+    else{
+        return(volume/100);
+    }
+};
+
 public.set_sfx_volume = function( volume ){
-    sfx_volume = (volume/100);
+    sfx_volume = normalize( volume );
 }
 
 public.set_ambient_volume = function( volume ){
-    ambient_volume = (volume/100);
+    ambient_volume = normalize(volume);
     if( current_ambient ){
         current_ambient.setVolume( ambient_volume );
     }
 }
 
 public.set_music_volume = function( volume ){
-    music_volume = (volume/100);
+    music_volume = normalize(volume);
     if( current_song ){
         current_song.setVolume( music_volume );
     }
 }
 
+public.start = function(){
+    sound_on = true;
+    createjs.Sound.setMute(false);
+};
 
 public.stop = function(){
     sound_on = false;
-    createjs.Sound.stop();
+    createjs.Sound.setMute(true);
 };
 
 public.sfx = function(path){
     if( sound_on ){
-
     };
 };
 
