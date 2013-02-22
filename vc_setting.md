@@ -161,21 +161,6 @@ impoverished dwell, and in these can be found the highest concentrations
 of the Unchipped. Venturing into such a place is an unknown to $NAME, and
 in their initial state they are surely to run afoul of nefarious deeds.
 
-> ### Unresponsives ###
-> 
-> Some brains, after being plugged into the Ancients' Network, refuse to connect 
-> to the outside world. 
-> They concoct elaborate fantasies inside their own shell and will not interact.
-> 
-> The policy for dealing with unresponsives differs from network to network, but
-> most of them are willing to keep the brains plugged in until their payments 
-> are past due, at which point they are disconnected and discarded. 
-> 
-> For the player, bending the universe too much in absurd directions will trigger
-> one of the 'you were an unresponsive the whole time' endings. 
-
-Cut.
-
 Strong AI
 ---------
 
@@ -221,10 +206,10 @@ Electricity Project, and are currently constructing a pilot commercial
 fusion facility - but the price-to-kilowatt-hour ratio of this new
 technology currently lags behind even solar and wind.
 
-There still exists individuals who belief that global warming is a hoax, and that
+There still exists individuals who believe that global warming is a hoax, and that
 UN Agenda 23 is a plan to enact a single world Government at the expense of
 individual liberty. Most of these people are unchipped, and ironically their
-subversive activities makes them magnets for law enforcement. However, they
+subversive activities make them magnets for law enforcement. However, they
 are likely sources of black market munitions and certainly for aid in 
 converting to an off-the-grid, unchipped lifestyle. Just be forewarned,
 although the 9/11 commission was over two decades previously they will insist
@@ -246,7 +231,8 @@ sensitive. Natural eyes perform faster saccades and don't overload the brain wit
 out-of-focus data, and natural ears handle music and human speech better than 
 any prosthetic to date. 
 
-One could call these things 'cybernetics' once people would choose a prosthetic over their natural equipment - and we're not there yet. 
+One could call these things 'cybernetics' once people would choose a prosthetic over 
+their natural equipment - and we're not there yet. 
 
 However, prosthetic research into direct neural interfaces has allowed for one common
 human modification - a datajack. A special high-bandwidth IO card installed directly 
@@ -256,8 +242,9 @@ and in many cases dedicated physical therapy, but in doing so, humans can graft 
 new interfaces on to their bodies.  These aren't bionic replacements, but fully operable
 extra bits of equipment.  
 
-The most common datajack augmentation amongst cube drones and desk jockeys is direct computeraccess - text-input and ui interaction. It takes some training to type directly with 
-one's mind, but it's much more ergonomically sound.
+The most common datajack augmentation amongst cube drones and desk jockeys is direct 
+computeraccess - text-input and ui interaction. It takes some training to type directly 
+with one's mind, but it's much more ergonomically sound.
 
 Other professions often get datajack augmentations to provide other useful functions. 
 Operating heavy machinery, for example. 
@@ -339,10 +326,10 @@ firehose of humanity. People who are involuntarily Disconnected
 have a much rougher time of it. 
 
 It is not uncommon for those who experience Disconnect for the first
-time to never undertake the action again. The shock of loosing their
+time to never undertake the action again. The shock of losing their
 social feed and the gratification of constant awareness of their
 friends' connectivity often leaves those Disconnecting in a state of
-panic. Still, because of the retro futurism of the concept and genuine
+panic. Still, because of the retro-futurism of the concept and genuine
 curiousity, it remains a semi-popular undertaking amongst youth.
 
 It has given rise to the phrase "Disconnect, not even once."
