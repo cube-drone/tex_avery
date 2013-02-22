@@ -25,6 +25,8 @@ public.set_file = function( file ) {
 
 // Before objects will work in the universe, you need to call
 //  'add_to_universe' on them. 
+var init_names = [];
+var initialized = [];
 public.add_to_universe = function( name, object ){
     var name = name;
     var object = object;
@@ -32,15 +34,25 @@ public.add_to_universe = function( name, object ){
     var thing = function(){ 
         this.name = name; 
         this.origin = object_file;
-        this.base_setup();
         var that = this;
-        if ( typeof(object.init) !== 'undefined' ){
-            object.init.apply( this );
+        if( !_.contains( init_names, this.name ) ){
+            this.base_setup();
+            if ( typeof(object.init) !== 'undefined' ){
+                object.init.apply( this );
+            }
+            if ( typeof(object.special_verbs) !== 'undefined' ){
+                _.each( object.special_verbs, function( verb ){
+                    that.register_special_verb( verb );
+                });
+            }
+            initialized.push( this );
+            init_names.push( this.name );
         }
-        if ( typeof(object.special_verbs) !== 'undefined' ){
-            _.each( object.special_verbs, function( verb ){
-                that.register_special_verb( verb );
+        else{
+            var obj = _.find( initialized, function( i ){
+                return(i.name === that.name); 
             });
+            return obj;
         }
     }; 
     thing.prototype = new core();
@@ -70,6 +82,7 @@ public.add_to_universe = function( name, object ){
             }
         }
     }
+    var throwaway = new thing();
     registry.register_object( name, thing );
     return thing;
 };
