@@ -17,21 +17,21 @@ is online at this point, the problems of authentication and
 authorization have become more and more crucial to address.
 
 Passwords are just so easy to break, and maintaining dozens
-and dozens of username/password pairs becomes unwieldy when 
+and dozens of user-name/password pairs becomes unwieldy when 
 one's life is distributed amongst dozens of different systems.
 
-In 2017, a small biotech firm, AuthentiCat (the logo of which
+In 2017, a small bio-tech firm, AuthentiCat (the logo of which
 is a small black cat with a lock for a head), released a consumer
-grade subdermal chip system.  Based on public-key crypto, each
-subdermal chip contains a password-protected private key and a 
-bluetooth connection that can be used to authenticate the user
+grade sub-dermal chip system.  Based on public-key crypto, each
+sub-dermal chip contains a password-protected private key and a 
+Bluetooth connection that can be used to authenticate the user
 to a variety of sources. 
 
 While there are security concerns - no system is unhackable - 
 the AuthentiCat chips have proven more secure than most chip-and-pin
 systems, and financial providers have started to phase out cards in
 favour of AuthentiCats. Particularly paranoid 
-users can keep their AuthentiCats extradermally, (key-chain FOBs
+users can keep their AuthentiCats extra-dermally, (key-chain FOBs
 being a particularly popular option) but these units are much
 more prone to theft. 
 
@@ -61,38 +61,39 @@ can become very complicated for that person, especially if they
 happen the be the sort of early adopter who keeps everything 
 in his life behind authenti-crypted doors. 
 
-Like our protagonist, $NAME Jevons, who wakes up in his own 
-bathtub, having had his AuthentiCat removed, surgically. This
-isn't an amnesia story - because played out, right? - but he
+Like our protagonist, $NAME Jevons, who wakes up in their own 
+bathtub, having had their AuthentiCat removed, surgically. This
+isn't an amnesia story - because played out, right? - but they
 honestly can't remember how it happened, past a rowdy night
-out drinking with his buddies. 
+out drinking with their buddies. 
 
-He could consult the recorded video from his specs, but, first,
-they're locked behind an Auth wall, and second, his specs 
+They could consult the recorded video from his specs, but, first,
+they're locked behind an Auth wall, and second, their specs 
 have been stolen. 
 
-$NAME is locked out of his entire life, and it doesn't take
-long for him to realize that the chipless are treated like an
-unwanted underclass in society. He can't get taxis, and cash 
+$NAME is locked out of their entire life, and it doesn't take
+long for them to realize that the chipless are treated like an
+unwanted underclass in society. They can't get taxis, and cash 
 transactions seem to come at a huge premium, if they're available
-at all. None of his devices will recognize or even respond to him.
+at all. None of their devices will recognize or even respond to them.
 Public terminals are crowded and extremely limited.
 
 The procedure for getting an AuthentiCat revoked and replaced is 
 not a particularly easy one, either - $NAME's going to have to
-survive for a few weeks while he waits for the wheels of bureacracy
-to turn - he's going to have to find three character references,
-a copy of his birth certificate, a police report of his attack, 
-and a single drop of blood from a live unicorn. And he has to do 
-all of these things without a phone, without his contacts, without
-his bank accounts, without his friends, because they're all online. 
+survive for a few weeks while they waits for the wheels of bureacracy
+to turn - their going to have to find three character references,
+a copy of their birth certificate, a police report of their attack, 
+and a single drop of blood. And they have to do each of these things 
+without a phone, without their contacts, without their bank accounts,
+and without their friends, because they're all online. 
 
-He can't even talk to half of his neighbors without the Mandarin 
-to English module installed in his X-Array Specs.
+They can't even talk to half of his neighbors without the 
+Cantonese/Tagalog/Patois-Pidgin to English module installed in his 
+X-Array Specs.
 
-He will, however, learn a lot about how the Chipless manage to 
-survive without identity. Maybe he'll even steal or
-create a new identity for himself. Have to survive somehow. 
+They will, however, learn a lot about how the Chipless manage to 
+survive without identity. Maybe they'll even steal or
+create a new identity for themselves. Have to survive somehow. 
 
 X-Array Specs
 -------------
@@ -153,18 +154,27 @@ What this means for the player is that they are likely to encounter ATM
 machines and auto-taxis with a little bit more personality than they would
 normally expect from inanimate devices. 
 
-### Unresponsives ###
+Moreover, the bottom 25% of the population hasn't just vanished, they still
+remain. With Ancients increasingly acquiring the cushy office jobs of
+yesterday more and more buildings have become vacant husks. In these the
+impoverished dwell, and in these can be found the highest concentrations
+of the Unchipped. Venturing into such a place is an unknown to $NAME, and
+in their initial state they are surely to run afoul of nefarious deeds.
 
-Some brains, after being plugged into the Ancients' Network, refuse to connect 
-to the outside world. 
-They concoct elaborate fantasies inside their own shell and will not interact.
+> ### Unresponsives ###
+> 
+> Some brains, after being plugged into the Ancients' Network, refuse to connect 
+> to the outside world. 
+> They concoct elaborate fantasies inside their own shell and will not interact.
+> 
+> The policy for dealing with unresponsives differs from network to network, but
+> most of them are willing to keep the brains plugged in until their payments 
+> are past due, at which point they are disconnected and discarded. 
+> 
+> For the player, bending the universe too much in absurd directions will trigger
+> one of the 'you were an unresponsive the whole time' endings. 
 
-The policy for dealing with unresponsives differs from network to network, but
-most of them are willing to keep the brains plugged in until their payments 
-are past due, at which point they are disconnected and discarded. 
-
-For the player, bending the universe too much in absurd directions will trigger
-one of the 'you were an unresponsive the whole time' endings. 
+Cut.
 
 Strong AI
 ---------
@@ -206,10 +216,19 @@ to Hong Kong businessmen.
 
 Fusion experiments are promising and even positive-energy, but not at
 anywhere near the scale required for wide-spread power generation. Some French 
-physicists have managed to build up a lot of steam behind the Global Electricity Project,
-and are currently constructing a pilot commercial fusion facility - but the 
-price-to-kilowatt-hour ratio of this new technology currently lags behind even 
-solar and wind.
+physicists have managed to build up a lot of steam behind the Global
+Electricity Project, and are currently constructing a pilot commercial
+fusion facility - but the price-to-kilowatt-hour ratio of this new
+technology currently lags behind even solar and wind.
+
+There still exists individuals who belief that global warming is a hoax, and that
+UN Agenda 23 is a plan to enact a single world Government at the expense of
+individual liberty. Most of these people are unchipped, and ironically their
+subversive activities makes them magnets for law enforcement. However, they
+are likely sources of black market munitions and certainly for aid in 
+converting to an off-the-grid, unchipped lifestyle. Just be forewarned,
+although the 9/11 commission was over two decades previously they will insist
+on showing various proofs that it was an inside job.
 
 
 Cybernetics, Augments, Biocybernetics and Datajacks
@@ -227,8 +246,7 @@ sensitive. Natural eyes perform faster saccades and don't overload the brain wit
 out-of-focus data, and natural ears handle music and human speech better than 
 any prosthetic to date. 
 
-So, I'd argue that one could call these things 'cybernetics' once people would choose 
-a prosthetic over their natural equipment - and we're not there yet. 
+One could call these things 'cybernetics' once people would choose a prosthetic over their natural equipment - and we're not there yet. 
 
 However, prosthetic research into direct neural interfaces has allowed for one common
 human modification - a datajack. A special high-bandwidth IO card installed directly 
@@ -238,8 +256,7 @@ and in many cases dedicated physical therapy, but in doing so, humans can graft 
 new interfaces on to their bodies.  These aren't bionic replacements, but fully operable
 extra bits of equipment.  
 
-The most common datajack augmentation amongst cube drones and desk jockeys is direct computer
-access - text-input and ui interaction. It takes some training to type directly with 
+The most common datajack augmentation amongst cube drones and desk jockeys is direct computeraccess - text-input and ui interaction. It takes some training to type directly with 
 one's mind, but it's much more ergonomically sound.
 
 Other professions often get datajack augmentations to provide other useful functions. 
@@ -288,6 +305,23 @@ leader Bryan Fung has dismissed this, claiming that these people had always enjo
 some level of preferred treatment in the political process, being as they were the 
 most likely to vote anyways. 
 
+As a result, populist measures have become increasingly dominant as
+key policy. Efforts to improve the lives of those who are outside the
+accepted normal bounds of common society find it difficult to have
+their concerns addressed by Government. This includes the
+Unchipped. Fewer and fewer resources are expended to improve their
+lives, while a growing malaise amongst the marginalized has given
+birth to perpetual protest movements. Riots occur almost daily, and
+are violently suppressed almost as fast as they occur.
+
+Commonly referred to as professional protesters, these individuals
+have ironically found a way to scrape out a living by repeatedly
+finding themselves either incarcerated or living off the couch and
+general good nature of those sympathetic to their cause. Ever since
+the dramatic EI reforms of 2018 made it impossible to receive EI
+unless you had already received assurance of future employment, this
+method has become a primary means of survival for many.
+
 Disconnect
 ----------
 With ubquitous computing being old hat, most users exhibit a level of dependence on
@@ -303,6 +337,15 @@ on purpose, just to feel like human beings again - although it's
 not long before they itch to once again connect themselves to the 
 firehose of humanity. People who are involuntarily Disconnected 
 have a much rougher time of it. 
+
+It is not uncommon for those who experience Disconnect for the first
+time to never undertake the action again. The shock of loosing their
+social feed and the gratification of constant awareness of their
+friends' connectivity often leaves those Disconnecting in a state of
+panic. Still, because of the retro futurism of the concept and genuine
+curiousity, it remains a semi-popular undertaking amongst youth.
+
+It has given rise to the phrase "Disconnect, not even once."
 
 On The Value of Identity Theft
 ------------------------------
@@ -333,3 +376,21 @@ The major telecommunications providers in the Vancouver area are
 TELUX (formed as a merger between TELUS and BELL, tagline: 
 "The Future is Expensive", mascot: "ARPU D2") and Spring Mobile 
 (A Sprint subsidiary that bought a lot of line from Rogers).
+
+Sex
+---
+
+Pornography is everywhere, but not in the way those in the early 21st
+century would have come to expect. Sex in the streets never came
+about, and Playboy magazines no longer hide behind the top shelf at
+London Drugs. Instead, the allusion to pornography is ever-present,
+where marketers convey the tacit understanding to the viewer that they
+share knowledge of the seedy side of the internet.
+
+Clothing hasn't changed much, beyond that improved fabrics have
+allowed textures and hues that sustain longer and in greater variety
+than had previously. The digital revolution has made permanent the
+revolution of fashion, and in combination with online reinforcement of
+community the variety of accepted clothing ranges from burkas to
+bikinis and back to bell bottoms. The fashion of any era, any place is certain to
+find acceptance and can be seen in the streets of Vancouver.
