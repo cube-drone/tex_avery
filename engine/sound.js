@@ -164,8 +164,14 @@ public.stop = function(){
     createjs.Sound.setMute(true);
 };
 
-public.sfx = function(path){
+public.register_sfx = function(path, title){
+    createjs.Sound.registerSound(path, title)
+}
+
+public.sfx = function(title){
     if( sound_on ){
+        sfx = createjs.Sound.play(title);
+        sfx.setVolume( sfx_volume );
     };
 };
 
