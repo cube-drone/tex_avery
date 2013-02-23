@@ -16,11 +16,6 @@ If your build and skin color were a refreshing beer, it would be
  * A mug of Amber Ale
  * Short & Stout
 
-Your hair is 
- * Short & Black
- * Medium & Brown
- * Long & Blonde
-
 You're not wearing any clothes. 
 
 You have a long tattoo of an asian-style dragon running from

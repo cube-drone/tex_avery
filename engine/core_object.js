@@ -94,8 +94,11 @@ InteractiveObject.prototype.add_child = function( obj ){
 };
 
 InteractiveObject.prototype.remove_child = function( obj ){
+    if( typeof(obj) !== "string" ){
+        obj = obj.name;
+    }
     var children = _.reject(this.children(), function(child){
-        return obj.name === child.name;
+        return obj === child.name;
     });
     this.set_state("contains", children);
 };
@@ -104,15 +107,21 @@ InteractiveObject.prototype.remove_children = function(){
     this.set_state("contains", [] );
 }
 
-InteractiveObject.prototype.has_child = function( name ){
+InteractiveObject.prototype.has_child = function( obj ){
+    if( typeof(obj) !== "string" ){
+        obj = obj.name;
+    }
     return _.any( this.children(), function(child){
-        return child.name === name;
+        return child.name === obj;
     });
 }
 
-InteractiveObject.prototype.has_visible_child = function( name ){
+InteractiveObject.prototype.has_visible_child = function( obj ){
+    if( typeof(obj) !== "string" ){
+        obj = obj.name;
+    }
     return _.any( this.visible_children(), function(child){
-        return child.name === name;
+        return child.name === obj;
     });
 }
 
