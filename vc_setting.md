@@ -430,3 +430,17 @@ community the variety of accepted clothing ranges from burkas to
 bikinis and back to bell bottoms. The fashion of any era, any place is certain to
 find acceptance and can be seen in the streets of Vancouver.
 
+Marriage
+--------
+
+"There's no place for the state in the bedrooms of the nation."
+
+In order to sidestep the political minefield of modern marriage in the 
+face of a conservative push towards traditional marriages, as well as
+a push from same-sex and poly couples towards less traditional marriages, 
+Canada stepped out of the marriage business entirely. Instead, a group 
+of persons can incorporate together, determining their own next-of-kin 
+and equalization rules upon incorporation.
+
+Many churches and religious affiliations have drafted standard incorporation
+contracts that reflect their own religious beliefs. 
