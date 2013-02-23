@@ -89,7 +89,10 @@ and without their friends, because they're all online.
 
 They can't even talk to half of his neighbors without the 
 Cantonese/Tagalog/Patois-Pidgin to English module installed in his 
-X-Array Specs.
+X-Array Specs. 
+
+Many stores tie payment directly to Chips, and have doors that 
+only open for people with AuthentiCats.  
 
 They will, however, learn a lot about how the Chipless manage to 
 survive without identity. Maybe they'll even steal or
@@ -253,8 +256,8 @@ Companies responsible for growing 'boutique organs' for custom transplant are cu
 investing a lot of time and research into nervous-system tech and custom bio-implants, but
 nothing of particular interest has come out of it, yet. 
 
-Content
--------
+Content & Influence
+-------------------
 
 The first decade of the 21st century was dominated by competing trends - a 
 vastly increasing stable of digital media, combined with the
@@ -268,6 +271,48 @@ So now there are two competing content spheres - library service providers who,
 for a fixed fee, provide unlimited access to large libraries of content, and 
 online enclaves of nary-unlimited pirated content, with each doing their best
 to attempt to extenguish the other. 
+
+However, in both of the content spheres, eyeballs can translate almost directly 
+into remuneration.  Content producers can choose exactly how much they are 
+willing to subvert their message to corporate interests, and are paid on a
+sliding scale, trading their message on online marketplaces like integrity.3am
+and zlick.zap. 
+
+Brand Personalities
+-------------------
+
+"Brand Experience" is a new watchword. Corporate wants everybody's experience 
+at storefronts and kiosks to match with brand guidelines - so Kiosk employees
+are instructed to adopt Brand Personalities.  These are more pervasive and 
+far more comprehensive than simply service with a smile or mandatory pieces 
+of flair. 
+
+Salty Jack's Fish n' Chip-Hop Funk Marina was one of the first brands
+to really embrace this philosophy - every Salty Jack's has the same character 
+archetypes on staff. A surly-but-friendly Captain who loves bourbon (but not too
+much) and who would be happy to tell you about his time at the Ballestas Islands. 
+A skinny bartender who secretly-out-loud wants to be a DJ, but can't scrape
+together the funds to get his equipment in order.  If you really grill the Captain, 
+he'll admit to you that he's never been to the Ballestas Islands, it's just an
+act that he puts on for the sake of working at Salty Jack's; he'll pour you a
+scotch and soda and tell you about his wife and golden retriever. This, too, 
+is a pre-planned part of the brand experience. 
+
+Now there's a Salty Jack's at every pier in Canada and the United States, and 
+the concept of detailed Brand Personalities with nested back-stories and recognizable
+tics has developed massive resonance with most multi-nationals. 
+
+Kiosk Puppets
+-------------
+
+In another push to create a more consistent Brand Experience, sales staff are 
+often replaced by semi-self-serve Kiosks, managed by a combination of automation
+and Ancients.  With careful training, and the work of some well-compensated 3d 
+modelers, a small team of Ancients can really bring a Brand Personality to life.
+Your fried chicken order will be taken by The Colonel himself, and he'll wink at
+you and ask how your daughter's doing in Grade 3 - because he remembers that 
+conversation you had six weeks ago; The Colonel is your friend, and he's always
+interested how you've been doing.  
 
 Direct Democratic
 -----------------
@@ -374,6 +419,9 @@ London Drugs. Instead, the allusion to pornography is ever-present,
 where marketers convey the tacit understanding to the viewer that they
 share knowledge of the seedy side of the internet.
 
+Vengeance & Fashion
+-------------------
+
 Clothing hasn't changed much, beyond that improved fabrics have
 allowed textures and hues that sustain longer and in greater variety
 than had previously. The digital revolution has made permanent the
@@ -381,3 +429,4 @@ revolution of fashion, and in combination with online reinforcement of
 community the variety of accepted clothing ranges from burkas to
 bikinis and back to bell bottoms. The fashion of any era, any place is certain to
 find acceptance and can be seen in the streets of Vancouver.
+
