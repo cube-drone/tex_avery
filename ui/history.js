@@ -7,7 +7,7 @@ define(function() {
         $("#dialog").remove();
         var dialog = $( "<div id='dialog' title='"+title+"'> </div> " );
         dialog.append( html );
-        $( dialog ).dialog( );
+        $( dialog ).dialog( { minWidth:700 , modal:true} );
         $(document).append(dialog);
     };
 

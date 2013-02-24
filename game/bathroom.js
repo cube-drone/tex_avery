@@ -8,8 +8,10 @@ define(["engine/objects",
 objects.set_file( "game/bathroom" );
 
 sound.register_playlist("apartment", 
-    [], 
-    []);
+    ["sounds/ambient-bathroom.ogg", "sounds/ambient-kitchen.ogg"], 
+    ["sounds/tryad-the_final_rewind.mp3", "sounds/tryad-seduction.mp3", "sounds/tryad-our_lives_change.mp3"]);
+
+sound.register_sfx( "sounds/sfx-flush.ogg", "flush" );
 
 var app = history.append;
 var public = {};
@@ -89,7 +91,7 @@ var mirror = {
                          " say: "] );
                     app( "\"HELLO. I AM THE MAYOR OF MIRROR TOWN.\"", 'you' );
                     app( "I DECREE THAT COLLARED SHIRTS ARE NOW MANDATORY FOR ALL.", "you");
-                    app( "ON PENALTY OF DEATH.", "you", "Wow, that escalated quickly" );
+                    app( "ON PENALTY OF DEATH.", "you", "<iframe width=\"560\" height=\"315\" src=\"http://www.youtube.com/embed/FONN-0uoTHI\" frameborder=\"0\" allowfullscreen></iframe>" );
                 }
                 if( gender === "Male" ){
                     app( [" You didn't like the look of blonde chest hair, ",
@@ -125,7 +127,7 @@ var mirror = {
                 if( gender === "Male" ){
                     app([" You're stocky. Barrel-chested. Muscled.  If you were to grow ",
                         " a beard, you'd be a Tolkienesque dwarf. So you refuse to grow ",
-                        " a beard.  You make a muscle at yourself in the mirror. CUBAN.", 
+                        " a beard.  You make a muscle at yourself in the mirror. CUBAN. ", 
                         "MUSCLE. CRISIS.  Okay, it's not as impressive as you'd like. ", 
                         "You should probably spend a little more time at the gym." ] );
                 }
@@ -142,12 +144,19 @@ var mirror = {
                 " was a funny nod to a common joke (The tattoo artist said it meant 'Honor') ",
                 " at the time, but you're starting to regret it. "] )
             // If you're not wearing specs: 
-            app([ "You're not wearing your <em>Array Specs</em>. Your vision is perfect, ",
+            app([ "You're not wearing your <strong class='object'>X Array Specs</strong>. Your vision is perfect, ",
                 "but you're not used to seeing yourself without a thin veneer of augmented reality ",
                 "painted over the scene. Where are your specs? " ]);
+            objects.get_root().recursive_find("definition").show_verb("x_array_specs");
+            
             // If you still have the gauze on: 
-            app([ "With a twinge of pain, your attention is drawn to your arm, which is ",
-                "wrapped in bloodied gauze, and <em>sore</em>. " ])
+            if( objects.get_root().has_child('gauze') ){
+                app([ "With a twinge of pain, your attention is drawn to your arm, which is ",
+                    "wrapped in bloodied <strong class='object'>gauze</strong>, and <em>sore</em>. " ])
+            } else {
+                app([ "The <strong class='object'>wound</strong> on your arm ",
+                        "has scabbed over." ]); 
+            }
         }
         else
         {
@@ -177,13 +186,29 @@ var toilet = {
         app("No. You refuse to put your tongue on that. ");
     },
     flush:function(){
-        app("You flush the toilet. Way to waste that water. ");
+        app("You flush the toilet. Way to waste that water. <em>Champ.</em> ");
+        sound.sfx("flush");
     },
     clean:function(){
         app("Not right now. You'll do it later. You promise. ");
     } 
 };
 public.toilet = objects.add_to_universe( "toilet", toilet );
+
+var toiletries = {
+    look_at:function(){
+        app("Razor, shaving cream, soap, deoderant, toothbrush, general hygeine gear.");
+    },
+    take: function(){
+        app([ "In many games, the solution to puzzles is to <em>take</em> every object that", 
+            " you can pick up, and then <em>use</em> those objects on every concievable surface.",
+            " This is not one of those games. You would feel silly carrying your entire bathroom worth ", 
+            " of gear about. If you need the toiletries, you can come back to your bathroom. They're ",
+            " not going anywhere." ]);
+    }
+
+};
+public.toiletries = objects.add_to_universe("toiletries", toiletries );
 
 var dried_blood = {
     look_at:function(){
@@ -226,21 +251,26 @@ var bathroom = {
     special_verbs: ["leave_bathroom"],
     init: function(){
         sound.set_playlist("apartment");
+        app( "You wake up in a haze, on the floor of your bathroom stall." );
     },
     setup: function(){
         this.add_child( new public.mirror() );
         this.add_child( new public.toilet() );
         this.add_child( new public.shower_stall() );
+        this.add_child( new public.toiletries() );
     },
     leave_bathroom: function(){
-        app(" You can't leave the bathroom. You can never leave the bathroom." );
+        app(" You can't leave the bathroom. You can <em>never</em> leave the bathroom." );
+        app(" At least, not until I write that part of the game. " );
+        // TODO: leave the bathroom
         //room.change_location("game/apartment");
     },
     look_at:function(){
         app( ["Your bathroom is cramped and small. ", 
-        "On one side of the bathroom is a large ",
-        "<strong class='object'>bathroom mirror</strong> and a ", 
-        "sink. On the other side of the",
+        "On one side of the bathroom is a large bathroom ",
+        "<strong class='object'>mirror</strong> and a ",
+        "sink. Next to the sink is a handful of assorted <strong class='object'>toiletries</strong>. ", 
+        " On the other side of the",
         " bathroom is a <strong class='object'>shower stall</strong> ",
         " and a small <strong class='object'>toilet</strong>." ]);
     },

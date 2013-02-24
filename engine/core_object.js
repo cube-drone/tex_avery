@@ -31,6 +31,9 @@ InteractiveObject.prototype.base_setup = function() {
     }
 }
 
+InteractiveObject.prototype.init = function(){
+}
+
 // Include this object when listing things to use on other things.
 InteractiveObject.prototype.use_target = function(){
     return ( typeof( this.use ) !== 'undefined' );   

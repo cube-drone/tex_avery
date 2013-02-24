@@ -61,3 +61,7 @@ margin: 10px;
 .choices{
 font-family: 'Source Code Pro', monospace;
 }
+
+.ui-widget{
+line-height: 1.3em;
+}

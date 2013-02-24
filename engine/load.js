@@ -1,4 +1,5 @@
-
+// Make sure that we have registered objects for every 
+//   object in the scene's heirarchy. 
 define(["engine/objects"], function( objects ){
 
 var public = {};

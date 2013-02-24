@@ -75,7 +75,7 @@ var sound = {
         this.hide_verb( "mute" );
     },
     unmute: function(){
-        history.append( "You turn on the sound. ", "narrator" );
+        history.append( "You turn on the <strong class='object'>sound</strong>. ", "narrator" );
         
         sound_engine.start(); 
         
@@ -86,7 +86,7 @@ var sound = {
         this.hide_verb( "unmute" );
     },
     mute: function(){
-        history.append( "You mute the sound. ", "narrator" );
+        history.append( "You mute the <strong class='object'>sound</strong>. ", "narrator" );
 
         sound_engine.stop();
 
