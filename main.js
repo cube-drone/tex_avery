@@ -1,6 +1,25 @@
 require(["ui/prompt", "game/player", "engine/command", "engine/load", "ui/history"], 
     function(prompt, player, command, load, history){
 
+var version_check = function(){
+    var major_version = "Hormel";
+    var minor_version = "2";
+
+    var local_major = localStorage['major_version'];
+    var local_minor = localStorage['minor_version'];
+        
+    if( local_major !== major_version || typeof(local_major) === 'undefined' ||
+        local_minor !== minor_version || typeof(local_minor) === 'undefined' ){
+        localStorage.clear();
+        console.log("Version change. Restarting universe." );
+        localStorage['major_version'] = major_version;
+        localStorage['minor_version'] = minor_version;
+        location.reload();
+    }
+}
+
+version_check();
+
 $(document).ready(function() {
 
     prompt.register_callback( function(text){
