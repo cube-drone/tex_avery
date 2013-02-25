@@ -2,28 +2,6 @@
 You
 ---
 
-Name:
- * NAME 
-
-You identify as:
- * Male
- * Female
- * It's Complicated
-
-If your build and skin color were a refreshing beer, it would be
- * A tall sleeve of Hefeveisen
- * A pint of Lager
- * A mug of Amber Ale
- * Short & Stout
-
-You're not wearing any clothes. 
-
-You have a long tattoo of an asian-style dragon running from
-your thighbone up the side of your torso, alongside the chinese
-character for "SOUP".  It was a funny nod to a common joke 
-("The tattoo artist said it meant 'Honor'") at the time, but you're
-starting to regret it. 
-
 You work as a graphic designer at a local T-Shirt design 
 collective that specializes in extremely fast print 
 runs of shirts featuring up-to-the minute internet memes, 
@@ -31,9 +9,11 @@ selling these shirts during the memes' exact window of
 popularity, and then forgetting the shirts entirely and forever. 
 
 You work with Ennis Laoghaire, who works with local 
-screen-printers, and Shani Djamila, who manages both 
-the shipping and the handling of the shirts.  The 
-three of you don't maintain an office, but maintain a digital
+screen-printers and manages shipping and handling, 
+and Shani Djamila, who scans the entire internet for
+trending memes daily. 
+
+The three of you don't maintain an office, but maintain a digital
 workspace. Ennis and Shani both live in Vancouver, 
 although you've never visited either - their apartments 
 are every bit as shitty as yours. You meet at pubs, and 
@@ -41,6 +21,14 @@ occasionally co-work out of coworking offices or coffee shops.
 
 Ennis Laoghaire
 ---------------
+The Business Administrator. Runs the production and delivery
+side of things. 
+
+Frequently volunteers as a part-time protestor and social activist
+at the Vancouver Art Gallery Perpetual Protest. When he gets 
+chiphacked, his first instinct is to hit the Airport for public
+terminals and support from his Chipless cohorts. 
+
 Co-worker. "It's prounounced 'Ennis Leera'". Vancouver native,
 Irish/Filipino parents (also Vancouver natives.)
 A little pudgy, usually wears a close-cropped beard. 
@@ -51,8 +39,14 @@ Shani Djamila
 -------------
 
 Co-worker. South Californian, with Indonesian parents, who
-migrated from South Sulawesi. Fond of collared shirts, Bachelor's
-degree in Business Administration. 
+migrated from South Sulawesi. 
+
+When she gets chiphacked, retreats to her parents' house. 
+
+If you find her parents' house, and visit around dinner time, 
+you can solve your food problem for the rest of the game.
+They will load you down with so many calories that it almost
+triggers the "Bursts At The Seams" ending. 
 
 Police Constable 1st Class Jeanne Javert
 ----------------------------------------
@@ -81,3 +75,26 @@ TELUX ARPU D2
 The TELUX kiosk is manned by ARPU D2, a digitally rendered android
 who's happy to help you compare cel-phone plans. 
 
+God of Memes
+------------
+
+A hacker who works in the field of public opinion manipulation to 
+create and shape viral media. 
+
+Purposefully indeterminate gender. 
+
+(s)he knows guys at readit and dugg-dugg, (s)he writes articles for BoingSproing,
+(s)he has access to the codebase for a few-dozen social platforms, 
+knows h(er/is) way around phishing and social engineering, and generally 
+spends most of h(er/is) time just soaking in data. 
+
+God of Memes has h(er/is) thumb on the internet popularity scale. (S)he doesn't 
+craft content on h(er/is) own, but (s)he's a power broker for internet virality. 
+
+Why?  Not for wealth - although (s)he does sell a little 
+influence on the side here and there to afford to live - (s)he does it 
+for the Internet Points - of which (s)he has almost eight million, at this
+point. 
+
+Oh, (s)he loves your company's shirts, by the way, although (s)he'd like it if
+you'd make them out of more long-lasting cottons. 

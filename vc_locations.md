@@ -50,7 +50,7 @@ Coal Harbour
 Robson & Seymour
 ----------------
  - TELUX Offices (no admittance w/o chip)
- - CoreaDog (no admittance w/o chip)
+ - CoreaDog
  - Noodleton Abbey (no admittance w/o chip)
 
 Vancouver Public Library
@@ -73,10 +73,9 @@ Stadium-Chinatown Skytrain
 Airport
 =======
  - <Flash Riot Event>
-   - Run with the Squatters (reveals' Squatters' Hole)
-   - Submit to the police (get a concussion, lose a day in prison)
+   - If you haven't filed a Police Report, triggers a Police Report
+ - Squatters' Hole 
 
 Squatters' Hole
 ---------------
- - If you enter Squatters' Hole with a locked terminal, TELUX will 
-   sell your location to the VPD. 
+ - It's poor as SHIT all up in here. 
