@@ -11,8 +11,8 @@ body{
 }
 
 .options{
-    margin-bottom: 10px;
-    margin-top: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .options a{
@@ -22,7 +22,8 @@ body{
 }
 
 .options a:hover{
-    font-weight: bold;
+    background-color: #222;
+    cursor: pointer;
 }
 
 #target{
@@ -39,6 +40,7 @@ textarea:focus, input:focus{
 
 #history {
     padding: 0;
+    padding-right: 20px;
     list-style-type: none;
     max-height: 450px;
     overflow: auto;

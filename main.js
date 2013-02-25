@@ -43,6 +43,24 @@ $(document).ready(function() {
     //      to the prompt element. 
     $(document).bind('keydown', prompt.focus );
 
+    var histoggle = false;
+    $("#toggle_history").click( function(){
+        if( histoggle ){
+            $("#history").css('overflow-y', 'hidden');
+            histoggle = false;
+        }
+        else{
+            $("#history").css('overflow-y', 'scroll');
+            histoggle = true;
+        }
+    });
+    $("#view_journal").click( function(){
+        history.append("That hasn't been implemented yet.");
+    });
+    $("#toggle_sound").click( function(){
+        history.append("That hasn't been implemented yet.");
+    });
+
 });
 
 });
