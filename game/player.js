@@ -54,10 +54,7 @@ var me = {
         room.change_location( path_to_initial_location, function(){
             load.load();   
         });
-        if( this.get_state('initialized') ){
-            history.append("Welcome back.");            
-            history.append("The <strong class='object'>sound</strong> is muted." );
-        };
+        history.append("The <strong class='object'>sound</strong> is muted." );
     },
     special_verbs:["look_around", 
         "debug", 
@@ -95,9 +92,10 @@ var me = {
     },
     help: function(){
         history.append("Here are some commands you might try!", "help") 
-        history.append("inventory - Check out what you're holding.", "help");
-        history.append("reset universe - Completely reset the entire universe.", "help");
-        history.append("help - See this page.", "help");
+        history.append("<strong class='object'>look around</strong> - Look around.", "help");
+        history.append("<strong class='object'>inventory</strong> - Check out what you're holding.", "help");
+        history.append("<strong class='object'>reset universe</strong> - Completely reset the entire universe.", "help");
+        history.append("<strong class='object'>help</strong> - See this page.", "help");
     },
     reset_universe:function(){
         localStorage.clear();

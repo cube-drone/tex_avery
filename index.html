@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title> Greetings, human., </title>
+    <title> Greetings, human. </title>
 
     <!-- Every javascript system benefits from jQuery and underscore. -->
     <script src="libs/jquery-1.9.1.min.js"></script>
@@ -28,22 +28,31 @@
     <script src="main.js"></script>
 
     <!-- Google Source Code font. Probably unnecessary, but pretty. -->
-    <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900' rel='stylesheet' type='text/css' />
-     --> 
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900' rel='stylesheet' type='text/css' />
     <link href='style.css' rel='stylesheet' type='text/css' />
 
     <meta charset='utf-8' /> 
 </head>
 <body>
     <div class='container'>
-    <div class='row'>
-        <ul id='history' class='span12' > 
-        </ul>
-    </div> 
-    
-    <div class='row' class='span12'>
-        <div id='host' class='span1'>&gt;&gt;&gt;</div> 
-        <div id='prompt'>
+        <div class='row options' class='span12'>
+            <div class='span6'> 
+                <a class='span6'> ^ History </a>
+            </div> 
+            <div class='span6'> 
+                <a class='span6'> ^ Journal </a> 
+            </div> 
+        </div> 
+        <div class='row'>
+            <ul id='history' class='span12' > 
+                <div class="placeholder" style="height:380px;"></div> 
+            </ul>
+        </div> 
+        
+        <div class='row' class='span12'>
+            <div id='host' class='span1'>&gt;&gt;&gt;</div> 
+            <div id='prompt'>
+            </div>
         </div>
     </div>
 </body>

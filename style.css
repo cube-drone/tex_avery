@@ -1,67 +1,88 @@
 
 body{
-font-size: large;
-background-color: #111;
-color: #CCC;
-font-family: 'Source Code Pro', monospace;
+    font-size: large;
+    background-color: #111;
+    color: #CCC;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .container{
-padding-top: 50px;
+    padding-top: 50px;
+}
+
+.options{
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.options a{
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.options a:hover{
+    font-weight: bold;
 }
 
 #target{
-background-color: #111;
-color: #CCC;
-border: 0;
-font-size: medium;
-font-family: 'Source Code Pro', monospace;
+    background-color: #111;
+    color: #CCC;
+    border: 0;
+    font-size: medium;
+    font-family: 'Source Code Pro', monospace;
 }
 
 textarea:focus, input:focus{
-outline: none;
+    outline: none;
 }
 
 #history {
-padding: 0;
-list-style-type: none;
-max-height: 600px;
-overflow: auto;
-overflow-x: hidden;
-overflow-y: hidden;
+    padding: 0;
+    list-style-type: none;
+    max-height: 450px;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #history .clickable{
-cursor: pointer;
-padding: 10px;
-margin: 10px;
-border: 1px dashed #BBB; 
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    border: 1px dashed #BBB; 
 }
 
 #history .clickable:hover{
-background-color: #555;
+    background-color: #555;
 }
 
 #history .clickable i{
-margin-right: 10px;
+    margin-right: 10px;
 }
 
 .pagebreak{
-height: 500px;
+    height: 500px;
 }
 
 .player{
-color: #E8C5D3;
-margin: 10px;
+    color: #E8C5D3;
+    margin: 10px;
 }
 
 .narrator {
 }
 
 .choices{
-font-family: 'Source Code Pro', monospace;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .ui-widget{
-line-height: 1.3em;
+    line-height: 1.3em;
 }
