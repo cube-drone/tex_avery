@@ -11,6 +11,7 @@ var definitions = {
     },
     x_array_specs: function(){
         history.append("X-Array Specs", "narrator", "" +
+" <p><strong>tl;dr: a phone had sex with VR goggles</strong></p> " + 
 " <p>Specs are today's " +
 " dominant display technology. They can display a transparent overlay " +
 " over your vision, an opaque overlay over your vision, or simply fade " +
@@ -23,6 +24,7 @@ var definitions = {
     },
     authenticat: function(){
         history.append("AuthentiCat", "narrator", " "+
+"<p><strong>tl;dr: your identity</strong></p> " + 
 "<p>Being as everybody is net-savvy at this point, and everything "+ 
 "is online at this point, the problems of authentication and " +
 "authorization have become more and more crucial to address. </p>" +

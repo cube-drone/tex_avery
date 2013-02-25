@@ -1,5 +1,11 @@
-require(["ui/prompt", "game/player", "engine/command", "engine/load", "ui/history"], 
-    function(prompt, player, command, load, history){
+require(["ui/prompt", 
+            "game/player",
+            "game/journal", 
+            "engine/command", 
+            "engine/load", 
+            "engine/sound", 
+            "ui/history"], 
+    function(prompt, player, journal, command, load, sound, history){
 
 var version_check = function(){
     var major_version = "Hormel";
@@ -53,12 +59,23 @@ $(document).ready(function() {
             $("#history").css('overflow-y', 'scroll');
             histoggle = true;
         }
+        prompt.focus();
     });
     $("#view_journal").click( function(){
-        history.append("That hasn't been implemented yet.");
+        var j = new journal();
+        var j_text = "<ul class='journal'><li>"+j.get_journal().join("</li>\n<li>") + "</li></ul>";
+        history.dialog( "Journal", j_text ); 
     });
     $("#toggle_sound").click( function(){
-        history.append("That hasn't been implemented yet.");
+        if( sound.is_on() ){
+            $("#target").val("mute sound");
+            prompt.enter();
+            prompt.focus();
+        } else {
+            $("#target").val("unmute sound");
+            prompt.enter();
+            prompt.focus();
+        };
     });
 
 });

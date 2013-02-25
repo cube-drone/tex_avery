@@ -4,20 +4,23 @@ define(["engine/objects",
         "ui/history",
         "ui/prompt", 
         "game/room",
+        "game/journal",
         "game/sound",
         "game/inventory", 
         "game/bathroom", 
         "game/definition"], 
         function( objects, load, 
                     history, prompt, 
-                    room, sound, inventory, bathroom, definition){
+                    room, journal, sound, inventory, bathroom, definition){
+
+var journ = new journal();
 
 objects.set_file( "game/player" );
 var public = {};
 
 var wound = {
     look_at: function(){
-        history.append(["There's a fresh <strong class='object'>wound</strong> on your arm, scabbed over, approximately ", 
+        history.append(["There's a fresh <strong class='object'>wound</strong> on your arm, approximately ", 
             " where your <strong class='object'>AuthentiCat</strong> should be. It's ",
             " scabbed over, and seems to be healing reasonablly well." ]);
     },
@@ -39,6 +42,7 @@ var gauze = {
         history.append(["You unwrap the gauze from your arm, discarding it, revealing ", 
             " a fresh <strong class='object'>wound</strong> in your arm, ",
             " approximately where your <strong class='object'>AuthentiCat</strong> should be. Oh, boy. This is bad. "]);
+        journ.add_to_journal("You have discovered that you're missing your AuthentiCat." );
         this.parent().remove_child('gauze');
         this.parent().add_child( new public.wound() );
         objects.get_root().recursive_find("definition").show_verb("authenticat");
@@ -71,7 +75,10 @@ var me = {
         this.add_child(snd);
         this.add_child(def);
         this.add_child( new public.gauze() );
+        this.hide_child( 'gauze' );
         this.set_state('current_location', bath );
+
+        journ.add_to_journal( "You woke up in your bathroom, dazed and confused." );
     },
     look_around: function(){
         var current_location = this.get_state('current_location');

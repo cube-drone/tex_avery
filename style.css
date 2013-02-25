@@ -88,3 +88,17 @@ textarea:focus, input:focus{
 .ui-widget{
     line-height: 1.3em;
 }
+
+.dialog_content{
+    background-color: #EEE;
+    color: #111;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.journal li{
+    line-height: 1.3em;
+    margin-top: 5px;
+}

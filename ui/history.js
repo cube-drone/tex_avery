@@ -6,12 +6,13 @@ define(function() {
         title = title.replace(/'/g, '&amp;');
         $("#dialog").remove();
         var dialog = $( "<div id='dialog' title='"+title+"'> </div> " );
-        dialog.append( html );
+        dialog.append( "<div class='dialog_content'>"+html+"</div>" );
         $( dialog ).dialog( { minWidth:700 , modal:true, maxHeight:500} );
         $(document).append(dialog);
     };
 
     return {
+    dialog: dialog, 
     append: function(message, author, popup){
         if(typeof(message) !== 'string' && ! message instanceof jQuery ){
             if( typeof(message) === 'undefined' ){

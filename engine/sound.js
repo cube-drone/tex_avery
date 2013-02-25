@@ -159,6 +159,10 @@ public.start = function(){
     createjs.Sound.setMute(false);
 };
 
+public.is_on = function(){
+    return sound_on;
+};
+
 public.stop = function(){
     sound_on = false;
     createjs.Sound.setMute(true);

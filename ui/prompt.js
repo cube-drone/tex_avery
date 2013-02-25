@@ -48,11 +48,17 @@ public.hide_choices = function(){
     $(".choices").remove();
 }
 
-public.choices = function( object, choice_object ){
+public.choices = function( object, choice_object, vertical ){
     choices_mode = true;
     $("#target").hide();
     $(".choices").remove();
-    var choices = $("<div class='choices btn-group btn-group-vertical'></div>");
+
+    var btn_group = 'btn-group';
+    if( vertical === true ){
+        btn_group = 'btn-group-vertical';
+    }
+
+    var choices = $("<div class='choices btn-group "+btn_group+"'></div>");
     _.each( _.keys(choice_object), function(key){
         var choice = $("<button class='btn btn-large btn-inverse'>"+key+"</button>");
         var func = function(){
@@ -99,6 +105,7 @@ private.enter = function(evt){
     public.show();
     return evt;
 };
+public.enter = private.enter;
 
 private.keypress = function(evt) {
     var TAB = 9;

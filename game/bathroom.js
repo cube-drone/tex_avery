@@ -2,10 +2,12 @@ define(["engine/objects",
         "engine/sound", 
         "ui/prompt",
         "game/room",
+        "game/journal", 
         "ui/history"], 
-        function( objects, sound, prompt,  room, history){
+        function( objects, sound, prompt, room, journal, history){
 
 objects.set_file( "game/bathroom" );
+var journ = new journal();
 
 sound.register_playlist("apartment", 
     ["sounds/ambient-bathroom.ogg", "sounds/ambient-kitchen.ogg"], 
@@ -36,6 +38,7 @@ var mirror_conversation =  {
     set_name: function(name){
         var me = objects.get_root();
         me.set_state("name", name );
+        journ.add_to_journal("Your name is " + name + "." );
         app( "You identify as:");
         prompt.choices( this, { 
             "Female": this.female, 
@@ -49,18 +52,20 @@ var mirror_conversation =  {
     gender: function(gender){
         var me = objects.get_root();
         me.set_state("gender", gender );
+        journ.add_to_journal("Your gender is " + gender + "." );
         app( "If you were to compare yourself to a refreshing beer, it would be a:" );
         prompt.choices( this, {
             "Tall, pale, blonde, a sleeve of Hefeveisen": this.wheat_beer, 
             "Medium-sized, creamy-tan, refeshing, a pint of Honey-Brown Ale": this.ale, 
             "Short and Stout": this.is_my_handle_this_is_my_spout
-        });
+        }, true);
     },
     wheat_beer: function(){ this.beer("Wheat"); },
     ale: function(){ this.beer("Ale"); },
     is_my_handle_this_is_my_spout: function(){ this.beer("Stout"); },
     beer: function( beer ){
         var me = objects.get_root();
+        journ.add_to_journal("Your beer is " + beer + ".");
         me.set_state("beer", beer);
         prompt.hide_choices();
         var mirror = new public.mirror();
@@ -148,6 +153,7 @@ var mirror = {
                 "but you're not used to seeing yourself without a thin veneer of augmented reality ",
                 "painted over the scene. Where are your specs? " ]);
             objects.get_root().recursive_find("definition").show_verb("x_array_specs");
+            objects.get_root().show_child('gauze');
             
             // If you still have the gauze on: 
             if( objects.get_root().has_child('gauze') ){
