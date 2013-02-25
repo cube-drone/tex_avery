@@ -5,11 +5,21 @@ var public = {};
 objects.set_file( "game/definition" );
 
 var definitions = {
+    // TODO: special verbs can't be hidden.
+    special_verbs: ["what_are_x_array_specs", "what_is_an_authenticat"],
     setup: function(){
-        this.hide_verb("x_array_specs");
-        this.hide_verb("authenticat");
+        this.hide_verb("what_are_x_array_specs");
+        this.hide_verb("what_is_an_authenticat");
+        this.hide_verb("get_definitions");
+        this.hide_verb("show_definition");
     },
-    x_array_specs: function(){
+    show_definition: function( def ){
+        // TODO: this
+    },
+    get_definitions: function( ){
+        // TODO: this
+    }, 
+    what_are_x_array_specs: function(){
         history.append("X-Array Specs", "narrator", "" +
 " <p><strong>tl;dr: a phone had sex with VR goggles</strong></p> " + 
 " <p>Specs are today's " +
@@ -22,7 +32,7 @@ var definitions = {
 " <p><em>Your</em> model is the \"Lemovo X-Array\" - well, it would " +
 " be if you were wearing them. </p> "); 
     },
-    authenticat: function(){
+    what_is_an_authenticat: function(){
         history.append("AuthentiCat", "narrator", " "+
 "<p><strong>tl;dr: your identity</strong></p> " + 
 "<p>Being as everybody is net-savvy at this point, and everything "+ 

@@ -1,18 +1,17 @@
 
 body{
-    font-size: large;
     background-color: #111;
     color: #CCC;
     font-family: 'Source Code Pro', monospace;
 }
 
 .container{
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 .options{
     padding-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .options a{
@@ -42,10 +41,10 @@ textarea:focus, input:focus{
     padding: 0;
     padding-right: 20px;
     list-style-type: none;
-    max-height: 450px;
+    height: 380px;
     overflow: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 #history .clickable{

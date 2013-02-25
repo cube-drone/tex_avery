@@ -45,7 +45,7 @@ var gauze = {
         journ.add_to_journal("You have discovered that you're missing your AuthentiCat." );
         this.parent().remove_child('gauze');
         this.parent().add_child( new public.wound() );
-        objects.get_root().recursive_find("definition").show_verb("authenticat");
+        objects.get_root().recursive_find("definition").show_verb("what_is_an_authenticat");
     }
 };
 public.gauze = objects.add_to_universe( "gauze", gauze );

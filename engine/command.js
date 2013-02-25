@@ -29,13 +29,9 @@ public.get_actions = function(){
             actions.push( verb.replace(/_/g, " ") );
         });
 
-        // Synonyms
         var verbs = noun.visible_verbs();
         _.each( verbs, function( verb ) {
-            var syns = synonyms.find( verb );
-            _.each( syns, function( synonym ){
-                actions.push( synonym.replace(/_/g, " ") + " " + noun.name.replace(/_/g, " ") );
-            });
+            actions.push( verb.replace(/_/g, " ") + " " + noun.name.replace(/_/g, " ") );
         });
     });
     return actions;
