@@ -21,6 +21,13 @@ occasionally co-work out of coworking offices or coffee shops.
 
 Ennis Laoghaire
 ---------------
+Co-worker. "It's prounounced 'Ennis Leera'". Vancouver native,
+Irish/Filipino parents (also Vancouver natives.)
+A little pudgy, usually wears a close-cropped beard and a 
+cap. Not a hat, but a 'cap'. 
+Has a tendency to over-hyperbolize statements ("This is the 
+finest coffee ever touched by human hands."). 
+
 The Business Administrator. Runs the production and delivery
 side of things. 
 
@@ -29,17 +36,13 @@ at the Vancouver Art Gallery Perpetual Protest. When he gets
 chiphacked, his first instinct is to hit the Airport for public
 terminals and support from his Chipless cohorts. 
 
-Co-worker. "It's prounounced 'Ennis Leera'". Vancouver native,
-Irish/Filipino parents (also Vancouver natives.)
-A little pudgy, usually wears a close-cropped beard. 
-Has a tendency to over-hyperbolize statements ("This is the 
-finest coffee ever touched by human hands."). 
 
 Shani Djamila
 -------------
 
 Co-worker. South Californian, with Indonesian parents, who
-migrated from South Sulawesi. 
+migrated from South Sulawesi. Total bit-head. Reads the 
+entire internet every day. 
 
 When she gets chiphacked, retreats to her parents' house. 
 
@@ -98,3 +101,31 @@ point.
 
 Oh, (s)he loves your company's shirts, by the way, although (s)he'd like it if
 you'd make them out of more long-lasting cottons. 
+
+Ex-TELUX Executive
+------------------
+
+Recently fired after launching the poorly thought out "ygolohcysP esreveR"
+ad campaign. Mortgaged to the hilt, couldn't find another job, soon ended
+up drinking and, well, long-story-short, now he lives at the Airport. 
+
+Can tell you all about tmiyoh.3am. 
+
+The Surgeon
+-----------
+
+A contractor through tmiyoh.3am, under the handle the_surgeon. Your chiphacker.
+
+Bright red hair and very steady hands. 
+
+He's a real professional.  He's done over 18 live chiphacks, and he hasn't 
+lost a patient, yet.  It pays very well, and he justifies what he's doing
+as a humanitarian project - people are going to get chiphacked anyways, but
+so long as he's the one doing it, the targets are a lot less likely to 
+get seriously injured during the procedure.
+
+Even so, though, he does have to work _quickly_, and discreetly. 
+
+He subcontracts out the preparation and procurement of his various drugs and
+knockout gases to another tmiyoh.3am contractor, grand_duchess_anaesthesia.
+

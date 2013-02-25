@@ -36,26 +36,49 @@ Dunsmuir & Beatty
 ---------------
  - Apartment Complex
  - Stadium/Chinatown Skytrain
+ - Coffee Hut
+    - Exactly the same as every other Coffee Hut
 
 West Georgia & Hamilton
 -------------------
  - The CBC Broadcasting Company (no admittance w/o chip)
  - The Vancouver Public Library
+ - Coffee Hut
+
+Art Gallery
+-----------
+ - Perpetual Protest
+ - Coffee Hut
 
 Coal Harbour
 ------------
- - Salty Jack's Fish & Chip-Hop Funk Marina (no admittance w/o chip)
+ - Salty Jack's Fish & Chip-Hop Funk Marina (no admittance)
+ - Ancients' Kiosk
  - AuthentiCat Identity Services 
+ - Waveblend Coffee Emporium
+   - Full of Portland-esque hipsters who give awful game advice.
+   - "You should pawn your terminal."
+   - "Have you thought of buying an accordion?" 
+
+Burrard & Davie
+---------------
+ - Triple Crown Pawn Shop
+ - St. Paul's Hospital
+ - Coffee Hut
+ - TELUX Kiosk 
 
 Robson & Seymour
 ----------------
  - TELUX Offices (no admittance w/o chip)
+ - TELUX Kiosk 
  - CoreaDog
  - Noodleton Abbey (no admittance w/o chip)
+ - Coffee Hut
 
 Vancouver Public Library
 ========================
  - Public phones
+ - Coffee Hut
 
 TELUX Kiosk
 -----------
