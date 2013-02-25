@@ -7,6 +7,7 @@ require(["ui/prompt",
             "ui/history"], 
     function(prompt, player, journal, command, load, sound, history){
 
+createjs.Sound.setMute(true);
 var version_check = function(){
     var major_version = "Hormel";
     var minor_version = "2";

@@ -2,8 +2,7 @@ define(
     function(){
 
 var public = {};
-    
-createjs.Sound.setMute(true);
+
 var sound_on = false;
 
 var playlist_name = "sample";
