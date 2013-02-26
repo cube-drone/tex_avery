@@ -55,10 +55,10 @@ var mirror_conversation =  {
         journ.add_to_journal("Your gender is " + gender + "." );
         app( "If you were to compare yourself to a refreshing beer, it would be a:" );
         prompt.choices( this, {
-            "Tall, pale, blonde, a sleeve of Hefeveisen": this.wheat_beer, 
-            "Medium-sized, creamy-tan, refeshing, a pint of Honey-Brown Ale": this.ale, 
+            "Sleeve of Hefeveisen": this.wheat_beer, 
+            "Pint of Honey-Brown Ale": this.ale, 
             "Short and Stout": this.is_my_handle_this_is_my_spout
-        }, true);
+        });
     },
     wheat_beer: function(){ this.beer("Wheat"); },
     ale: function(){ this.beer("Ale"); },
@@ -112,12 +112,12 @@ var mirror = {
                     " the gym often enough." ]); 
                 if( gender === "Female" ){
                     app([" You arrange your hair a bit to try to get it from Flock of Seagulls ",
-                        " to Rough Ponytail. "] ); 
+                        " to Flapper, but settle on Rough Ponytail. "] ); 
                 }
                 if( gender === "Male" ){
                     app([" You've recently trimmed your chest hair into the Batman symbol. ",
                         " No regrets, although the required shaving has been an extra pain ",
-                        " in the ass. I'm Batman. Batman is itchy. "]);
+                        " in the ass. <em>I'm Batman</em>. Batman is <em>itchy</em>. "]);
                 }
             }
             if( beer === "Stout" ){
@@ -133,7 +133,7 @@ var mirror = {
                     app([" You're stocky. Barrel-chested. Muscled.  If you were to grow ",
                         " a beard, you'd be a Tolkienesque dwarf. So you refuse to grow ",
                         " a beard.  You make a muscle at yourself in the mirror. CUBAN. ", 
-                        "MUSCLE. CRISIS.  Okay, it's not as impressive as you'd like. ", 
+                        "MUSCLE. <em>crisis</em>.  Okay, it's not as impressive as you'd like. ", 
                         "You should probably spend a little more time at the gym." ] );
                 }
                 if( gender === "Undefined" ){
