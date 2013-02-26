@@ -60,7 +60,7 @@ public.choices = function( object, choice_object, vertical ){
 
     var choices = $("<div class='choices btn-group "+btn_group+"'></div>");
     _.each( _.keys(choice_object), function(key){
-        var choice = $("<button class='btn btn-large btn-inverse'>"+key+"</button>");
+        var choice = $("<button class='btn btn-inverse'>"+key+"</button>");
         var func = function(){
             history.append( "> " + key, "player");
             choice_object[key].apply(object); 
