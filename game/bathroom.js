@@ -180,46 +180,31 @@ var mirror = {
 public.mirror = objects.add_to_universe( "mirror", mirror );
 
 var toilet = {
-    look_at:function(){
-        app(["It's a small, beige commode. There is nothing spectacular about", 
-            " this toilet at all, except that it has been a little while since", 
-            " its last cleaning."]);
-    },
-    smell:function(){
-        app("Ungh. Needs a scrub. ");
-    },
-    taste:function(){
-        app("No. You refuse to put your tongue on that. ");
-    },
+    look_at:"It's a small, beige commode. There is nothing spectacular about"+ 
+            " this toilet at all, except that it has been a little while since"+ 
+            " its last cleaning.",
+    smell:"Ungh. Needs a scrub. ",
+    taste:"No. You refuse to put your tongue on that. ",
     flush:function(){
         app("You flush the toilet. Way to waste that water. <em>Champ.</em> ");
         sound.sfx("flush");
     },
-    clean:function(){
-        app("Not right now. You'll do it later. You promise. ");
-    } 
+    clean:"Not right now. You'll do it later. You promise. " 
 };
 public.toilet = objects.add_to_universe( "toilet", toilet );
 
 var toiletries = {
-    look_at:function(){
-        app("Razor, shaving cream, soap, deoderant, toothbrush, general hygeine gear.");
-    },
-    take: function(){
-        app([ "In many games, the solution to puzzles is to <em>take</em> every object that", 
-            " you can pick up, and then <em>use</em> those objects on every concievable surface.",
-            " This is not one of those games. You would feel silly carrying your entire bathroom worth ", 
-            " of gear about. If you need the toiletries, you can come back to your bathroom. They're ",
-            " not going anywhere." ]);
-    }
-
+    look_at:"Razor, shaving cream, soap, deoderant, toothbrush, general hygeine gear.",
+    take: "In many games, the solution to puzzles is to <em>take</em> every object that"+ 
+            " you can pick up, and then <em>use</em> those objects on every concievable surface."+
+            " This is not one of those games. You would feel silly carrying your entire bathroom worth "+ 
+            " of gear about. If you need the toiletries, you can come back to your bathroom. They're "+
+            " not going anywhere."
 };
 public.toiletries = objects.add_to_universe("toiletries", toiletries );
 
 var dried_blood = {
-    look_at:function(){
-        app("It's what appears to be your blood, congealing on the stall's drain." );
-    }
+    look_at:"It's what appears to be your blood, congealing on the stall's drain."
 };
 public.dried_blood = objects.add_to_universe( "dried_blood", dried_blood );
 

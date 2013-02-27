@@ -37,6 +37,51 @@ public.get_actions = function(){
     return actions;
 };
 
+public.execute = function execute( noun, verb ){
+    switch(typeof(noun[verb])){
+        case 'undefined':
+            console.error(noun + " " + verb + " not found")
+            return;
+        case 'function':
+            noun[verb]();
+            return;
+        case 'string':
+            history.append( noun[verb] );
+            return;
+        case 'object':
+            //TODO: I haven't tested any of this stuff yet. 
+            if(noun[verb].length > 0){
+                if( verb === "look_at" ){
+                    // special cases abound! 
+                }
+                var type_of_recurrence = noun[verb][0];
+                var recurrences = noun[verb][1];
+                if( type_of_recurrence === 'random') {
+                    var n = Math.floor((Math.random()*noun[verb].length)+1);
+                }
+                else{
+                    var n = noun.get_state(verb + ":recurrences");
+                }
+                if( typeof(n) === 'undefined' ){
+                    n = 0;
+                };
+                if( n > noun[verb].length && type_of_recurrence === 'one_pass' ){
+                    n = noun[verb].length;
+                };
+                if( n > noun[verb].length && type_of_recurrence === 'random' )
+                {
+                    n = 0;
+                };
+                execute( noun, noun[verb][n] );
+                n++;
+            }
+            else{
+                console.error("malformed object");
+            }
+            return;
+    }
+}
+
 // Execute a command
 public.command = function ( command ){
     var root_object = objects.get_root();
@@ -97,7 +142,7 @@ public.command = function ( command ){
                 // Single Object Logic
                 var success = _.some( noun.visible_verbs(), function( verb ){
                     if( tools.verb_in_command( verb, command )){
-                        noun[verb]();
+                        public.execute( noun, verb );
                         return true;
                     };
                 });
