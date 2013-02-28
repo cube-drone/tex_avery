@@ -179,8 +179,8 @@ up, as the "mine it in Canada, ship it to China, manufacture it in China, ship i
 Canada, and sell it" strategy is starting to become unsustainably expensive. 
 
 The staggering and oft-ignored efficiency of rail comes back into
-light.  Many airlines are going bankrupt at the sheer cost of keeping planes aloft
-makes air travel unreasonable for all but the most affluent of passengers - and
+light.  Many airlines are going bankrupt at the sheer cost of keeping planes aloft,
+makes air travel unsustainable for all but the most affluent of passengers - and
 the concept of battery-powered airplanes is at-best hilarious. Even the vast trucking
 infrastructure of the U.S. and Canada is having trouble with the soaring cost
 of gasoline. Ergo, more rail, and some of the first major rail development in North
@@ -218,6 +218,28 @@ converting to an off-the-grid, unchipped lifestyle. Just be forewarned,
 although the 9/11 commission was over two decades previously they will insist
 on showing various proofs that it was an inside job.
 
+Meat is a serious luxury-product - although Tilapia and Cricket are both reasonably
+affordable for the upper-classes. Most inexpensive fast food is corn-paste flavoured
+with a variety of extremely well-tailored chemical perfumes. 
+
+Geoengineering
+--------------
+
+With climate change a stark reality, humanity has turned to solutions that they
+had dismissed years ago as being too extreme and unpredictable to be practical. 
+Most of the major cities have been "cold roofed" - a euphemism for increasing their
+reflectivity by adding reflective or white surfaces to anything that isn't already
+dotted with solar energy collection. The atmosphere is laced with sunlight-reflecting
+sulphur - which is a temporary solution with its own ecological problems. Let us not 
+even discuss the combination of massive success and grand catastrophe that was the
+Grand South African Mirror Project. 
+
+The government claims to be engaged in large-scale carbon sequestration projects and
+longer-term solar shading procedures.  Some conspiracy theorists believe that 
+the government is _not_ actually involved in carbon sequestration projects or
+longer-term solar shading procedures, but are instead preparing for wide-spread 
+societal collapse through police militarization, human pacification, and quiet
+population culling. They're actually half-right; the government is doing both.
 
 Cybernetics, Augments, Biocybernetics and Datajacks
 ---------------------------------------------------
